@@ -17,7 +17,7 @@ class CreateTextsTable extends Migration
             $table->increments('tid');
             $table->integer('uid');
             $table->integer('aid');
-            $table->text('text');
+            $table->text('txt');
             $table->timestamps();
         });
     }
