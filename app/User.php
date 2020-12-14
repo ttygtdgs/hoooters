@@ -1,5 +1,5 @@
 <?php
-
+// 12/14 後藤田メモ：以下要変更
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
