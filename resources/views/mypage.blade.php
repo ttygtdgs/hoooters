@@ -7,7 +7,10 @@
 </head>
 <body>
 <header>hoooters</header>
-<main></main>
+<main>
+<p>マイページ</p>
+
+</main>
 <footer></footer>
     
 </body>
