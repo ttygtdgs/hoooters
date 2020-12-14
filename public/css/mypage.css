@@ -1,0 +1,46 @@
+body{
+    background-color: #f6f6f4;
+}
+
+
+
+
+/* 以下、main---------------------------- */
+#profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#leftprofile{
+    background: #FFFFFF;
+    width: 360px;
+    margin-right: 16px;
+    margin-left: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    height: 600px;
+}
+
+#rightprofile{
+    width: 700px;
+}
+
+
+#rightprofile #like{
+    background: #FFFFFF;
+    width: 700px;
+    height: 300px;
+    margin: 30px;
+}
+
+#rightprofile #article{
+    background: #FFFFFF;
+    width: 700px;
+    height: 300px;
+    margin: 30px;
+}
+/* 以上、main---------------------------- */
+
+
+
