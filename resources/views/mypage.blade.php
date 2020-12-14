@@ -75,7 +75,7 @@
     <hr>
     記事投稿数
     <hr>
-    ログアウト
+    ログアウト?
     </div>
 
     <div id="rightprofile">
