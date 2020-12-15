@@ -12,6 +12,9 @@ body{
     align-items: center;
 }
 
+
+
+/* 以下、leftprofile --------*/
 #leftprofile{
     background: #FFFFFF;
     width: 360px;
@@ -22,6 +25,103 @@ body{
     height: 600px;
 }
 
+#leftprofile #leftprofile1{
+    width: 90%;
+    height: 200px;
+    /* background-color: aqua; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+   align-items: center;
+}
+
+#leftprofile #leftprofile1 img{
+    object-fit: contain;
+    width: 70%;
+    height: 70%;
+    /* border-radius: 50%; */
+}
+
+#leftprofile #leftprofile2{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+#leftprofile #leftprofile3{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+}
+
+#leftprofile #leftprofile4{
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#leftprofile #leftprofile5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: chartreuse; */
+
+}
+
+#leftprofile #leftprofile5 .p5{
+    font-size: 25px;
+    font-weight: 400;  
+}
+
+#leftprofile #leftprofile5 #leftprofile5_1{
+    /* background-color: aquamarine; */
+    width: 104px;
+    text-align: center;
+    
+}
+
+#leftprofile #leftprofile5 #leftprofile5_2{
+    /* background-color: brown; */
+    width: 104px;
+    text-align: center;
+}
+
+#leftprofile #leftprofile6{
+    text-align: center;
+}
+
+#leftprofile #leftprofile6 a{
+    display: inline-block;
+    border: 2px solid #ccc;
+    font-size: 18px;
+    padding: 4px 0;
+    text-align: center;
+    width: 80%;
+    background-color: #777;
+    color: #fff;
+    border-color: #777;
+    font-weight: bold;
+}
+
+#leftprofile #leftprofile7{
+    text-align: center;
+}
+
+#leftprofile #leftprofile7 a{
+    font-size: 13px;
+    color: gray;
+    text-decoration: none;
+}
+   
+/* 以上、leftprofile --------*/
+
+
+/* 以下、rightprofile --------*/
 #rightprofile{
     width: 700px;
 }
@@ -29,17 +129,92 @@ body{
 
 #rightprofile #like{
     background: #FFFFFF;
-    width: 700px;
-    height: 300px;
-    margin: 30px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
+
+#rightprofile #like #like1{
+    /* background-color: hotpink; */
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#rightprofile #like ul{
+    list-style: none;
+}
+
+#rightprofile #like ul a{
+    font-size:16px;
+    font-weight: bold;
+    color: black;
+}
+
+#rightprofile #like ul li{
+    padding-right: 40px;
+}
+
+#rightprofile #like ul li #li1{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* background-color: cyan; */
+}
+#rightprofile #like ul li #li2{
+    font-size:13px;
+}
+
 
 #rightprofile #article{
     background: #FFFFFF;
-    width: 700px;
+    width: 100%;
     height: 300px;
-    margin: 30px;
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
+
+#rightprofile #article #article1 {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;   
+}
+
+#rightprofile #article ul{
+    list-style: none;
+}
+
+#rightprofile #article ul a{
+    font-size:16px;
+    font-weight: bold;
+    color: black;
+}
+
+#rightprofile #article ul li{
+    padding-right: 40px;
+}
+
+#rightprofile #article ul li #li1{
+    font-size:13px;
+}
+
+
+
+
+
+
+
+/* 以上、rightprofile --------*/
 /* 以上、main---------------------------- */
 
 
