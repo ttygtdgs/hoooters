@@ -1,0 +1,124 @@
+body{
+  width:100vw;
+  height:100vh;
+  background-color:#f6f6f4 ;
+}
+
+header{
+  width:100vw;
+  height:8vh;
+  background-color: orange;
+}
+
+
+.footerFixed{
+  min-height: 100vh; /* ←コンテンツの高さの最小値＝ブラウザの高さに指定 */
+  position: relative;/* ←相対位置 */
+  padding-bottom: 60px; 
+  /* ←フッターの高さを指定 */
+  box-sizing: border-box;
+  /* ↑ヘッダーやフッターを含むすべての要素の高さ＝min-height:100vhになるように指定 */
+}
+
+footer{
+  position: absolute;/* ←絶対位置 */
+  bottom: 0;
+  width:100vw;
+  height: 8vh;
+  
+  /* 以下 背景色やテキストカラー */
+  background: orange;
+  color: #fff;
+  text-align: center;
+  
+}
+
+footer p{
+  
+}
+
+
+
+
+
+/* メインコンテンツはここから */
+.wrapper{
+  width: 100vw;
+  min-height:80vh;
+  display: flex;
+}
+
+
+
+.left-content{
+  padding-top: 3vh;
+  width: 25vw;
+  min-height:70vh;
+}
+
+.left-box{
+  width: 20vw;
+  min-height:50vh;
+  background-color: white;
+  margin:auto auto;
+  line-height: 2;
+}
+
+
+.right-content{
+  padding-top: 3vh;
+  width: 75vw;
+  min-height:70vh;
+}
+
+
+/* 右側のコンテントの切替 */
+.tab-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tab-label {
+  color: #ffffff;
+  background: gainsboro;
+  margin-right: 5px;
+  padding: 3px 12px;
+  order: -1;
+  width:23vw;
+
+}
+.tab-content {
+  width: 70vw;
+  min-height:60vh;
+  display: none;
+  background-color: gainsboro;
+}
+/* アクティブなタブ */
+.tab-switch:checked+.tab-label {
+  background: orange;
+}
+.tab-switch:checked+.tab-label+.tab-content {
+   display: block;
+}
+/* ラジオボタン非表示 */
+.tab-switch {
+  display: none;
+}
+
+
+
+
+
+/* 右側コンテンツの編集 */
+.feed{
+  width:67vw;
+  height:25vh;
+  background-color: white;
+  margin: 1vh auto;
+}
+
+title {
+  padding-left: 30px;
+  line-height: 30px;
+  background: url("../pic/icon.png") no-repeat;
+  
+}
