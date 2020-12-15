@@ -17,6 +17,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
   <!-- 丹羽作成 -->
   <link href="{{asset('/css/mypage.css')}}" rel="stylesheet">
+  <!-- リセットcssを追加する -->
+  <link href="" rel="stylesheet">
 
 </head>
 
@@ -69,6 +71,12 @@
 
 <div id="profile">
     <div id="leftprofile">
+        <div>
+            <img src="" alt="">
+        </div>
+    
+    
+    
     プロフィール画像
     <br>
     プロフィール名
@@ -78,11 +86,22 @@
     ログアウト?
     </div>
 
+
+
+
+
     <div id="rightprofile">
         <div id="like">
         いいねした記事一覧
         </div>
         <div id="article">
+            @foreach
+            <div></div>
+
+
+
+        
+        
         投稿した記事一覧
         </div>
     </div>
@@ -91,12 +110,6 @@
 
 
 </main>
-
-
-
-
-
-
 
 <!-- Main -->
 
