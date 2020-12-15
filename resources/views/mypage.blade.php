@@ -123,28 +123,28 @@
             <ul>
                 <!-- foreach -->
                 <li>
-                    <a href="" class="">サイバーエージェント&ensp;webマーケティング</a> 
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
+                    <div id="li1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+                    <div id="li2">投稿者：チキン&ensp;&ensp;投稿日：2020/12/15</div>
+                </li>
+                <hr>
+                <li>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
+                    <div id="li1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+                    <div id="li2">投稿者：チキン&ensp;&ensp;投稿日：2020/12/15</div>
+                </li>
+                <hr>
+                <li>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
                     <div id="li1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
                     <div id="li2">投稿者：チキン&ensp;&ensp;投稿日：2020/12/15</div>
                 </li>
                 <hr>
                 <!-- foreach -->
-                <li>
-                    <a href="" class="">サイバーエージェント&ensp;webマーケティング</a> 
-                    <div id="li1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
-                    <div id="li2">投稿者：チキン&ensp;&ensp;投稿日：2020/12/15</div>
-                </li>
-                <hr>
-                <li>
-                    <a href="" class="">サイバーエージェント&ensp;webマーケティング</a> 
-                    <div id="li1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
-                    <div id="li2">投稿者：チキン&ensp;&ensp;投稿日：2020/12/15</div>
-                </li>
-                <hr>
+               
+                <br>
             </ul>
-
         </div>
-
 
         <div id="article">  
             <div id="article1">
@@ -154,13 +154,43 @@
             <ul>
                 <!-- foreach -->
                 <li>
-                    <a href="" class="">サイバーエージェント&ensp;webマーケティング</a> 
-                    <div id="li1">投稿者：チキン&ensp;&ensp;投稿日：2020/12/15</div>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
+                    <div id="li1">投稿日：2020/12/15</div>
+                </li>
+                <hr>
+                <li>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
+                    <div id="li1">投稿日：2020/12/15</div>
+                </li>
+                <hr>
+                <li>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
+                    <div id="li1">投稿日：2020/12/15</div>
+                </li>
+                <hr>
+                <li>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
+                    <div id="li1">投稿日：2020/12/15</div>
+                </li>
+                <hr>
+                <li>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
+                    <div id="li1">投稿日：2020/12/15</div>
+                </li>
+                <hr>
+                <li>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
+                    <div id="li1">投稿日：2020/12/15</div>
+                </li>
+                <hr>
+                <li>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
+                    <div id="li1">投稿日：2020/12/15</div>
                 </li>
                 <hr>
                 <!-- foreach -->
+                <br>
             </ul>
-        
         </div>
     </div>
 
