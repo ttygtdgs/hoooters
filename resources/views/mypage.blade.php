@@ -17,15 +17,17 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
   <!-- 丹羽作成 -->
   <link href="{{asset('/css/mypage.css')}}" rel="stylesheet">
+  <!-- fontawsome -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
   <!-- リセットcssを追加する -->
-  <link href="" rel="stylesheet">
+  <link href="#" rel="stylesheet">
 
 </head>
 
 <body>
 
 <!--Header-->
-<header>
+<header style="background:rgb(8,165,234) ;">
   <nav class="navbar navbar-expand-lg navbar-dark default-color">
     <a class="navbar-brand" href="#"><strong>Hoooters</strong></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -70,39 +72,95 @@
 <main>
 
 <div id="profile">
+
     <div id="leftprofile">
-        <div>
-            <img src="" alt="">
+        <div id="leftprofile1">
+            <img src="{{asset('/pic/icon.png')}}" alt="">
         </div>
-    
-    
-    
-    プロフィール画像
-    <br>
-    プロフィール名
-    <hr>
-    記事投稿数
-    <hr>
-    ログアウト?
+        <div id="leftprofile2">
+            <!-- データ取得！！ -->
+            アカウント名
+        </div> 
+        <div id="leftprofile3">
+            ※SNSアイコン※
+        </div> 
+        <div id="leftprofile4">
+            <!-- データ取得！！ -->
+            初めまして、チキンです。原宿のエンジニア養成学校に通ってます。チーム開発頑張るぞ〜〜。
+        </div> 
+        <div  id="leftprofile5">
+            <div id="leftprofile5_1">
+                <!-- データ取得！！ -->
+                <p class="p5">0</p>
+                <p>投稿</p>
+            </div>
+            <div id="leftprofile5_2">
+                <!-- データ取得！！ -->
+                <p class="p5">0</p>
+                <p>お気に入り</p>
+            </div>
+        </div>
+        <div id="leftprofile6">
+            <a href="" id="">
+                プロフィールを編集する
+            </a>
+        </div>
+        <hr>
+        <div id="leftprofile7">
+            <a href="" id="">
+                ログアウト
+            </a>
+        </div>
+
     </div>
-
-
-
-
 
     <div id="rightprofile">
         <div id="like">
-        いいねした記事一覧
+            <div id="like1">
+                <span class="fa fa-thumb-tack" style="font-size:20px;color:#c5a800;margin-right:8px"></span>
+                最新のお気に入り記事
+            </div>
+            <ul>
+                <!-- foreach -->
+                <li>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング</a> 
+                    <div id="li1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+                    <div id="li2">投稿者：チキン&ensp;&ensp;投稿日：2020/12/15</div>
+                </li>
+                <hr>
+                <!-- foreach -->
+                <li>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング</a> 
+                    <div id="li1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+                    <div id="li2">投稿者：チキン&ensp;&ensp;投稿日：2020/12/15</div>
+                </li>
+                <hr>
+                <li>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング</a> 
+                    <div id="li1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
+                    <div id="li2">投稿者：チキン&ensp;&ensp;投稿日：2020/12/15</div>
+                </li>
+                <hr>
+            </ul>
+
         </div>
-        <div id="article">
-            @foreach
-            <div></div>
 
 
-
+        <div id="article">  
+            <div id="article1">
+            <span class="fa fa-pencil" style="font-size:20px;color:#c5a800;margin-right:8px"></span>
+                投稿した記事一覧
+            </div>
+            <ul>
+                <!-- foreach -->
+                <li>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング</a> 
+                    <div id="li1">投稿者：チキン&ensp;&ensp;投稿日：2020/12/15</div>
+                </li>
+                <hr>
+                <!-- foreach -->
+            </ul>
         
-        
-        投稿した記事一覧
         </div>
     </div>
 
