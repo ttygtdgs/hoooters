@@ -17,6 +17,10 @@ class CreateCorpsTable extends Migration
             $table->increments('cid');
             $table->string('cname');
             $table->integer('curl');
+            $table->string('p1');
+            $table->string('p2');
+            $table->string('p3');
+            $table->string('p4');
         });
     }
 
