@@ -1,11 +1,11 @@
-<!-- 記事 -->
+<!-- 投稿・編集 -->
 
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>記事ページ</title>
+  <title>投稿ページ</title>
 </head>
 <body>
   <div class="container">
