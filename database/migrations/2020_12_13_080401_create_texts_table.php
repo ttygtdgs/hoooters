@@ -19,6 +19,10 @@ class CreateTextsTable extends Migration
             $table->integer('aid');
             $table->text('txt');
             $table->timestamps();
+            $table->string('p1');
+            $table->string('p2');
+            $table->string('p3');
+            $table->string('p4');
         });
     }
 
