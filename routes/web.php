@@ -18,6 +18,9 @@ Route::get('/', function () {
 Route::get('/article', function () {
     return view('article');
 });
+Route::get('/edit', function () {
+    return view('edit');
+});
 
 // マイページ（丹羽担当）
 Route::get('/mypage', function () {
