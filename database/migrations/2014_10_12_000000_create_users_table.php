@@ -21,6 +21,12 @@ class CreateUsersTable extends Migration
             $table->string('uname');
             $table->string('icon');
             $table->timestamps();
+            $table->string('intro');
+            $table->string('site');
+            $table->string('p1');
+            $table->string('p2');
+            $table->string('p3');
+            $table->string('p4');
         });
     }
 
