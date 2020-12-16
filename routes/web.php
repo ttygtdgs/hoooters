@@ -10,27 +10,17 @@ use Illuminate\Http\Request;
 
 
 // 一覧ページ（後藤田担当）
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'IndexController@top');
 
 // 記事登録ページ（風太担当）
-Route::get('/article', function () {
-    return view('article');
-});
+Route::get('/article', 'ArticleController@article');
 
-Route::post('/article', function () {
-    return view('article');
-});
+Route::get('/edit', 'EditController@edit');
 
-Route::get('/edit', function () {
-    return view('edit');
-});
+Route::post('/edit', 'EditController@register');
 
 // マイページ（丹羽担当）
-Route::get('/mypage', function () {
-    return view('mypage');
-});
+Route::get('/mypage', 'MypageController@mypage');
 
 // ログイン、認証ページ（田代担当）
 Auth::routes();
