@@ -18,6 +18,11 @@ Route::get('/', function () {
 Route::get('/article', function () {
     return view('article');
 });
+
+Route::post('/article', function () {
+    return view('article');
+});
+
 Route::get('/edit', function () {
     return view('edit');
 });
