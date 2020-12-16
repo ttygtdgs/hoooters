@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="{{asset('/css/reset.css')}}">
   <link rel="stylesheet" href="{{asset('/css/edit.css')}}">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>投稿・編集</title>
 </head>
 <body>
@@ -140,6 +141,7 @@
   </div>
 
 <!-- JS -->
-<script src="{{ asset('js/edit.js') }}" defer></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+<script src="{{ asset('js/edit.js') }}"></script>
 </body>
 </html>

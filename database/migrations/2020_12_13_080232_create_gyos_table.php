@@ -16,6 +16,7 @@ class CreateGyosTable extends Migration
         Schema::create('gyos', function (Blueprint $table) {
             $table->increments('gid');
             $table->string('gname');
+            $table->timestamps();
         });
     }
 
