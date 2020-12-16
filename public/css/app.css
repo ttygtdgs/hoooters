@@ -3284,12 +3284,12 @@ fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: #FF6928;
+  color: black;
   text-decoration: none;
 }
 
 .btn-link:hover {
-  color: #FF6928;
+  color:black;
   text-decoration: underline;
 }
 
