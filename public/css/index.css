@@ -1,13 +1,13 @@
 body{
   width:100vw;
   height:100vh;
-  background-color:#f6f6f4 ;
+  background-color:rgb(247, 247, 247)  ;
 }
 
 header{
   width:100vw;
   height:8vh;
-  background-color: orange;
+  background-color: rgb(113, 203, 241);
 }
 
 
@@ -27,7 +27,7 @@ footer{
   height: 8vh;
   
   /* 以下 背景色やテキストカラー */
-  background: orange;
+  background: rgb(113, 203, 241);
   color: #fff;
   text-align: center;
   
@@ -44,15 +44,16 @@ footer p{
 /* メインコンテンツはここから */
 .wrapper{
   width: 100vw;
-  min-height:80vh;
+  min-height:90vh;
   display: flex;
+  justify-content: center;
 }
 
 
 
 .left-content{
   padding-top: 3vh;
-  width: 25vw;
+  width: 23vw;
   min-height:70vh;
 }
 
@@ -65,14 +66,22 @@ footer p{
 }
 
 
+
+
+
+
+/* 右側のコンテンツはここから */
+
+/* 右側のコンテントの切替 */
+
 .right-content{
   padding-top: 3vh;
-  width: 75vw;
+  width: 53vw;
   min-height:70vh;
 }
 
 
-/* 右側のコンテントの切替 */
+
 .tab-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -80,21 +89,22 @@ footer p{
 .tab-label {
   color: #ffffff;
   background: gainsboro;
-  margin-right: 5px;
+  margin-right: 6.5px;
   padding: 3px 12px;
   order: -1;
-  width:23vw;
+  width:17vw;
 
 }
 .tab-content {
-  width: 70vw;
-  min-height:60vh;
+  width: 52vw;
+  min-height:70vh;
   display: none;
   background-color: gainsboro;
+  padding-bottom: 5px;
 }
 /* アクティブなタブ */
 .tab-switch:checked+.tab-label {
-  background: orange;
+  background: rgb(113, 203, 241);
 }
 .tab-switch:checked+.tab-label+.tab-content {
    display: block;
@@ -110,15 +120,84 @@ footer p{
 
 /* 右側コンテンツの編集 */
 .feed{
-  width:67vw;
-  height:25vh;
+  width:50vw;
+  height:45vh;
   background-color: white;
   margin: 1vh auto;
+  position: relative;
 }
 
-title {
-  padding-left: 30px;
-  line-height: 30px;
-  background: url("../pic/icon.png") no-repeat;
-  
+.feed-icon{
+  width:24px;
+  height:24px;
+  vertical-align:middle;
+}
+
+span{
+  vertical-align:middle;
+}
+
+.feed-pict{
+  height: 23vh;
+  width:auto;
+  margin-left:5vw;
+  margin-top:1vh;
+  margin-bottom:1vh;
+}
+
+
+
+.feed-right{
+  width:25vw;
+  margin:1vh 0 1vh 1vw;
+}
+
+
+.icon{
+  height: 1vh;
+  width:1vw;
+}
+
+
+.feed-bottom{
+  height: 5vh;
+  bottom: 1vh;
+  margin-left: 1vw;
+  position:absolute;
+}
+
+.float{
+  float: left;
+  height: 3vh;
+  margin-left: 1vw;
+  margin-top:1vh;
+}
+
+.feed-top{
+  align-items: center;
+}
+
+
+.kigyo{
+  font-size: 2vh;
+  color: #212529;
+  margin-top: 0vh;
+  display: block;
+  padding-top: 1.5vh;
+  margin-left:3vw;
+}
+
+p.corp{
+  margin-left: 2vw;
+  font-weight: bold;
+  padding-top: 2vh;
+}
+
+span.kigyo-name {
+  font-size: 3.5vh;
+}
+
+p.kigyo-comme {
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
