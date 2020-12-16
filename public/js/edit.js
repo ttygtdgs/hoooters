@@ -1,3 +1,5 @@
+const { default: Axios } = require("axios");
+
 const gyos = document.querySelectorAll('.gyo-btn');
 
 gyos.forEach(function (gyo){
@@ -41,4 +43,18 @@ document.getElementById('cadd-btn').addEventListener('click',function(){
   add_modal.classList.add('fadein');
   c_modal.classList.add('none');
   c_modal.classList.remove('fadein');
+});
+
+
+document.getElementById('cadd-submit').addEventListener('click',function(){
+  const params = new URLSearchParams();
+  const cname = document.getElementById('cname').value;
+  const curl = document.getElementById('curl').value;
+  params.append('cname',cname);
+  params.append('curl',curl);
+
+  axios.post('http://localhost/hoooters/public/edit',params).then(function(e){
+    
+  });
+
 });
