@@ -37,9 +37,6 @@
                         <li>追加機能５</li>
 
                     
-                    
-                    
-                    
                     </ul>
                 
                 
@@ -48,57 +45,58 @@
 
 
             <div class="right-content">
-                <div class="right-box">
+        
                     
+
+
+                <!-- データを引っ張ってくる -->
+
                 
                 <div class="tab-wrap">
                     <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB-01">人気フィード</label>
-                    <div class="tab-content">
+                        <div class="tab-content">
 
-                        <div class="feed">
-                            <div class="feed-profile">
-                                <div class="icon-image">
-                                    <img src="." alt="">
+                            <div class="feed">                               
+                                
+                                <p class="corp"><span class="kigyo-name">株式会社サンリオ</span>　ハローキティ事業部　WEBマーケ</p>
+                                
+                                <img src="{{asset('/pic/example1.png')}}" class="feed-pict" alt=""> 
+                                <p class="kigyo-comme">キティちゃん人形の拡販。きてぃーちゃんタイムズの運用。ああああああああああああああああああああああああああああ</p>
+
+                                <div class="feed-bottom"><img src="{{asset('/pic/icon.png')}}"  class="float">
+                                    <p class="kigyo"> @ふーたーずが2020年12月25日に投稿</p>
                                 </div>
-                                <p class="title">tatsuya　2020/12/25</p>
-                                <img src="" class="icon" alt="">
                             </div>
-                            <h2>企業名</h2>
-                            <div class="feed-pict">
-                                <img src="" class="top-pict" alt="">ピクト図
+
+                            <div class="feed">                               
+                                
+                                <p class="corp"><span class="kigyo-name">株式会社サンリオ</span>　ハローキティ事業部　WEBマーケ</p>
+                                
+                                <img src="{{asset('/pic/example1.png')}}" class="feed-pict" alt=""> 
+                                <p class="kigyo-comme">キティちゃん人形の拡販。きてぃーちゃんタイムズの運用。ああああああああああああああああああああああああああああ</p>
+
+                                <div class="feed-bottom"><img src="{{asset('/pic/icon.png')}}"  class="float">
+                                    <p class="kigyo"> @ふーたーずが2020年12月25日に投稿</p>
+                                </div>
                             </div>
-                            <div class="feed-bottom">
-                                like数取ってくる
+
+                            <div class="feed">                               
+                                
+                                <p class="corp"><span class="kigyo-name">株式会社サンリオ</span>　ハローキティ事業部　WEBマーケ</p>
+                                
+                                <img src="{{asset('/pic/example1.png')}}" class="feed-pict" alt=""> 
+                                <p class="kigyo-comme">キティちゃん人形の拡販。きてぃーちゃんタイムズの運用。ああああああああああああああああああああああああああああ</p>
+
+                                <div class="feed-bottom"><img src="{{asset('/pic/icon.png')}}"  class="float">
+                                    <p class="kigyo"> @ふーたーずが2020年12月25日に投稿</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="feed">
-                            <div class="feed-profile">
-                                <p>tatsuya　2020/12/25</p>
-                                <img src="" class="icon" alt="">
-                            </div>
-                            <h2>企業名</h2>
-                            <div class="feed-pict">
-                                <img src="" class="top-pict" alt="">ピクト図
-                            </div>
-                            <div class="feed-bottom">
-                                like数取ってくる
-                            </div>
-                        </div>
-                        <div class="feed">
-                            <div class="feed-profile">
-                                <p>tatsuya　2020/12/25</p>
-                                <img src="" class="icon" alt="">
-                            </div>
-                            <h2>企業名</h2>
-                            <div class="feed-pict">
-                                <img src="" class="top-pict" alt="">ピクト図
-                            </div>
-                            <div class="feed-bottom">
-                                like数取ってくる
-                            </div>
+
+                            
+                            
+                           
                         </div>
 
-                    </div>
                     <input id="TAB-02" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-02">最新投稿</label>
                     <div class="tab-content">
                         最新投稿
@@ -120,8 +118,6 @@
 
 
 
-                </div>
-            
             </div>
         
         </div>
