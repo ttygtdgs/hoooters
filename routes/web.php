@@ -19,6 +19,8 @@ Route::get('/edit', 'EditController@edit');
 
 Route::post('/edit', 'EditController@register');
 
+Route::post('/corp', 'CorpController@register');
+
 // マイページ（丹羽担当）
 Route::get('/mypage', 'MypageController@mypage');
 
