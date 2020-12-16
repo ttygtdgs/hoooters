@@ -25,6 +25,7 @@ Route::post('/corp', 'CorpController@register');
 Route::get('/mypage', 'MypageController@mypage');
 
 // ログイン、認証ページ（田代担当）
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

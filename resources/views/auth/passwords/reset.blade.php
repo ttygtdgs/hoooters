@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8"style="background-color: #FF6928">
             <div class="card">
-                <div class="card-header" style="background-color: #FF6928">{{ __('Reset Password') }}</div>
+                <div class="card-header" style="background-color: #FF6928">パスワードをリセットする</div>
 
                 <div class="card-body" style="background-color: #FF6928">
                     <form method="POST" action="{{ route('password.update') }}">
