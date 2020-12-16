@@ -23,12 +23,8 @@ class CreateArtsTable extends Migration
             $table->string('art_place');
             $table->string('jcomme');
             $table->string('zcomme');
-            $table->timestamps();
             $table->integer('life_flg');
-            $table->string('p1');
-            $table->string('p2');
-            $table->string('p3');
-            $table->string('p4');
+            $table->timestamps();
         });
     }
 
