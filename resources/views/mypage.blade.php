@@ -79,7 +79,7 @@
         </div>
         <div id="leftprofile2">
             <!-- データ取得！！ -->
-            アカウント名
+            ユーザーネーム
         </div> 
         <div id="leftprofile3">
             ※SNSアイコン※

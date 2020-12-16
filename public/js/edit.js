@@ -42,3 +42,37 @@ document.getElementById('cadd-btn').addEventListener('click',function(){
   c_modal.classList.add('none');
   c_modal.classList.remove('fadein');
 });
+
+
+//企業登録
+document.getElementById('cadd-submit').addEventListener('click',function(){
+  const cname = document.getElementById('cname').value;
+  const curl = document.getElementById('curl').value;
+
+  if(cname=="" || curl==""){
+    alert('未入力箇所があります');
+    return;
+  }
+
+  const params = new FormData();
+  params.append('cname',cname);
+  params.append('curl',curl);
+  console.log(params);
+
+  const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+  fetch('http://localhost/hoooters/public/corp',{
+    headers: {'X-CSRF-TOKEN': token},
+    method: 'POST',
+    cache: 'no-cache',
+    body: params
+  }).then((response) => {
+    return response.json(); // あるいは response.blob()
+  }).then(function(res){
+    console.log(res.data);
+
+  }).catch(function(error){
+    console.log(error);
+  });
+
+});
