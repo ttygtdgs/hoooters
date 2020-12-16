@@ -29,7 +29,10 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // ここで新規登録後のページ遷移を指定できる。↓がオリジナル
+     //protected $redirectTo = RouteServiceProvider::HOME;
+    // ここ丹羽が変換
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -51,7 +54,6 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'uname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -69,10 +71,9 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'uname' => $data['uname'],
+            'uname' => $data['name'],
             'icon' => '/pic/icon.png',
-            'intro' => '2',
-            'site' => '3',
+         
         ]);
     }
 }
