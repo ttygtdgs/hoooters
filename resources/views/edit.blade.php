@@ -22,8 +22,8 @@
             <div class="company-wrapper">
               <div class="clabel tlabel">企業</div>
               <div class="cname-wrapper">
-                <div id="csearch-btn" type="button">企業を選ぶ</div>
-                <div class="cname"></div>
+                <div id="csearch-btn" type="button"><i class="far fa-hand-point-right"></i>企業を選ぶ</div>
+                <div class="cname-box"></div>
               </div>
               <!-- cid -->
               <input type="hidden" name="cid">
@@ -39,8 +39,10 @@
           </div>
           <!-- 投稿 -->
           <div class="submit-wrapper">
-            <button type="submit" id="submit-btn">下書き</button>
-            <button type="submit" id="submit-btn">投稿</button>
+            <input type="hidden" name="life_flg" value="0">
+            <button type="submit" class="submit-btn" id="draft">下書き</button>
+            <button type="submit" class="submit-btn" id="deploy">投稿</button>
+            <i class="fas fa-question-circle"></i>
           </div>
         </div>
         <!-- 業態 -->
@@ -68,6 +70,7 @@
                 <ul class="imenu">
                   <li class="imenu-item"><i class="fas fa-font"></i></li>
                   <li class="imenu-item"><i class="fas fa-user"></i></li>
+                  <li class="imenu-item"><i class="fas fa-building"></i></li>
                   <li class="imenu-item"><i class="fas fa-arrow-up"></i></li>
                   <li class="imenu-item"><i class="fas fa-yen-sign"></i></li>
                   <li class="imenu-item"><i class="fas fa-trash-alt"></i></li>
@@ -109,18 +112,29 @@
           <ul class="cresult">
             <li class="citem">
               <p>企業名</p>
-              <button type="button">選択</button>
+              <button type="button" class="choice-btn">選択</button>
             </li>
             <li class="citem">
               <p>企業名</p>
-              <button type="button">選択</button>
+              <button type="button" class="choice-btn">選択</button>
             </li>
             <li class="citem nullmesse">登録はありません</li>
           </ul>
           <div class="cmodal-bottom">
-            <a id="cadd-btn" href="#">企業を登録</a>
+            <div id="cadd-btn">新しく企業を登録</div>
           </div>
         </div>
+      </div>
+      <div class="cadd-modal none">
+        <div class="cadd-box">
+          <label class="tlabel cadd" for="cname">企業名</label>
+          <input type="text" name="cname" id="cname">
+        </div>
+        <div class="cadd-box">
+          <label class="tlabel cadd" for="curl">企業URL</label>
+          <input type="text" name="curl" id="curl">
+        </div>
+        <button id="cadd-submit">登録</button>
       </div>
     </div>
   </div>
