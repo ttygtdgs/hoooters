@@ -28,7 +28,8 @@ class CorpController extends Controller
         $corp->cname = $request->cname;
         $corp->curl = $request->curl;
         $corp->save();
-        return $request->cname;
+        $cname = $request->cname;
+        return response()->json($cname);
 
     }
 }
