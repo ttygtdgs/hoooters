@@ -17,16 +17,12 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email');
-            $table->string('lpw');
+            $table->string('password');
             $table->string('uname');
             $table->string('icon');
+            $table->string('intro')->nullable();
+            $table->string('site')->nullable();
             $table->timestamps();
-            $table->string('intro');
-            $table->string('site');
-            $table->string('p1')->nullable();
-            $table->string('p2')->nullable();
-            $table->string('p3')->nullable();
-            $table->string('p4')->nullable();
         });
     }
 
