@@ -57,7 +57,6 @@ document.getElementById('cadd-submit').addEventListener('click',function(){
   const params = new FormData();
   params.append('cname',cname);
   params.append('curl',curl);
-  console.log(params);
 
   const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
