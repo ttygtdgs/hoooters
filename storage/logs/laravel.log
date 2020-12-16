@@ -1839,3 +1839,91 @@ Stack trace:
 #50 /Applications/MAMP/htdocs/hoooters/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #51 {main}
 "} 
+[2020-12-16 13:15:18] local.DEBUG: array (
+  'cname' => 'aaa',
+  'curl' => 'aaa',
+)  
+[2020-12-16 13:15:40] local.DEBUG: array (
+  'cname' => 'bbb',
+  'curl' => 'bbb',
+)  
+[2020-12-16 13:16:51] local.DEBUG: array (
+  'cname' => 'bbb',
+  'curl' => 'bbb',
+)  
+[2020-12-16 13:17:00] local.DEBUG: array (
+  'cname' => 'ccc',
+  'curl' => 'ccc',
+)  
+[2020-12-16 13:19:32] local.DEBUG: array (
+  'cname' => 'ddd',
+  'curl' => 'ddd',
+)  
+[2020-12-16 13:19:49] local.DEBUG: array (
+  'cname' => 'ddd',
+  'curl' => 'ddd',
+)  
+[2020-12-16 13:33:17] local.DEBUG: array (
+  'cname' => 'ddd',
+  'curl' => 'ddd',
+)  
+[2020-12-16 13:34:20] local.DEBUG: array (
+  'cname' => 'えええ',
+  'curl' => 'えええ',
+)  
+[2020-12-16 13:35:08] local.DEBUG: array (
+  'cname' => 'aaa',
+  'curl' => 'aaa',
+)  
+[2020-12-16 13:49:19] local.DEBUG: array (
+  'cname' => 'eee',
+  'curl' => 'ddd',
+)  
+[2020-12-16 13:49:39] local.DEBUG: array (
+  'cname' => 'ああああ',
+  'curl' => 'えええええ',
+)  
+[2020-12-16 13:57:47] local.DEBUG: array (
+  'cname' => 'aaa',
+  'curl' => 'ccc',
+)  
+[2020-12-16 13:59:50] local.DEBUG: array (
+  'cname' => 'eee',
+  'curl' => 'ddd',
+)  
+[2020-12-16 14:01:49] local.DEBUG: array (
+  'cname' => 'aaaa',
+  'curl' => 'ddddd',
+)  
+[2020-12-16 14:05:30] local.DEBUG: array (
+  'cname' => 'aaa',
+  'curl' => 'ccc',
+)  
+[2020-12-16 14:12:36] local.DEBUG: array (
+  'cname' => 'dddd',
+  'curl' => 'gggg',
+)  
+[2020-12-16 14:13:12] local.DEBUG: array (
+  'cname' => 'ddd',
+  'curl' => 'ccc',
+)  
+[2020-12-16 14:14:01] local.DEBUG: array (
+  'cname' => 'dddd',
+  'curl' => 'gggg',
+)  
+[2020-12-16 14:14:44] local.DEBUG: array (
+  'cname' => 'eee',
+  'curl' => 'ddd',
+)  
+[2020-12-16 14:14:57] local.DEBUG: array (
+  'cname' => 'gggg',
+  'curl' => 'dddd',
+)  
+[2020-12-16 14:15:56] local.DEBUG: array (
+  'cname' => 'ggg',
+  'curl' => 'ggg',
+)  
+[2020-12-16 14:17:03] local.DEBUG: array (
+  'cname' => 'ccc',
+  'curl' => 'ddd',
+)  
