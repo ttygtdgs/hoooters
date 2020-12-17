@@ -20,7 +20,7 @@
 <body>
 
 <div class="footerFixed">
-    <header>記事のページ
+    <header>記事のページだよ
 
     </header>
   
