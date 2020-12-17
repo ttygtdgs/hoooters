@@ -87,7 +87,6 @@
             </div>
             <div class="image-content">
               <div class="canvas-box">
-                <canvas id="can"></canvas>
                 <input type="file" name="art_img" id="art_img" class="none">
               </div>
             </div>
