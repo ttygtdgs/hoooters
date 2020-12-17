@@ -15,8 +15,11 @@
 <body>
   <header style="width: 100vw; height: 7vh; background-color:  rgb(113, 203, 241)">header</header>
   <div class="container">
-    <form action="#">
+    <form action="{{ url('/edit') }}" enctype="multipart/form-data" method="post">
+    {{ csrf_field() }}
       <!-- タイトル---------------------------------->
+      <!-- uid -->
+      <input type="hidden" name="uid" id="uid" value="1">
       <div class="title-wrapper">
         <div class="title-top">
           <div class="corp-wrapper">
@@ -42,9 +45,10 @@
           </div>
           <!-- 投稿 -->
           <div class="submit-wrapper">
-            <input type="hidden" name="life_flg" value="0">
-            <button type="submit" class="submit-btn" id="draft">下書き</button>
-            <button type="submit" class="submit-btn" id="deploy">投稿</button>
+            <button type="button" class="submit-btn" id="draft">下書き</button>
+            <button type="button" class="submit-btn" id="deploy">投稿</button>
+            <input type="hidden" name="life_flg" id="life_flg" value="0">
+            <button type="submit" class="none" id="submit"></button>
             <i class="fas fa-question-circle"></i>
           </div>
         </div>
@@ -84,6 +88,7 @@
             <div class="image-content">
               <div class="canvas-box">
                 <canvas id="can"></canvas>
+                <input type="file" name="art_img" id="art_img" class="none">
               </div>
             </div>
           </div>
