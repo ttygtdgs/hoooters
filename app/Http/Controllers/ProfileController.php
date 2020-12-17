@@ -42,10 +42,10 @@ class ProfileController extends Controller
         $file = $request->file('icon'); //file が空かチェック
         if( !empty($file) ){
             //アイコン名を取得
-            $filename = $file->getClientOriginalName(); //AWSの場合どちらかになる事がある”../upload/” or “./upload/”
+            $filename = '/pic/'.date("YmdHis").$file->getClientOriginalName(); //AWSの場合どちらかになる事がある”../upload/” or “./upload/”
             $move = $file->move('./pic/',$filename);
         }else{
-            $filename = "";
+            $filename = Auth::user()->icon;
         }
         
         //データ登録
@@ -53,9 +53,11 @@ class ProfileController extends Controller
         $users->name = $request->name;
         $users->email = $request->email;
         //$users->icon = '/pic/icon.png';
-        $users->icon = '/pic/'.$filename;
+        $users->icon = $filename;
         $users->intro = $request->intro;
         $users->site = $request->site;
+        $users->fsite = $request->fsite;
+        $users->tsite = $request->tsite;
         $users->save();
         // 下はエラーチェック用
         // return redirect('profile');
