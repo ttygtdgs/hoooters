@@ -20,7 +20,7 @@
   <!-- fontawsome -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
   <!-- リセットcssを追加する -->
-  <link href="#" rel="stylesheet">
+  <link rel="stylesheet" href="#">
 
 </head>
 
@@ -69,24 +69,28 @@
 
 
 <!-- Main -->
+<!-- 以下、「ProfileController.php」のバリテーションエラー確認用 -->
+@foreach ($errors->all() as $error)
+  <li>{{$error}}</li>
+@endforeach
+<!-- 以上、「ProfileController.php」のバリテーションエラー確認用 -->
 <main>
 
 <div id="profile">
-
     <div id="leftprofile">
         <div id="leftprofile1">
-            <img src="{{asset('/pic/icon.png')}}" alt="">
+            <img src="{{$usersicon}}" alt="">
         </div>
         <div id="leftprofile2">
-            <!-- データ取得！！ -->
-            ユーザーネーム
+            <!-- ユーザーネーム -->
+            {{Auth::user()->name}}さん
         </div> 
         <div id="leftprofile3">
             ※SNSアイコン※
         </div> 
         <div id="leftprofile4">
-            <!-- データ取得！！ -->
-            初めまして、チキンです。原宿のエンジニア養成学校に通ってます。チーム開発頑張るぞ〜〜。
+            <!-- 初めまして、チキンです。原宿のエンジニア養成学校に通ってます。チーム開発頑張るぞ〜〜。 -->
+            {{Auth::user()->intro}}      
         </div> 
         <div  id="leftprofile5">
             <div id="leftprofile5_1">

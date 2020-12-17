@@ -24,10 +24,11 @@
               <div class="clabel tlabel">企業</div>
               <div class="cname-wrapper">
                 <div id="csearch-btn" type="button"><i class="far fa-hand-point-right"></i>企業を選ぶ</div>
-                <div class="cname-box"></div>
+                <div id="cname-box" class="none"></div>
+                <div id="cchange-btn" class="none">変更する</div>
               </div>
               <!-- cid -->
-              <input type="hidden" name="cid">
+              <input type="hidden" name="cid" id="cid">
             </div>
             <!-- サービス -->
             <div class="service-wrapper">
@@ -74,6 +75,7 @@
                   <li class="imenu-item"><i class="fas fa-building"></i></li>
                   <li class="imenu-item"><i class="fas fa-arrow-up"></i></li>
                   <li class="imenu-item"><i class="fas fa-yen-sign"></i></li>
+                  <li class="imenu-item"><i class="fas fa-square"></i></li>
                   <li class="imenu-item"><i class="fas fa-trash-alt"></i></li>
                 </ul>
               </div>
@@ -111,15 +113,7 @@
         </div>
         <div class="cmodal-content">
           <ul class="cresult">
-            <li class="citem">
-              <p>企業名</p>
-              <button type="button" class="choice-btn">選択</button>
-            </li>
-            <li class="citem">
-              <p>企業名</p>
-              <button type="button" class="choice-btn">選択</button>
-            </li>
-            <li class="citem nullmesse">登録はありません</li>
+            <!-- 企業リスト -->
           </ul>
           <div class="cmodal-bottom">
             <div id="cadd-btn">新しく企業を登録</div>
@@ -139,6 +133,11 @@
       </div>
     </div>
   </div>
+  <!-- <div class="loading-wrapper none">
+    <div class="gif-wrapper">
+      <img src="pic/loading.gif">
+    </div>
+  </div> -->
 
 <!-- JS -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->

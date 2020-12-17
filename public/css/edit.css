@@ -52,6 +52,7 @@
   height: 100%;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .tlabel{
@@ -71,12 +72,23 @@
 
 .cname-wrapper{
   padding: 0 20px;
+  display: flex;
+}
+
+#cchange-btn{
+  position: absolute;
+  right: 10px;
+  color: rgb(112, 112, 112);
+  border-bottom: 1px solid rgb(112, 112, 112);
 }
 
 #csearch-btn{
   color: rgb(50, 50, 255);
-  padding: 1px 5px;
   border-bottom: 1px solid rgb(50, 50, 255);
+}
+
+#csearch-btn, #cchange-btn{
+  padding: 1px 5px;
   font-size: 14px;
   opacity: 0.8;
 }
@@ -89,7 +101,7 @@
   font-size: 16px;
 }
 
-#csearch-btn:hover{
+#csearch-btn:hover,#cchange-btn:hover{
   cursor: pointer;
   opacity: 1;
 }
@@ -496,3 +508,15 @@
   display: block;
   margin: 30px auto 10px;
 }
+
+/* .gif-wrapper{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
