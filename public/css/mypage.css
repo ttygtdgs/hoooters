@@ -3,6 +3,37 @@ body{
 }
 
 
+/* 以下、header---------------------------- */
+.header{
+    width: 100vw;
+    height: 7vh;
+    background-color:rgb(113, 203, 241);
+    display: flex;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0 0 0 30px;
+    padding: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+  }
+  
+.header nav {
+    margin: 0 20px 0 auto;
+  }
+
+.header nav ul{
+    display: flex;
+    align-items: center;
+}
+
+.header nav ul li{
+    margin: 0 0 0 80px;
+}
+
+/* 以上、header---------------------------- */
 
 
 /* 以下、main---------------------------- */
@@ -22,7 +53,7 @@ body{
     margin-left: 16px;
     margin-top: 16px;
     margin-bottom: 16px;
-    height: 600px;
+    height: 640px;
 }
 
 #leftprofile #leftprofile1{
@@ -53,19 +84,37 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    height: 70px;
+    height: 80px;
     padding-bottom: 5px;
     padding-top: 5px;
 
 }
 
-#leftprofile #leftprofile4{
-    text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
+#leftprofile #leftprofile3 a{
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
+
+#leftprofile #leftprofile4{
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#leftprofile #leftprofile4 p{
+    width: 90%;
+    height: auto;
+    word-wrap:break-word;
+    line-height: 25px;
+}
+
+
 #leftprofile #leftprofile5{
+    width: 100%;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,13 +124,21 @@ body{
 
 #leftprofile #leftprofile5 .p5{
     font-size: 25px;
-    font-weight: 400;  
+    font-weight: 500;  
+    height: 35px;
+}
+
+#leftprofile #leftprofile5 .p6{
+    font-size: 15px;
+ 
+    height: 30px;
 }
 
 #leftprofile #leftprofile5 #leftprofile5_1{
     /* background-color: aquamarine; */
     width: 104px;
     text-align: center;
+    
     
 }
 
@@ -108,7 +165,7 @@ body{
     font-weight: bold;
 }
 
-#leftprofile #leftprofile7{
+/* #leftprofile #leftprofile7{
     text-align: center;
 }
 
@@ -116,7 +173,7 @@ body{
     font-size: 13px;
     color: gray;
     text-decoration: none;
-}
+} */
    
 /* 以上、leftprofile --------*/
 
@@ -152,23 +209,32 @@ body{
 }
 
 #rightprofile #like ul a{
-    font-size:16px;
+    font-size:20px;
     font-weight: bold;
     color: black;
 }
 
 #rightprofile #like ul li{
     padding-right: 40px;
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 
 #rightprofile #like ul li #li1{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-size:16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
     /* background-color: cyan; */
 }
 #rightprofile #like ul li #li2{
     font-size:13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
 }
 
 
@@ -196,17 +262,21 @@ body{
 }
 
 #rightprofile #article ul a{
-    font-size:16px;
+    font-size:20px;
     font-weight: bold;
     color: black;
 }
 
 #rightprofile #article ul li{
     padding-right: 40px;
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 
 #rightprofile #article ul li #li1{
     font-size:13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 

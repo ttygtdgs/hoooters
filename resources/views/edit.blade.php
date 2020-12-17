@@ -7,15 +7,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{asset('/css/reset.css')}}">
   <link rel="stylesheet" href="{{asset('/css/edit.css')}}">
+  <link rel="stylesheet" href="{{asset('/css/canvas.css')}}">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>投稿・編集</title>
 </head>
 <body>
-  <header style="width: 100vw; height: 7vh; background-color:  rgb(113, 203, 241)">header</header>
+<header class="header">
+  <h1>Hoooters</h1>
+  <nav>
+    <ul>
+      <li>
+        <a href="{{url('/')}}">
+          <i class="fa fa-home" style="font-size: 2em; color: #fff;" ></i>
+        </a>
+      </li>
+      <li>
+        <a href="{{url('/edit')}}">
+          <i class="fa fa-newspaper-o " style="font-size: 2em; color: #fff; " ></i>
+        </a>
+      </li>
+      <li>
+        <a href="{{url('/mypage')}}">
+          <i class="fa fa-user-circle-o " style="font-size: 2em; color:#fff; " ></i>
+        </a>
+      </li>
+      <li>
+        <!--  以下、ログアウト処理-->
+        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+          <i class="fa fa-sign-out " style="font-size: 2em; color:#fff; " ></i>
+        </a>
+          <form id='logout-form' action={{route('logout')}} method="POST" style="display: none;">
+          {{ csrf_field() }}
+          <!--  以上、ログアウト処理-->
+          </form>
+      </li>
+    </ul>
+  </nav>
+</header>
   <div class="container">
-    <form action="#">
+    <form action="{{ url('/edit') }}" enctype="multipart/form-data" method="post">
+    {{ csrf_field() }}
       <!-- タイトル---------------------------------->
+      <!-- uid -->
+      <input type="hidden" name="uid" id="uid" value="1">
       <div class="title-wrapper">
         <div class="title-top">
           <div class="corp-wrapper">
@@ -41,9 +77,10 @@
           </div>
           <!-- 投稿 -->
           <div class="submit-wrapper">
-            <input type="hidden" name="life_flg" value="0">
-            <button type="submit" class="submit-btn" id="draft">下書き</button>
-            <button type="submit" class="submit-btn" id="deploy">投稿</button>
+            <button type="button" class="submit-btn" id="draft">下書き</button>
+            <button type="button" class="submit-btn" id="deploy">投稿</button>
+            <input type="hidden" name="life_flg" id="life_flg" value="0">
+            <button type="submit" class="none" id="submit"></button>
             <i class="fas fa-question-circle"></i>
           </div>
         </div>
@@ -75,12 +112,16 @@
                   <li class="imenu-item"><i class="fas fa-building"></i></li>
                   <li class="imenu-item"><i class="fas fa-arrow-up"></i></li>
                   <li class="imenu-item"><i class="fas fa-yen-sign"></i></li>
-                  <li class="imenu-item"><i class="fas fa-square"></i></li>
+                  <li class="imenu-item"><i class="fas fa-circle"></i></li>
                   <li class="imenu-item"><i class="fas fa-trash-alt"></i></li>
                 </ul>
               </div>
             </div>
-            <div class="image-content"></div>
+            <div class="image-content">
+              <div class="canvas-box">
+                <input type="file" name="art_img" id="art_img" class="none">
+              </div>
+            </div>
           </div>
           <div class="comment-wrapper">
             <div class="jcomme-wrapper">
@@ -142,5 +183,6 @@
 <!-- JS -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
 <script src="{{ asset('js/edit.js') }}"></script>
+<script src="{{ asset('js/canvas.js') }}"></script>
 </body>
 </html>

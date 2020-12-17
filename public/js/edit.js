@@ -51,6 +51,7 @@ document.getElementById('cchange-btn').addEventListener('click',function(){
 document.querySelector('.csearch-modal-wrapper').addEventListener('click', (e) => {
   if(!e.target.closest('.csearch-modal') && !e.target.closest('.cadd-modal')) {
     modal_remove();
+    csearch('null');
   } else {
     return;
   }
@@ -82,6 +83,9 @@ function csearch(key){
   }).then((response) => {
     return response.json(); // あるいは response.blob()
   }).then(function(val){
+    while(cresult.firstChild){
+      cresult.removeChild(cresult.firstChild);
+    }
     for(let i = 0; i<val.length; i++){
       const li = document.createElement("li");
       li.id = val[i]["cid"];
@@ -106,6 +110,7 @@ function choice(){
       document.getElementById('cname-box').textContent = c_btn.previousElementSibling.textContent;
       document.getElementById('cid').value = c_btn.parentNode.getAttribute('id');
       modal_remove();
+      csearch('null');
     });
   });
 }
@@ -117,9 +122,6 @@ window.addEventListener('load',function(){
 
 //企業検索
 document.getElementById('csearch').addEventListener('input',function(){
-  while(cresult.lastChild){
-    cresult.removeChild(cresult.lastChild);
-  }
   const keyword = document.getElementById('csearch').value;
   csearch(keyword);
 });
@@ -158,8 +160,53 @@ document.getElementById('cadd-submit').addEventListener('click',function(){
       document.getElementById('csearch-btn').classList.add('none');
       document.getElementById('cid').value = res["cid"];
       modal_remove();
+      csearch('null');
   }).catch(function(error){
     console.log(error);
   });
 
 });
+
+//下書き
+document.getElementById('draft').addEventListener('click',function(){
+  document.getElementById('life_flg').value = 0;
+  if(confirm('下書きに保存しますか？')){
+    console.log(document.getElementById('life_flg').value);
+    document.getElementById('submit').click();
+  }else{
+    return;
+  }
+});
+
+//投稿
+document.getElementById('deploy').addEventListener('click',function(){
+  document.getElementById('life_flg').value = 1;
+  inputcheck();
+});
+
+function inputcheck(){
+  try{
+    const uid = document.getElementById('uid').value;
+    const cid = document.getElementById('cid').value;
+    const gid = document.getElementById('gid').value;
+    const service = document.getElementById('service').value;
+    const art_img = 'example1.png';
+    // const art_img = document.getElementById('art_img').value;
+    // const art_place = document.getElementById('art_place').value;
+    const jcomme = document.getElementById('jcomme').value;
+    const zcomme = document.getElementById('zcomme').value;
+    const life_flg = document.getElementById('life_flg').value;
+    if(uid=="" || cid=="" || gid=="" || service=="" || art_img=="" || jcomme=="" || zcomme=="" || life_flg==""){
+      alert('未入力箇所があります！');
+      throw new Error([uid,cid,gid,service,art_img,jcomme,zcomme,life_flg]);
+    }
+    if(confirm('この内容で投稿しますか？')){
+      console.log(document.getElementById('life_flg').value);
+      document.getElementById('submit').click();
+    }else{
+      return;
+    }
+  }catch(e){
+    console.log(e.message);
+  }
+}

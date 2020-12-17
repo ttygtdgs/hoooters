@@ -1,0 +1,28 @@
+.image-content{
+  width: 100%;
+  height: 92%;
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas-box{
+  overflow: hidden;
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+  max-height: 525px;
+  background-color: #fff;
+  position: relative;
+}
+
+.canvas-item{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.canvas-item:hover{
+  cursor: pointer;
+}

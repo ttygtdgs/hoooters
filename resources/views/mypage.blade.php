@@ -9,61 +9,50 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Google Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-  <!-- Bootstrap core CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-  <!-- 丹羽作成 -->
-  <link href="{{asset('/css/mypage.css')}}" rel="stylesheet">
   <!-- fontawsome -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
-  <!-- リセットcssを追加する -->
-  <link rel="stylesheet" href="#">
+  <!-- 丹羽作成 -->
+  <link href="{{asset('/css/mypage.css')}}" rel="stylesheet">
+  <!-- リセットcss -->
+  <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
 
 </head>
 
 <body>
 
 <!--Header-->
-<header style="background:rgb(8,165,234) ;">
-  <nav class="navbar navbar-expand-lg navbar-dark default-color">
-    <a class="navbar-brand" href="#"><strong>Hoooters</strong></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Opinions</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav nav-flex-icons">
-        <li class="nav-item">
-          <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"><i class="fab fa-twitter"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"><i class="fab fa-instagram"></i></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-</header>
+<header class="header">
+        <h1>Hoooters</h1>
+        <nav>
+            <ul>
+                <li>
+                  <a href="{{url('/')}}">
+                    <i class="fa fa-home" style="font-size: 2em; color: #fff;" ></i>
+                   </a>
+                </li>
+                <li>
+                  <a href="{{url('/edit')}}">
+                    <i class="fa fa-newspaper-o " style="font-size: 2em; color: #fff; " ></i>
+                   </a>
+                </li>
+                <li>
+                  <a href="{{url('/mypage')}}">
+                    <i class="fa fa-user-circle-o " style="font-size: 2em; color:#fff; " ></i>
+                   </a>
+                </li>
+                <li>
+                  <!--  以下、ログアウト処理-->
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fa fa-sign-out " style="font-size: 2em; color:#fff; " ></i>
+                   </a>
+                   <form id='logout-form' action={{ route('logout')}} method="POST" style="display: none;">
+                   {{ csrf_field() }}
+                   <!--  以上、ログアウト処理-->
+                </li>          
+            </ul>
+        </nav>
+    </header>
+      
 <!--Header-->
 
 
@@ -86,35 +75,56 @@
             {{Auth::user()->name}}さん
         </div> 
         <div id="leftprofile3">
-            ※SNSアイコン※
+          @if (Auth::user()->site == "")
+          @else
+            <a href="{{Auth::user()->site}}" target="_blank" rel="noopener noreferrer">
+              <i class="fa fa-github my-icon" style="font-size: 2em; color: black;" aria-hidden="true"></i>
+            </a>
+          @endif
+          @if (Auth::user()->tsite == "")
+          @else
+          <a href="{{Auth::user()->tsite}}" target="_blank" rel="noopener noreferrer">
+            <i class="fa fa-twitter my-icon " style="font-size: 2em; color:#55acee; " aria-hidden="true"></i>
+          </a>
+          @endif
+          @if (Auth::user()->fsite == "")
+          @else
+          <a href="{{Auth::user()->fsite}}" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook-square" style="font-size: 2em; color: royalblue;" aria-hidden="true"></i>
+          </a>
+          @endif
         </div> 
         <div id="leftprofile4">
-            <!-- 初めまして、チキンです。原宿のエンジニア養成学校に通ってます。チーム開発頑張るぞ〜〜。 -->
-            {{Auth::user()->intro}}      
+          @if (Auth::user()->intro == "")
+              <p>下の「プロフィールを編集する」から、自己紹介文を記載しましょう！</p>
+          @else
+               <!-- 初めまして、チキンです。原宿のエンジニア養成学校に通ってます。チーム開発頑張るぞ〜〜。 -->
+               <p>{{Auth::user()->intro}}</p>
+          @endif
         </div> 
         <div  id="leftprofile5">
             <div id="leftprofile5_1">
                 <!-- データ取得！！ -->
                 <p class="p5">0</p>
-                <p>投稿</p>
+                <p class="p6">投稿</p>
             </div>
             <div id="leftprofile5_2">
                 <!-- データ取得！！ -->
                 <p class="p5">0</p>
-                <p>お気に入り</p>
+                <p class="p6">お気に入り</p>
             </div>
         </div>
         <div id="leftprofile6">
-            <a href="" id="">
+            <a href="/hoooters/public/profile" id="">
                 プロフィールを編集する
             </a>
         </div>
-        <hr>
+        <!-- <hr>
         <div id="leftprofile7">
             <a href="" id="">
                 ログアウト
             </a>
-        </div>
+        </div> -->
 
     </div>
 
@@ -130,20 +140,23 @@
                     <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
                     <div id="li1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
                     <div id="li2">投稿者：チキン&ensp;&ensp;投稿日：2020/12/15</div>
+                    <hr>
                 </li>
-                <hr>
+                
                 <li>
                     <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
                     <div id="li1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
                     <div id="li2">投稿者：チキン&ensp;&ensp;投稿日：2020/12/15</div>
+                    <hr>
                 </li>
-                <hr>
+                
                 <li>
                     <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
                     <div id="li1">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</div>
                     <div id="li2">投稿者：チキン&ensp;&ensp;投稿日：2020/12/15</div>
+                    <hr>
                 </li>
-                <hr>
+                
                 <!-- foreach -->
                
                 <br>
@@ -160,38 +173,46 @@
                 <li>
                     <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
                     <div id="li1">投稿日：2020/12/15</div>
+                    <hr>
                 </li>
-                <hr>
                 <li>
                     <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
                     <div id="li1">投稿日：2020/12/15</div>
+                    <hr>
                 </li>
-                <hr>
                 <li>
                     <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
                     <div id="li1">投稿日：2020/12/15</div>
+                    <hr>
                 </li>
-                <hr>
                 <li>
                     <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
                     <div id="li1">投稿日：2020/12/15</div>
+                    <hr>
                 </li>
-                <hr>
                 <li>
                     <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
                     <div id="li1">投稿日：2020/12/15</div>
+                    <hr>
                 </li>
-                <hr>
                 <li>
                     <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
                     <div id="li1">投稿日：2020/12/15</div>
+                    <hr>
                 </li>
-                <hr>
                 <li>
                     <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
                     <div id="li1">投稿日：2020/12/15</div>
+                    <hr>
                 </li>
-                <hr>
+                <li>
+                    <a href="" class="">サイバーエージェント&ensp;webマーケティング&ensp;開発事業</a> 
+                    <div id="li1">投稿日：2020/12/15</div>
+                    <hr>
+                </li>
+                
+                
+              
                 <!-- foreach -->
                 <br>
             </ul>
@@ -199,74 +220,11 @@
     </div>
 
 </div>
-
-
 </main>
 
 <!-- Main -->
 
 
-
-
-
-
-
-
-<!-- Footer -->
-<footer class="page-footer font-small teal pt-4">
-
-  <!-- Footer Text -->
-  <div class="container-fluid text-center text-md-left">
-
-    <!-- Grid row -->
-    <div class="row">
-
-      <!-- Grid column -->
-      <div class="col-md-6 mt-md-0 mt-3">
-
-        <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
-        <p>aaaaaaaaaaaaa</p>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none pb-3">
-
-      <!-- Grid column -->
-      <div class="col-md-6 mb-md-0 mb-3">
-
-        <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
-        <p>aaaaaaaaa</p>
-
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row -->
-
-  </div>
-  <!-- Footer Text -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Hoooters</div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
-
-
-
-  <!-- SCRIPTS -->
- <!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 </body>
 
 </html>
