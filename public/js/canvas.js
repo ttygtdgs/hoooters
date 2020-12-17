@@ -72,19 +72,19 @@ canvas.addEventListener('mouseup', event => {
   end.y = diff.y;
 });
 
-// function onDown(e) {
-//   // キャンバスの左上端の座標を取得
-//   const offsetX = canvas.getBoundingClientRect().left;
-//   const offsetY = canvas.getBoundingClientRect().top;
+function onDown(e) {
+  // キャンバスの左上端の座標を取得
+  const offsetX = canvas.getBoundingClientRect().left;
+  const offsetY = canvas.getBoundingClientRect().top;
 
-//   // マウスが押された座標を取得
-//   x = e.clientX - offsetX;
-//   y = e.clientY - offsetY;
+  // マウスが押された座標を取得
+  x = e.clientX - offsetX;
+  y = e.clientY - offsetY;
 
-//   // オブジェクト上の座標かどうかを判定
-//   if (objX < x && (objX + objWidth) > x && objY < y && (objY + objHeight) > y) {
-//     dragging = true; // ドラッグ開始
-//     relX = objX - x;
-//     relY = objY - y;
-//   }
-// }
+  // オブジェクト上の座標かどうかを判定
+  if (objX < x && (objX + objWidth) > x && objY < y && (objY + objHeight) > y) {
+    dragging = true; // ドラッグ開始
+    relX = objX - x;
+    relY = objY - y;
+  }
+}
