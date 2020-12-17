@@ -9,11 +9,43 @@
   <link rel="stylesheet" href="{{asset('/css/edit.css')}}">
   <link rel="stylesheet" href="{{asset('/css/canvas.css')}}">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>投稿・編集</title>
 </head>
 <body>
-  <header style="width: 100vw; height: 7vh; background-color:  rgb(113, 203, 241)">header</header>
+<header class="header">
+  <h1>Hoooters</h1>
+  <nav>
+    <ul>
+      <li>
+        <a href="{{url('/')}}">
+          <i class="fa fa-home" style="font-size: 2em; color: #fff;" ></i>
+        </a>
+      </li>
+      <li>
+        <a href="{{url('/edit')}}">
+          <i class="fa fa-newspaper-o " style="font-size: 2em; color: #fff; " ></i>
+        </a>
+      </li>
+      <li>
+        <a href="{{url('/mypage')}}">
+          <i class="fa fa-user-circle-o " style="font-size: 2em; color:#fff; " ></i>
+        </a>
+      </li>
+      <li>
+        <!--  以下、ログアウト処理-->
+        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+          <i class="fa fa-sign-out " style="font-size: 2em; color:#fff; " ></i>
+        </a>
+          <form id='logout-form' action={{route('logout')}} method="POST" style="display: none;">
+          {{ csrf_field() }}
+          <!--  以上、ログアウト処理-->
+          </form>
+      </li>
+    </ul>
+  </nav>
+</header>
   <div class="container">
     <form action="{{ url('/edit') }}" enctype="multipart/form-data" method="post">
     {{ csrf_field() }}
