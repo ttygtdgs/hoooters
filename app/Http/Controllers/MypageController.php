@@ -16,8 +16,14 @@ class MypageController extends Controller
 {
     public function mypage(){
         $users = Auth::user();
+        $usersicon=Auth::user()->icon;
+        // 上の$usersiconでassetヘルパー関数の引数に入れても画像は表示されない→{{asset('{{$usersicon}}')}}。''で囲むと文字列になって、ヘルパー関数使えないか?
+        $usersicon=asset($usersicon);
+
+
         return view('mypage',[
-            'users' => $users
+            'users' => $users,
+            'usersicon' => $usersicon
         ]);
 
     }
