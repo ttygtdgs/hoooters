@@ -1,0 +1,80 @@
+【header移植メモ】
+各自、担当のblade.phpとcssに、下記をコピペして追記してください！
+※リセットcssは読み込んでいる前提です。
+
+1．blade.php
+①head部分に追記
+
+ <!-- fontawsome -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
+
+②body部分に追記
+
+<!--Header-->
+<header class="header">
+        <h1>Hoooters</h1>
+        <nav>
+            <ul>
+                <li>
+                  <a href="{{url('/')}}">
+                    <i class="fa fa-home" style="font-size: 2em; color: #fff;" ></i>
+                   </a>
+                </li>
+                <li>
+                  <a href="{{url('/edit')}}">
+                    <i class="fa fa-newspaper-o " style="font-size: 2em; color: #fff; " ></i>
+                   </a>
+                </li>
+                <li>
+                  <a href="{{url('/mypage')}}">
+                    <i class="fa fa-user-circle-o " style="font-size: 2em; color:#fff; " ></i>
+                   </a>
+                </li>
+                <li>
+                  <!--  以下、ログアウト処理-->
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fa fa-sign-out " style="font-size: 2em; color:#fff; " ></i>
+                   </a>
+                   <form id='logout-form' action={{ route('logout')}} method="POST" style="display: none;">
+                   {{ csrf_field() }}
+                   <!--  以上、ログアウト処理-->
+                </li>          
+            </ul>
+        </nav>
+    </header>
+      
+<!--Header-->
+
+2．cssに追記
+
+/* 以下、header---------------------------- */
+.header{
+    width: 100vw;
+    height: 7vh;
+    background-color:rgb(113, 203, 241);
+    display: flex;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0 0 0 30px;
+    padding: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+  }
+  
+.header nav {
+    margin: 0 20px 0 auto;
+  }
+
+.header nav ul{
+    display: flex;
+    align-items: center;
+}
+
+.header nav ul li{
+    margin: 0 0 0 80px;
+}
+
+/* 以上、header---------------------------- */
