@@ -69,29 +69,28 @@
 
 
 <!-- Main -->
+<!-- 以下、「ProfileController.php」のバリテーションエラー確認用 -->
+@foreach ($errors->all() as $error)
+  <li>{{$error}}</li>
+@endforeach
+<!-- 以上、「ProfileController.php」のバリテーションエラー確認用 -->
 <main>
-{{Auth::user()->icon}}
-<br>
-{{asset('/pic/icon.png')}}
-<br>
-{{$users['icon']}}
 
 <div id="profile">
-
     <div id="leftprofile">
         <div id="leftprofile1">
-            <img src="{{asset('{{$users['icon']}}')}}" alt="">
+            <img src="{{$usersicon}}" alt="">
         </div>
         <div id="leftprofile2">
-            <!-- データ取得！！ -->
-            ユーザーネーム
+            <!-- ユーザーネーム -->
+            {{Auth::user()->name}}さん
         </div> 
         <div id="leftprofile3">
             ※SNSアイコン※
         </div> 
         <div id="leftprofile4">
-            <!-- データ取得！！ -->
-            初めまして、チキンです。原宿のエンジニア養成学校に通ってます。チーム開発頑張るぞ〜〜。
+            <!-- 初めまして、チキンです。原宿のエンジニア養成学校に通ってます。チーム開発頑張るぞ〜〜。 -->
+            {{Auth::user()->intro}}      
         </div> 
         <div  id="leftprofile5">
             <div id="leftprofile5_1">
