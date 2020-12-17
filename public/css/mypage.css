@@ -22,7 +22,7 @@ body{
     margin-left: 16px;
     margin-top: 16px;
     margin-bottom: 16px;
-    height: 600px;
+    height: 640px;
 }
 
 #leftprofile #leftprofile1{
@@ -59,11 +59,21 @@ body{
 
 }
 
+#leftprofile #leftprofile3 a{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
 #leftprofile #leftprofile4{
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;
+    width: 100%;
+    height: auto;
+    word-wrap:break-word;
 }
+
 
 #leftprofile #leftprofile5{
     display: flex;
@@ -108,7 +118,7 @@ body{
     font-weight: bold;
 }
 
-#leftprofile #leftprofile7{
+/* #leftprofile #leftprofile7{
     text-align: center;
 }
 
@@ -116,7 +126,7 @@ body{
     font-size: 13px;
     color: gray;
     text-decoration: none;
-}
+} */
    
 /* 以上、leftprofile --------*/
 
