@@ -1,13 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Art;
 use App\Corp;
-use Log;
+use App\Gyo;
+use App\Like;
+use App\Text;
+use App\User;
 use Illuminate\Http\Request;
 
-class CorpController extends Controller
+class ProfileController extends Controller
 {
-    public function register(Request $request){
+    //表示
+    public function profile(){
+        return view('profile');
+    }
+
+    public function update(Request $request){
         Log::debug($request);
 
         //バリデーション
@@ -28,8 +37,8 @@ class CorpController extends Controller
         $corp->cname = $request->cname;
         $corp->curl = $request->curl;
         $corp->save();
-        $cname = $request->cname;
-        return response()->json($cname);
+        return $request->cname;
 
     }
+    
 }

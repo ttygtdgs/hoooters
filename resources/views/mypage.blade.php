@@ -20,7 +20,7 @@
   <!-- fontawsome -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
   <!-- リセットcssを追加する -->
-  <link href="#" rel="stylesheet">
+  <link rel="stylesheet" href="#">
 
 </head>
 
@@ -70,12 +70,17 @@
 
 <!-- Main -->
 <main>
+{{Auth::user()->icon}}
+<br>
+{{asset('/pic/icon.png')}}
+<br>
+{{$users['icon']}}
 
 <div id="profile">
 
     <div id="leftprofile">
         <div id="leftprofile1">
-            <img src="{{asset('/pic/icon.png')}}" alt="">
+            <img src="{{asset('{{$users['icon']}}')}}" alt="">
         </div>
         <div id="leftprofile2">
             <!-- データ取得！！ -->
