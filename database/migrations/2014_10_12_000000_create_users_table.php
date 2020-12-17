@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('icon');
             $table->string('intro')->nullable();
             $table->string('site')->nullable();
+            $table->string('fsite')->nullable();
+            $table->string('tsite')->nullable();
             $table->timestamps();
         });
     }

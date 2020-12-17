@@ -86,12 +86,30 @@
             {{Auth::user()->name}}さん
         </div> 
         <div id="leftprofile3">
-            ※SNSアイコン※
+          @if (Auth::user()->site == "")
+          @else
+            <a href="{{Auth::user()->site}}" target="_blank" rel="noopener noreferrer">
+              <i class="fa fa-github my-icon" style="font-size: 2em; color: black;" aria-hidden="true"></i>
+            </a>
+          @endif
+          @if (Auth::user()->tsite == "")
+          @else
+          <a href="{{Auth::user()->tsite}}" target="_blank" rel="noopener noreferrer">
+            <i class="fa fa-twitter my-icon " style="font-size: 2em; " aria-hidden="true"></i>
+          </a>
+          @endif
+          @if (Auth::user()->fsite == "")
+          @else
+          <a href="{{Auth::user()->fsite}}" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook-square" style="font-size: 2em; color: royalblue;" aria-hidden="true"></i>
+          </a>
+          @endif
         </div> 
         <div id="leftprofile4">
             <!-- 初めまして、チキンです。原宿のエンジニア養成学校に通ってます。チーム開発頑張るぞ〜〜。 -->
-            {{Auth::user()->intro}}      
+            {{Auth::user()->intro}}
         </div> 
+        <hr>
         <div  id="leftprofile5">
             <div id="leftprofile5_1">
                 <!-- データ取得！！ -->
@@ -105,16 +123,16 @@
             </div>
         </div>
         <div id="leftprofile6">
-            <a href="" id="">
+            <a href="/hoooters/public/profile" id="">
                 プロフィールを編集する
             </a>
         </div>
-        <hr>
+        <!-- <hr>
         <div id="leftprofile7">
             <a href="" id="">
                 ログアウト
             </a>
-        </div>
+        </div> -->
 
     </div>
 
