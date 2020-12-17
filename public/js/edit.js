@@ -82,6 +82,9 @@ function csearch(key){
   }).then((response) => {
     return response.json(); // あるいは response.blob()
   }).then(function(val){
+    while(cresult.firstChild){
+      cresult.removeChild(cresult.firstChild);
+    }
     for(let i = 0; i<val.length; i++){
       const li = document.createElement("li");
       li.id = val[i]["cid"];
@@ -117,9 +120,6 @@ window.addEventListener('load',function(){
 
 //企業検索
 document.getElementById('csearch').addEventListener('input',function(){
-  while(cresult.lastChild){
-    cresult.removeChild(cresult.lastChild);
-  }
   const keyword = document.getElementById('csearch').value;
   csearch(keyword);
 });
