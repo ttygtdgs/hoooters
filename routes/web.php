@@ -21,8 +21,14 @@ Route::post('/edit', 'EditController@register');
 
 Route::post('/corp', 'CorpController@register');
 
+Route::post('/csearch', 'CsearchController@search');
+
 // マイページ（丹羽担当）
 Route::get('/mypage', 'MypageController@mypage');
+
+Route::get('/profile', 'ProfileController@profile');
+
+Route::post('/profile', 'ProfileController@update');
 
 // ログイン、認証ページ（田代担当）
 
