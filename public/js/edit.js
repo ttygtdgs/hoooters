@@ -28,6 +28,7 @@ function modal_remove(){
   c_modal.classList.remove('fadein');
   document.getElementById('cname').value = "";
   document.getElementById('curl').value = "";
+  document.getElementById('csearch').value = "";
 }
 
 //モーダル出現
@@ -61,6 +62,69 @@ document.getElementById('cadd-btn').addEventListener('click',function(){
   c_modal.classList.remove('fadein');
 });
 
+//通信トークン
+const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+//企業検索リスト
+const cresult = document.querySelector('.cresult');
+
+//検索の関数
+function csearch(key){
+  const params = new FormData();
+  params.append('keyword',key);
+
+  //非同期通信でcorpへpost
+  fetch('http://localhost/hoooters/public/csearch',{
+    headers: {'X-CSRF-TOKEN': token},
+    method: 'POST',
+    cache: 'no-cache',
+    body: params
+  }).then((response) => {
+    return response.json(); // あるいは response.blob()
+  }).then(function(val){
+    for(let i = 0; i<val.length; i++){
+      const li = document.createElement("li");
+      li.id = val[i]["cid"];
+      li.className = 'citem';
+      li.innerHTML = '<p>'+val[i]["cname"]+'</p><button type="button" class="choice-btn">選択</button>';
+      cresult.appendChild(li);
+      choice();
+    }
+  }).catch(function(error){
+    console.log(error);
+  });
+}
+
+//企業選択時の処理
+function choice(){
+  const c_btns = document.querySelectorAll('.choice-btn');
+  c_btns.forEach(c_btn => {
+    c_btn.addEventListener('click',function(){
+      document.getElementById('cchange-btn').classList.remove('none');
+      document.getElementById('cname-box').classList.remove('none');
+      document.getElementById('csearch-btn').classList.add('none');
+      document.getElementById('cname-box').textContent = c_btn.previousElementSibling.textContent;
+      document.getElementById('cid').value = c_btn.parentNode.getAttribute('id');
+      modal_remove();
+    });
+  });
+}
+
+//ロード時に企業全件取得
+window.addEventListener('load',function(){
+  csearch('null');
+})
+
+//企業検索
+document.getElementById('csearch').addEventListener('input',function(){
+  while(cresult.lastChild){
+    cresult.removeChild(cresult.lastChild);
+  }
+  const keyword = document.getElementById('csearch').value;
+  csearch(keyword);
+});
+
+
 
 //企業登録
 document.getElementById('cadd-submit').addEventListener('click',function(){
@@ -78,8 +142,6 @@ document.getElementById('cadd-submit').addEventListener('click',function(){
   params.append('cname',cname);
   params.append('curl',curl);
 
-  const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
   //非同期通信でcorpへpost
   fetch('http://localhost/hoooters/public/corp',{
     headers: {'X-CSRF-TOKEN': token},
@@ -90,17 +152,12 @@ document.getElementById('cadd-submit').addEventListener('click',function(){
     // loading.classList.add('none');
     return response.json(); // あるいは response.blob()
   }).then(function(res){
-    if(confirm(res+'を記事に反映しますか？')){
-      document.getElementById('cname-box').textContent = res;
+      document.getElementById('cname-box').textContent = res["cname"];
       document.getElementById('cchange-btn').classList.remove('none');
       document.getElementById('cname-box').classList.remove('none');
       document.getElementById('csearch-btn').classList.add('none');
+      document.getElementById('cid').value = res["cid"];
       modal_remove();
-    }else{
-      alert(res+'を登録しました！');
-      modal_remove();
-    }
-
   }).catch(function(error){
     console.log(error);
   });
