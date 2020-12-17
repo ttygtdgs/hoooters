@@ -132,7 +132,14 @@ imenu_items.forEach(imenu_item => {
   });
 });
 
+function onDown(e) {
+  // キャンバスの左上端の座標を取得
+  const offsetX = canvas.getBoundingClientRect().left;
+  const offsetY = canvas.getBoundingClientRect().top;
 
+  // マウスが押された座標を取得
+  x = e.clientX - offsetX;
+  y = e.clientY - offsetY;
 function itemmoves(){
   const canvas_items = document.querySelectorAll('.canvas-item');
   canvas_items.forEach(canvas_item => {
@@ -152,6 +159,13 @@ function itemmoves(){
         canvas_item.style.top = y - canvas_item.offsetHeight / 2 + 'px';
       }
 
+  // オブジェクト上の座標かどうかを判定
+  if (objX < x && (objX + objWidth) > x && objY < y && (objY + objHeight) > y) {
+    dragging = true; // ドラッグ開始
+    relX = objX - x;
+    relY = objY - y;
+  }
+}
       function onMouseMove(e) {
         moveAt(e.pageX-divX, e.pageY-divY);
       }
