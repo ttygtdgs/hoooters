@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class CorpController extends Controller
 {
+    //企業登録
     public function register(Request $request){
-        Log::debug($request);
 
         //バリデーション
         // $validator = $request->validate([
@@ -28,8 +28,8 @@ class CorpController extends Controller
         $corp->cname = $request->cname;
         $corp->curl = $request->curl;
         $corp->save();
-        $cname = $request->cname;
-        return response()->json($cname);
+        $cinfo = array('cid'=>$corp->id,'cname'=>$corp->cname);
+        return response()->json($cinfo);
 
     }
 }

@@ -28,7 +28,7 @@
                 <div id="cchange-btn" class="none">変更する</div>
               </div>
               <!-- cid -->
-              <input type="hidden" name="cid">
+              <input type="hidden" name="cid" id="cid">
             </div>
             <!-- サービス -->
             <div class="service-wrapper">
@@ -113,15 +113,7 @@
         </div>
         <div class="cmodal-content">
           <ul class="cresult">
-            <li class="citem">
-              <p>企業名</p>
-              <button type="button" class="choice-btn">選択</button>
-            </li>
-            <li class="citem">
-              <p>企業名</p>
-              <button type="button" class="choice-btn">選択</button>
-            </li>
-            <li class="citem nullmesse">登録はありません</li>
+            <!-- 企業リスト -->
           </ul>
           <div class="cmodal-bottom">
             <div id="cadd-btn">新しく企業を登録</div>
