@@ -33,21 +33,58 @@ dropitem('.fa-yen-sign', images[3]);
 dropitem('.fa-circle', images[4]);
 
 //ドラッグフラグ
-let dragable = false;
+let dragging = false;
+// ドラッグ開始位置
+let start = {
+  x: 0,
+  y: 0
+};
+// ドラッグ中の位置
+let diff = {
+  x: 0,
+  y: 0
+};
+// ドラッグ終了後の位置
+let end = {
+  x: 0,
+  y: 0
+}
 
-// function onDown(e) {
-//   // キャンバスの左上端の座標を取得
-//   const offsetX = canvas.getBoundingClientRect().left;
-//   const offsetY = canvas.getBoundingClientRect().top;
+const redraw = () => {
+  ctx.clearRect(0, 0, can.width, can.height);
+  ctx.drawImage(img, diff.x, diff.y)
+};
+canvas.addEventListener('mousedown', event => {
+  isDragging = true;
+  start.x = event.clientX;
+  start.y = event.clientY;
+});
+canvas.addEventListener('mousemove', event => {
+  if (isDragging) {
+    diff.x = (event.clientX - start.x) + end.x;
+    diff.y = (event.clientY - start.y) + end.y;
+    redraw();
+  }
+});
+canvas.addEventListener('mouseup', event => {
+  isDragging = false;
+  end.x = diff.x;
+  end.y = diff.y;
+});
 
-//   // マウスが押された座標を取得
-//   x = e.clientX - offsetX;
-//   y = e.clientY - offsetY;
+function onDown(e) {
+  // キャンバスの左上端の座標を取得
+  const offsetX = canvas.getBoundingClientRect().left;
+  const offsetY = canvas.getBoundingClientRect().top;
 
-//   // オブジェクト上の座標かどうかを判定
-//   if (objX < x && (objX + objWidth) > x && objY < y && (objY + objHeight) > y) {
-//     dragging = true; // ドラッグ開始
-//     relX = objX - x;
-//     relY = objY - y;
-//   }
-// }
+  // マウスが押された座標を取得
+  x = e.clientX - offsetX;
+  y = e.clientY - offsetY;
+
+  // オブジェクト上の座標かどうかを判定
+  if (objX < x && (objX + objWidth) > x && objY < y && (objY + objHeight) > y) {
+    dragging = true; // ドラッグ開始
+    relX = objX - x;
+    relY = objY - y;
+  }
+}
