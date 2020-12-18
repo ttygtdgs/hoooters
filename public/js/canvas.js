@@ -120,14 +120,15 @@
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 const field = document.querySelector('.canvas-box');
 
-const imenu_items = document.querySelectorAll('.imenu-item');
+const imenu_items = document.querySelectorAll('.canicon');
 imenu_items.forEach(imenu_item => {
-  imenu_item.addEventListener('click',function(e){
+  imenu_item.addEventListener('click',function(){
     const index = Array.from(imenu_items).indexOf(imenu_item);
     let item = document.createElement('div');
     item.className = 'canvas-item';
-    item.innerHTML = '<img src="pic/'+index+'.png" class="0">';
+    item.innerHTML = '<img src="./pic/'+index+'.png" class="'+index+'">';
     field.appendChild(item);
+    console.log(item);
     itemmoves();
   });
 });
@@ -135,17 +136,16 @@ imenu_items.forEach(imenu_item => {
 
 function itemmoves(){
   const canvas_items = document.querySelectorAll('.canvas-item');
+  //canvas-boxの座標を取得
+  const clientRect = field.getBoundingClientRect();
+  const divY = clientRect.top;
+  const divX = clientRect.left;
+  const divW = clientRect.right;
+  const divH = clientRect.bottom;
+
   canvas_items.forEach(canvas_item => {
     canvas_item.onmousedown = function(e){
       canvas_item.style.zIndex = 1000;
-      //canvas-boxの座標を取得
-      const clientRect = field.getBoundingClientRect();
-      const divY = clientRect.top;
-      const divX = clientRect.left;
-      const divW = clientRect.right;
-      const divH = clientRect.bottom;
-      //カーソルの座標をmoveAtに渡す
-      moveAt(e.pageX-divX, e.pageY-divY);
 
       // ボールを（pageX、pageY）座標の中心に置く
       function moveAt(x, y) {
@@ -155,24 +155,23 @@ function itemmoves(){
 
       function onMouseMove(e) {
         moveAt(e.pageX-divX, e.pageY-divY);
+        if(e.pageX < divX + canvas_item.offsetWidth/2 || e.pageY < divY + canvas_item.offsetHeight/2 || e.pageX > divW - canvas_item.offsetWidth/2 || e.pageY > divH - canvas_item.offsetHeight/2){
+          canvas_item.onmouseup();
+        }
       }
-
-      // if(e.pageX-divX > divW-canvas_item.offsetWidth/2 || e.pageY-divH > canvas_item.offsetHeight/2){
-      //   document.removeEventListener('mousemove', onMouseMove);
-      //   canvas_item.onmouseup = null;
-      // }
 
       // mousemove でボールを移動する
       document.addEventListener('mousemove', onMouseMove);
 
-      // ボールをドロップする。不要なハンドラを削除する
-      canvas_item.onmouseup = function() {
-        document.removeEventListener('mousemove', onMouseMove);
-        canvas_item.onmouseup = null;
-      };
 
+      // ボールをドロップする。不要なハンドラを削除する
       canvas_item.ondragstart = function() {
         return false;
+      };
+
+      canvas_item.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        // canvas_item.onmouseup = null;
       };
     }
   });
