@@ -108,11 +108,14 @@
               <div class="imenu-wrapper">
                 <ul class="imenu">
                   <li class="imenu-item"><i class="fas fa-font"></i></li>
-                  <li class="imenu-item"><i class="fas fa-user"></i></li>
-                  <li class="imenu-item"><i class="fas fa-building"></i></li>
-                  <li class="imenu-item"><i class="fas fa-arrow-up"></i></li>
-                  <li class="imenu-item"><i class="fas fa-yen-sign"></i></li>
-                  <li class="imenu-item"><i class="fas fa-circle"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-user"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-building"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-arrow-up"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-arrow-right"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-arrow-down"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-arrow-left"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-yen-sign"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-circle"></i></li>
                   <li class="imenu-item"><i class="fas fa-trash-alt"></i></li>
                 </ul>
               </div>
