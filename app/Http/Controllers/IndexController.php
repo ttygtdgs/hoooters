@@ -14,4 +14,9 @@ class IndexController extends Controller
     public function top(){
         return view('index');
     }
+
+
+
+
 }
+
