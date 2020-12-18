@@ -66,6 +66,7 @@
 <main>
 
 <div id="profile">
+  <div id="leftprofilebox">
     <div id="leftprofile">
         <div id="leftprofile1">
             <img src="{{$usersicon}}" alt="">
@@ -96,7 +97,7 @@
         </div> 
         <div id="leftprofile4">
           @if (Auth::user()->intro == "")
-              <p>下の「プロフィールを編集する」から、自己紹介文を記載しましょう！</p>
+              <p>「プロフィールを編集する」から、自己紹介文を記載しましょう！</p>
           @else
                <!-- 初めまして、チキンです。原宿のエンジニア養成学校に通ってます。チーム開発頑張るぞ〜〜。 -->
                <p>{{Auth::user()->intro}}</p>
@@ -119,14 +120,8 @@
                 プロフィールを編集する
             </a>
         </div>
-        <!-- <hr>
-        <div id="leftprofile7">
-            <a href="" id="">
-                ログアウト
-            </a>
-        </div> -->
-
     </div>
+  </div>
 
     <div id="rightprofile">
         <div id="like">
