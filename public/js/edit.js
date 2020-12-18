@@ -181,6 +181,16 @@ document.getElementById('draft').addEventListener('click',function(){
 //投稿
 document.getElementById('deploy').addEventListener('click',function(){
   document.getElementById('life_flg').value = 1;
+  //座標要素取得
+  const place = document.querySelector('.canvas-box').innerHTML;
+  document.getElementById('art_place').value = place;
+
+  //html2canvas
+  html2canvas(document.querySelector("#capture")).then(canvas => {
+    // canvas.classList.add('none');
+    const base64 = canvas.toDataURL("image/png");
+    document.getElementById('art_img').value = base64;
+  });
   inputcheck();
 });
 
