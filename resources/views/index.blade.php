@@ -16,11 +16,52 @@
   <link href="{{asset('/css/index.css')}}" rel="stylesheet">
   <!-- リセットcss -->
   <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
+  <!-- ヘッダー統一用のfontawesome -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
+ <!-- ajax用に入れる -->
+  <meta name="csrf-token" content="{{ csrf_token() }}
 </head>
 <body>
 
+<div class="search-wrapper col-sm-4">
+      <div class="user-search-form">
+        {{ Form::text('search_name', null, ['id' => 'search_name', 'class' => 'form-control shadow', 'placeholder' => 'ユーザーを検索する']) }}
+        {{ Form::button('<i class="fa fa-search" aria-hidden="true"></i>', ['class' => 'btn search-icon', 'type' => 'button']) }}
+      </div>
+    </div>
+
 <div class="footerFixed">
-    <header>Hootersのヘッダー</header>
+<header class="header">
+        <h1>Hoooters</h1>
+        <nav>
+            <ul>
+                <li>
+                  <a href="{{url('/')}}">
+                    <i class="fa fa-home" style="font-size: 2em; color: #fff;" ></i>
+                   </a>
+                </li>
+                <li>
+                  <a href="{{url('/edit')}}">
+                    <i class="fa fa-newspaper-o " style="font-size: 2em; color: #fff; " ></i>
+                   </a>
+                </li>
+                <li>
+                  <a href="{{url('/mypage')}}">
+                    <i class="fa fa-user-circle-o " style="font-size: 2em; color:#fff; " ></i>
+                   </a>
+                </li>
+                <li>
+                  <!--  以下、ログアウト処理-->
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fa fa-sign-out " style="font-size: 2em; color:#fff; " ></i>
+                   </a>
+                   <form id='logout-form' action={{ route('logout')}} method="POST" style="display: none;">
+                   {{ csrf_field() }}
+                   <!--  以上、ログアウト処理-->
+                </li>          
+            </ul>
+        </nav>
+    </header>
   
     <main>
         <div class="wrapper">
@@ -137,5 +178,10 @@
 
 </div>
 
+
+
+<!-- js読み込みAJAX用 -->
+<script src="{{ asset('js/index.js') }}"></script>
 </body>
+
 </html>
