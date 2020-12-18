@@ -12,7 +12,6 @@ use Illuminate\Http\Request;
 // 一覧ページ（後藤田担当）
 Route::get('/', 'IndexController@top');
 
-
 // ajaxの検索機能
 Route::get('/kensaku','IndexController@kensaku');
 
