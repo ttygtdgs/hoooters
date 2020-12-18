@@ -16,6 +16,8 @@ class EditController extends Controller
             'uid' => 'required',
             'cid' => 'required',
             'gid' => 'required',
+            'art_img' => 'required',
+            'art_place' => 'required',
             'service' => 'required',
             'jcomme' => 'required',
             'zcomme' => 'required',
@@ -29,15 +31,23 @@ class EditController extends Controller
                     ->withErrors($validator);
         }
 
-         //アイコン 取得
-        $file = $request->file('art_img'); //file が空かチェック
-        if( !empty($file) ){
-            //アイコン名を取得
-            $filename = $file->getClientOriginalName(); //AWSの場合どちらかになる事がある”../upload/” or “./upload/”
-            $move = $file->move('./pic/',$filename);
-        }else{
-            $filename = "test";
-        }
+        //画像変換
+        $imgsrc = $request->art_img;
+        list(, $imgsrc) = explode(',', $imgsrc);
+        //PHPのデコードでは、+がスペースに置き換わってしまうので戻す
+        $file_name = "./pic/".date("YmdHis").".png";
+
+        file_put_contents($file_name, base64_decode(str_replace(" ","+",$imgsrc)));
+
+        //  //アイコン 取得
+        // $file = $request->file('art_img'); //file が空かチェック
+        // if( !empty($file) ){
+        //     //アイコン名を取得
+        //     $filename = $file->getClientOriginalName(); //AWSの場合どちらかになる事がある”../upload/” or “./upload/”
+        //     $move = $file->move('./pic/',$filename);
+        // }else{
+        //     $filename = "test";
+        // }
 
         //データ登録
         $article = new Art;
@@ -45,8 +55,9 @@ class EditController extends Controller
         $article->cid = $request->cid;
         $article->gid = $request->gid;
         $article->service = $request->service;
-        $article->art_img = '/pic/'.$filename;
-        $article->art_place = 'test';
+        // $article->art_img = '/pic/'.$filename;
+        $article->art_img = $file_name;
+        $article->art_place = $request->art_place;
         $article->jcomme = $request->jcomme;
         $article->zcomme = $request->zcomme;
         $article->life_flg = $request->life_flg;

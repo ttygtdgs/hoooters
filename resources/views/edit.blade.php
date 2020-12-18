@@ -108,19 +108,26 @@
               <div class="imenu-wrapper">
                 <ul class="imenu">
                   <li class="imenu-item"><i class="fas fa-font"></i></li>
-                  <li class="imenu-item"><i class="fas fa-user"></i></li>
-                  <li class="imenu-item"><i class="fas fa-building"></i></li>
-                  <li class="imenu-item"><i class="fas fa-arrow-up"></i></li>
-                  <li class="imenu-item"><i class="fas fa-yen-sign"></i></li>
-                  <li class="imenu-item"><i class="fas fa-circle"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-user"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-building"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-arrow-up"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-arrow-right"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-arrow-down"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-arrow-left"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-yen-sign"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-circle"></i></li>
                   <li class="imenu-item"><i class="fas fa-trash-alt"></i></li>
                 </ul>
               </div>
             </div>
             <div class="image-content">
-              <div class="canvas-box">
-                <input type="file" name="art_img" id="art_img" class="none">
+              <!-- キャンバス -->
+              <div id="capture">
+                <div class="canvas-box">
+                </div>
               </div>
+              <textarea type="text" name="art_img" id="art_img" class="none"></textarea>
+              <input type="text" name="art_place" id="art_place" class="none">
             </div>
           </div>
           <div class="comment-wrapper">
@@ -134,7 +141,7 @@
               <div class="z-top">
                 <div class="zlabel tlabel">諸情報</div>
               </div>
-              <textarea name="zcomme" id="zcomme" placeholder="給与条件や労働条件など、働き方に関する諸条件を入力してください。"></textarea>
+              <textarea name="zcomme" id="zcomme" placeholder="給与条件や労働条件など、働き方に関する諸情報を入力してください。"></textarea>
             </div>
           </div>
         </div>
@@ -174,6 +181,9 @@
       </div>
     </div>
   </div>
+
+
+
   <!-- <div class="loading-wrapper none">
     <div class="gif-wrapper">
       <img src="pic/loading.gif">
@@ -182,6 +192,7 @@
 
 <!-- JS -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+<script src="{{ asset('js/html2canvas.js') }}"></script>
 <script src="{{ asset('js/edit.js') }}"></script>
 <script src="{{ asset('js/canvas.js') }}"></script>
 </body>
