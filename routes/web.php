@@ -35,3 +35,7 @@ Route::post('/profile', 'ProfileController@update');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// like関係
+Route::post('/like_product', 'LikeController@like_product');
