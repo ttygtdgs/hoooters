@@ -19,10 +19,14 @@
   <!-- ヘッダー統一用のfontawesome -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
  <!-- ajax用に入れる -->
-  <meta name="csrf-token" content="{{ csrf_token() }}
+
 </head>
 <body>
 
+<form action="{{ url('/kensaku') }}"  method="get">
+    <input type="text" name="keyword" id="1">
+    <input type="button" name="keyword" value="検索">
+</form>
 
 <div class="footerFixed">
 <header class="header">
@@ -171,7 +175,7 @@
 
 
 </div>
-
+</div>
 
 
 <!-- js読み込みAJAX用 -->
