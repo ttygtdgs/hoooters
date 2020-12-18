@@ -11,16 +11,9 @@ class EditController extends Controller
     //登録
     public function register(Request $request){
         Log::debug($request);
-
         $validator = Validator::make($request->all(), [
             'uid' => 'required',
-            'cid' => 'required',
             'gid' => 'required',
-            'art_img' => 'required',
-            'art_place' => 'required',
-            'service' => 'required',
-            'jcomme' => 'required',
-            'zcomme' => 'required',
             'life_flg' => 'required',
             ]);
 
@@ -33,21 +26,18 @@ class EditController extends Controller
 
         //画像変換
         $imgsrc = $request->art_img;
-        list(, $imgsrc) = explode(',', $imgsrc);
-        //PHPのデコードでは、+がスペースに置き換わってしまうので戻す
-        $file_name = "./pic/".date("YmdHis").".png";
+        // $imgsrc = explode(',', $imgsrc);
+        if(!empty($imgsrc)){
+            $imgsrc = str_replace('data:image/png;base64,','',$imgsrc);
+            $imgsrc = str_replace(' ','+',$imgsrc);
+            $fileData = base64_decode($imgsrc);
+            //PHPのデコードでは、+がスペースに置き換わってしまうので戻す
+            $file_name = "./pic/".date("YmdHis").".png";
 
-        file_put_contents($file_name, base64_decode(str_replace(" ","+",$imgsrc)));
-
-        //  //アイコン 取得
-        // $file = $request->file('art_img'); //file が空かチェック
-        // if( !empty($file) ){
-        //     //アイコン名を取得
-        //     $filename = $file->getClientOriginalName(); //AWSの場合どちらかになる事がある”../upload/” or “./upload/”
-        //     $move = $file->move('./pic/',$filename);
-        // }else{
-        //     $filename = "test";
-        // }
+            file_put_contents($file_name, $fileData);
+        }else{
+            $file_name = NULL;
+        }
 
         //データ登録
         $article = new Art;
