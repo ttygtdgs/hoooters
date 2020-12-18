@@ -23,12 +23,6 @@
 </head>
 <body>
 
-<div class="search-wrapper col-sm-4">
-      <div class="user-search-form">
-        {{ Form::text('search_name', null, ['id' => 'search_name', 'class' => 'form-control shadow', 'placeholder' => 'ユーザーを検索する']) }}
-        {{ Form::button('<i class="fa fa-search" aria-hidden="true"></i>', ['class' => 'btn search-icon', 'type' => 'button']) }}
-      </div>
-    </div>
 
 <div class="footerFixed">
 <header class="header">
@@ -182,6 +176,8 @@
 
 <!-- js読み込みAJAX用 -->
 <script src="{{ asset('js/index.js') }}"></script>
+<!-- ajax用jquery -->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </body>
 
 </html>
