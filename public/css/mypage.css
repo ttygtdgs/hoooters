@@ -46,14 +46,21 @@ body{
 
 
 /* 以下、leftprofile --------*/
-#leftprofile{
-    background: #FFFFFF;
+#leftprofilebox{
     width: 360px;
+    height: 650px;
     margin-right: 16px;
     margin-left: 16px;
     margin-top: 16px;
     margin-bottom: 16px;
-    height: 640px;
+}
+
+#leftprofile{
+    background: #FFFFFF;
+    width: 360px;
+    height: auto;
+    max-height: 650px;
+    
 }
 
 #leftprofile #leftprofile1{
@@ -84,7 +91,8 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: auto;
+    max-height: 80px;
     padding-bottom: 5px;
     padding-top: 5px;
 
@@ -98,7 +106,8 @@ body{
 
 #leftprofile #leftprofile4{
     width: 100%;
-    height: 140px;
+    height: auto;
+    max-height: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,7 +139,6 @@ body{
 
 #leftprofile #leftprofile5 .p6{
     font-size: 15px;
- 
     height: 30px;
 }
 
@@ -150,6 +158,7 @@ body{
 
 #leftprofile #leftprofile6{
     text-align: center;
+    padding-bottom: 20px;
 }
 
 #leftprofile #leftprofile6 a{
