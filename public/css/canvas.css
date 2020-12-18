@@ -24,6 +24,10 @@
   position: absolute;
 }
 
+.cantext{
+  overflow: visible;
+}
+
 .canvas-item:hover, .cantext>textarea:hover{
   cursor: pointer;
 }
@@ -40,5 +44,6 @@
   resize: none;
   white-space: pre-wrap;
   background-color: rgba(0, 0, 0, 0);
+  overflow: visible;
 }
 

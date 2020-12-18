@@ -116,6 +116,7 @@
                   <li class="imenu-item canicon"><i class="fas fa-arrow-left"></i></li>
                   <li class="imenu-item canicon"><i class="fas fa-yen-sign"></i></li>
                   <li class="imenu-item canicon"><i class="fas fa-circle"></i></li>
+                  <li class="imenu-item canicon"><i class="fas fa-mobile-alt"></i></li>
                   <li class="imenu-item"><i class="fas fa-trash-alt"></i></li>
                 </ul>
               </div>
