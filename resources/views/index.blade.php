@@ -18,15 +18,29 @@
   <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
   <!-- ヘッダー統一用のfontawesome -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
- <!-- ajax用に入れる -->
-
+ <!-- ajax用に入れるtoken -->
+ <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
 <body>
 
+    <!-- 検索窓 -->
 <form action="{{ url('kensaku') }}"  method="get">
-    <input type="text" name="keyword" id="kensaku">
-    <input type="submit" name="key" value="検索" id="kensaku">
+    <input type="text" id="key" class="kensaku" name="">
+    <input type="submit" name="btn" id="btn" value="検索">
+
+
+
+    <!-- 出すとこ -->
+ <div class="contents">
+        <h1>検索結果</h1>
+        <ul id="ul">
+  </ul>
+  @foreach ($arts as $art)
+  <li>{{$art->aid}}</li>
+    @endforeach
+</div>
+
 </form>
 
 <div class="footerFixed">
@@ -182,6 +196,8 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="{{ asset('js/index.js') }}"></script>
+
+
 <!-- ajax用jquery -->
 </body>
 
