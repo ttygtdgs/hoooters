@@ -42,7 +42,7 @@
                 </li>
                 <li>
                   <!--  以下、ログアウト処理-->
-                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
                     <i class="fa fa-sign-out " style="font-size: 2em; color:#fff; " ></i>
                    </a>
                    <form id='logout-form' action={{ route('logout')}} method="POST" style="display: none;">
