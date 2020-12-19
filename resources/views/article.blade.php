@@ -108,7 +108,19 @@
                               </div>
                               <div class="comme">
                                 <h2 class="j-title">コメント</h2>
-                                <p class="kigyo-comme">以下コメ
+                                <p class="kigyo-comme">現在、コメントはありません</p>
+                              </div>
+                              
+                             <div class="commepost">
+                                <div>
+                                  <img src="{{asset('/pic/icon.png')}}"  class="float">
+                                  <p>投稿する</p>
+                                </div>
+                                <form action="">
+                                  <textarea name="" id="" cols="30" rows="10"></textarea>
+                                </form>
+                                <button class="" style="margin-left: auto;">投稿</button>
+
 
                               </div>
                         </div>  
