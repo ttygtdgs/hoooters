@@ -55,42 +55,38 @@
     
 <!-- 以上、header----------------------------------------------- -->
 
-<!-- 以下、検証 -->
-
-              @if(isset($product->like_products[0]))
-                  <a class="toggle_wish" aid="1" like_product="1">
-                       <i class="fas fa-heart"></i>
-                  </a>
-              @else
-                  <a class="toggle_wish" aid="1" like_product="0">
-                      <i  class="far fa-heart"></i>
-                  </a> 
-              @endif
-
-
-
-<!-- 以下、検証 -->
-
-
-
 
 <!-- 以下、main----------------------------------------------- -->
 
     <main>
 
         <div class="wrapper">
+
               <div class="left-content">
                   <div class="like-icon">
                     <div class="page_top">
-                      <p class="like-num">111</p>
-                      <a href="#"><i class="far fa-heart fa-3x"></i></a>
+                      <p class="like-num">100</p>
+                      <!-- aidのデータ連携！！！！！！ -->
+                      <!-- like_product=0は、いいね押してない状態 -->
+                      <!-- like_product=1は、いいね押してる状態 -->
+                      <!-- 下のif~else部分は機能してないから、ページ遷移時に、データを引き渡す -->
+                      @if(isset($like->like_products[0]))
+                        <a class="iine" aid="1" like_product="1">
+                            <!-- これはいいね押してるハート -->
+                            <i class="fas fa-heart fa-3x"></i>
+                        </a>
+                      @else
+                        <a class="iine" aid="1" like_product="0">
+                          <!-- これはいいね押してないハート -->
+                            <i  class="far fa-heart fa-3x"></i>
+                        </a> 
+                       @endif
+                  
                       <p class="like-num">225</p>
                       <a href="#"><i class="far fa-comments fa-3x"></i></a>
                     </div>
                   </div>
               </div>
-
-
 
               <div class="middle-content">
                         <div class="feed">                 
@@ -112,7 +108,19 @@
                               </div>
                               <div class="comme">
                                 <h2 class="j-title">コメント</h2>
-                                <p class="kigyo-comme">以下コメ
+                                <p class="kigyo-comme">現在、コメントはありません</p>
+                              </div>
+                              
+                             <div class="commepost">
+                                <div>
+                                  <img src="{{asset('/pic/icon.png')}}"  class="float">
+                                  <p>投稿する</p>
+                                </div>
+                                <form action="">
+                                  <textarea name="" id="" cols="30" rows="10"></textarea>
+                                </form>
+                                <button class="" style="margin-left: auto;">投稿</button>
+
 
                               </div>
                         </div>  
