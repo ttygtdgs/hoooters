@@ -16,11 +16,51 @@
   <link href="{{asset('/css/index.css')}}" rel="stylesheet">
   <!-- リセットcss -->
   <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
+  <!-- ヘッダー統一用のfontawesome -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
+ <!-- ajax用に入れる -->
+
+
 </head>
 <body>
 
+<form action="{{ url('kensaku') }}"  method="get">
+    <input type="text" name="keyword" id="kensaku">
+    <input type="submit" name="key" value="検索" id="kensaku">
+</form>
+
 <div class="footerFixed">
-    <header>Hootersのヘッダー</header>
+<header class="header">
+        <h1>Hoooters</h1>
+        <nav>
+            <ul>
+                <li>
+                  <a href="{{url('/')}}">
+                    <i class="fa fa-home" style="font-size: 2em; color: #fff;" ></i>
+                   </a>
+                </li>
+                <li>
+                  <a href="{{url('/edit')}}">
+                    <i class="fa fa-newspaper-o " style="font-size: 2em; color: #fff; " ></i>
+                   </a>
+                </li>
+                <li>
+                  <a href="{{url('/mypage')}}">
+                    <i class="fa fa-user-circle-o " style="font-size: 2em; color:#fff; " ></i>
+                   </a>
+                </li>
+                <li>
+                  <!--  以下、ログアウト処理-->
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fa fa-sign-out " style="font-size: 2em; color:#fff; " ></i>
+                   </a>
+                   <form id='logout-form' action={{ route('logout')}} method="POST" style="display: none;">
+                   {{ csrf_field() }}
+                   <!--  以上、ログアウト処理-->
+                </li>          
+            </ul>
+        </nav>
+    </header>
   
     <main>
         <div class="wrapper">
@@ -136,6 +176,13 @@
 
 
 </div>
+</div>
 
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="{{ asset('js/index.js') }}"></script>
+<!-- ajax用jquery -->
 </body>
+
 </html>

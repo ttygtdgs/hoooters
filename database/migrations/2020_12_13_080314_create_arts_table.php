@@ -16,13 +16,13 @@ class CreateArtsTable extends Migration
         Schema::create('arts', function (Blueprint $table) {
             $table->increments('aid');
             $table->integer('uid');
-            $table->integer('cid');
-            $table->integer('gid');
-            $table->string('service');
-            $table->string('art_img');
-            $table->string('art_place');
-            $table->string('jcomme');
-            $table->string('zcomme');
+            $table->integer('cid')->nullable();
+            $table->integer('gid')->nullable();
+            $table->string('service')->nullable();
+            $table->string('art_img')->nullable();
+            $table->text('art_place')->nullable();
+            $table->text('jcomme')->nullable();
+            $table->text('zcomme')->nullable();
             $table->integer('life_flg');
             $table->timestamps();
         });
