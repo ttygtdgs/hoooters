@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Like;
+use App\User;
 use Auth;
 use Illuminate\Http\Request;
 use Log;
@@ -13,37 +14,27 @@ class LikeController extends Controller
 {
     public function like_product(Request $request)
     {
-        Log::debug($request);
-        Log::debug($request->aid);
-        Log::debug($request->like_product);
+        // Log::debug($request);
+        // Log::debug($request->aid);
+        // Log::debug($request->like_product);
         
-
-
-
-         if ( $request->input('like_product') == 0) {
-             //ステータスが0のときはデータベースに情報を保存
-            //  Likes::create([
-            //      'aid' => $request->input('aid'),
-            //       'uid' => auth()->user()->id,
-            //  ]);
-
+         if ( $request->input('like_product') == 0) {     
+            //like_product=0(いいね押してない状態)のときはデータベースに情報を保存
              $likes = new Like;
              $likes->aid = $request->aid;
-             $likes->uid = $request->like_product;
+             $likes->id = Auth::user()->id;      
+             $likes->like_product = $request->like_product;
              $likes->save();
 
+            //  $count = $likes->like_product->count();
 
-
-
-            //ステータスが1のときはデータベースに情報を削除
          } elseif ( $request->input('like_product')  == 1 ) {
-            //  Likes::where('aid', "=", $request->input('aid'))
-            //     ->where('uid', "=", auth()->user()->id)
-            //     ->delete();
-
-            $likes = Like::where('aid', "=", $request->aid);
-            $likes->delete();
+            //like_product=1(いいね押してる状態)のときはデータベースに情報を削除
+            $likes = Like::where('aid', $request->aid)->where('id', Auth::user()->id)->delete();
+            
+            // $count = $likes->like_product->count();
         }
+        
          return  $request->input('like_product');
     } 
 }

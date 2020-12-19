@@ -13,6 +13,7 @@ class ArticleController extends Controller
 {
     //入ってきた時
     public function article(){
+        // ＄likes = Like::
         return view('article');
     }
 
