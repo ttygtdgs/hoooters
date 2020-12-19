@@ -10,7 +10,7 @@ class EditController extends Controller
 {
     //登録
     public function register(Request $request){
-        Log::debug($request);
+        // Log::debug($request);
         $validator = Validator::make($request->all(), [
             'uid' => 'required',
             'gid' => 'required',
