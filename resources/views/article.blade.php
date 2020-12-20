@@ -108,8 +108,24 @@
                               </div>
                               <div class="comme">
                                 <h2 class="j-title">コメント</h2>
-                                <p class="kigyo-comme">現在、コメントはありません</p>
+                                @if(count($texts)>0)      
+                                  <ul>
+                                    <li>    
+                                    @foreach ($texts as $texts)
+                                      <div>{{ $texts->name }}</div>
+                                      <div>{{ $texts->txt }}</div> 
+                                      <div>{{ $texts->textscreated_at }}</div> 
+                                      <hr>
+                                    @endforeach
+                                    <!-- {{ $texts }} -->
+                                    </li>
+                                    <li id="newtext"></li>
+                                  </ul>
+                                @else
+                                  <p class="kigyo-comme">現在、コメントはありません</p>
+                                @endif
                               </div>
+
                               
                              <div class="commepost">
                                 <div>

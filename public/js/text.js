@@ -9,10 +9,10 @@ $(function ()
         let txt = $('#txt').val();
         txtbtn = $(this);
             // 情報確認用
-            console.log(id);
-            console.log(aid);
-            console.log(txt);
-            console.log(txtbtn);
+            // console.log(id);
+            // console.log(aid);
+            // console.log(txt);
+            // console.log(txtbtn);
         
         $.ajax({
             headers: {
@@ -26,22 +26,19 @@ $(function ()
             //正常にコントローラーの処理が完了した場合
             .done(function (data) //コントローラーからのリターンされた値(like_product、つまりクリックした時の状態)をdataとして指定
             {
-                // if ( data == 0 ) //like_product=0 いいね押してない状態
-                // {
-                //     //クリックしたタグをいいね押している状態（like_product=1）に変更
-                //     click_button.attr("like_product", "1");
-                //     //クリックしたタグの子の要素を変更(ハートをいいね状態に)
-                //     click_button.children().attr("class", "fas fa-heart fa-3x");
-                // }
-                // if ( data == 1 ) //like_product=1 いいね押しnない状態
-                // {
-                //     //クリックしたタグをいいね押してない状態（like_product=0）に変更
-                //     click_button.attr("like_product", "0");
-                //     //クリックしたタグの子の要素を変更(ハートをいいね押してない状態に)
-                //     click_button.children().attr("class", "far fa-heart fa-3x");
-                // }
-                console.log(data);
-                alert('コメント投稿成功')
+                let html = '<div>'+data.name+'</div>';
+                html += '<div>'+data.txt+'</div>';
+                html += '<div>'+data.textscreated_at+'</div>';
+                html += '<hr>';
+                // console.log(html);
+
+                $(newtext).append(html);
+
+                 // 入力フォームのデータを空にする
+                $('#txt').val("");
+ 
+                // ajax成功アラート
+                // alert('コメント投稿成功')
             })
             ////正常に処理が完了しなかった場合
             .fail(function (data)
