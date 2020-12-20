@@ -13,22 +13,19 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function top(){
-        // $arts = \App\Art::get(); 
+        $arts = \App\Art::get(); 
 
         return view('index');
     }
 
-    // public function kensaku($key){
-        
-        // $arts = $this->art->
-       
+
+    public function sub(){
+        return view('indexcopy');
+    }
 
 
 
-        // return response()->json($arts);
-    // }
-
-    public function kensaku(Request $request){
+      public function kensaku(Request $request){
         // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
         // return response()->json($users);
          // Log::debug($key);
@@ -38,6 +35,7 @@ class IndexController extends Controller
         
         $query = Art::query();
 
+
         if (!empty($key)) {
             $query->where('jcomme', 'LIKE', "%{$key}%");
         }
@@ -46,15 +44,26 @@ class IndexController extends Controller
 
         $artss = Art::join('corps', 'arts.cid', '=', 'corps.cid')
                 // ->select('aid', 'cname', 'jcomme')
-                // ->join('gyos', 'arts.gid', '=', 'gyos.gid')
+                ->join('gyos', 'arts.gid', '=', 'gyos.gid');
                 ->get();
 
-        //  $arts = Art::where('jcomme','%'.$request->key.'%')->get();
-        // $arts = "3";
+         $arts = Art::where('jcomme','%'.$request->key.'%')->get();
+        $arts = "3";
 
-         //Log::debug($arts);
-         //Log::debug($arts[0]);
-        //  Log::debug($arts->cid);
+         Log::debug($arts);
+         Log::debug($arts[0]);
+         Log::debug($arts->cid);
+          Log::debug($artss);
+            
+
+
+
+
+        $arts = "3";
+
+         Log::debug($arts);
+         Log::debug($arts[0]);
+         Log::debug($arts->cid);
           Log::debug($artss);
             
 
@@ -68,8 +77,8 @@ class IndexController extends Controller
 
 
     public function latest(){
-        // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
-        // return response()->json($users);
+        $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
+        return response()->json($users);
         
 
         return view('edit');

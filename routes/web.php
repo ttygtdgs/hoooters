@@ -50,4 +50,4 @@ Route::post('/like_product', 'LikeController@like_product');
 
 
 // テキスト投稿用
-Route::post('/text', 'TextController@text');
+Route::post('/text', 'TextContoroller@text');
