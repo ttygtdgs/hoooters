@@ -18,6 +18,10 @@ class IndexController extends Controller
         return view('index');
     }
 
+    public function sub(){
+        return view('indexcopy');
+    }
+
 
       public function kensaku(Request $request){
         // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
