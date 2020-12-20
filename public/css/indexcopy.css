@@ -274,7 +274,7 @@ main{
   height: 110px;
   padding: 10px;
   width: 100%;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   line-height: 24px;
   overflow: hidden;
 }
@@ -283,6 +283,7 @@ main{
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
+  font-size: 14px;
 }
 
 .feed-right{
