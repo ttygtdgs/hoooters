@@ -35,6 +35,7 @@ class IndexController extends Controller
         
         $query = Art::query();
 
+
         if (!empty($key)) {
             $query->where('jcomme', 'LIKE', "%{$key}%");
         }
@@ -46,12 +47,23 @@ class IndexController extends Controller
                 ->join('gyos', 'arts.gid', '=', 'gyos.gid');
                 ->get();
 
-        //  $arts = Art::where('jcomme','%'.$request->key.'%')->get();
-        // $arts = "3";
+         $arts = Art::where('jcomme','%'.$request->key.'%')->get();
+        $arts = "3";
 
-         //Log::debug($arts);
-         //Log::debug($arts[0]);
-        //  Log::debug($arts->cid);
+         Log::debug($arts);
+         Log::debug($arts[0]);
+         Log::debug($arts->cid);
+          Log::debug($artss);
+            
+
+
+
+
+        $arts = "3";
+
+         Log::debug($arts);
+         Log::debug($arts[0]);
+         Log::debug($arts->cid);
           Log::debug($artss);
             
 
@@ -64,24 +76,9 @@ class IndexController extends Controller
     }
 
 
-
-         $arts = Art::where('jcomme','%'.$request->key.'%')->get();
-        // $arts = "3";
-
-         Log::debug($request->key);
-
-
-
-
-
-         
-        return $arts;
-    }
-
-
     public function latest(){
-        // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
-        // return response()->json($users);
+        $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
+        return response()->json($users);
         
 
         return view('edit');
