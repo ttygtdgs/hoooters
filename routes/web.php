@@ -15,6 +15,7 @@ Route::get('/latest', 'IndexController@latest');
 
 // ajaxの検索機能
 Route::get('/kensaku','IndexController@kensaku');
+Route::get('/indexcopy','IndexController@sub');
 
 // 記事登録ページ（風太担当）
     // ↓とりあえず
