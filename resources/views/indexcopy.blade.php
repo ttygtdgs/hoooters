@@ -52,11 +52,8 @@
 <main>
     <div class="left-content">
         <div class="searchform">
-            <form action="#" method="get">
-                    <i class="fas fa-search"></i>
-                    <input type="text" name="keyword" id="kensaku" placeholder="キーワードを入力">
-                    <button type="submit" id="kensaku" class="none"></button>
-            </form>
+                <i class="fas fa-search"></i>
+                <input type="text" id="key" class="kensaku" placeholder="キーワードを入力">
         </div>
         <div class="left-box">
             <h2 class="left-title">記事フィード</h2>
