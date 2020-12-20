@@ -13,24 +13,23 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function top(){
-        return view('index');
+        $arts = \App\Art::get(); 
+
+        return view('index',[
+            "arts" => $arts
+
+        ]);
     }
 
-    public function sub(){
-        return view('indexcopy');
+    public function kensaku($key){
+        
+        $arts = $this->art->
+        Log::debug($key);
+
+
+
+        return response()->json($arts);
     }
 
-    public function kensaku(){
 
-
-        // Log::debug($request);
-        return view('index');
-    }
-
-    public function getArticlesByKeyword($keyword)
-    {
-        $articles = Art::where('jcomme', $keyword)->groupBy('address')->pluck('address');
-
-        return response()->json($addresses);
-    }
 }
