@@ -36,23 +36,34 @@ class IndexController extends Controller
          Log::debug($request->key);
         $key = $request->key;
         
+        $query = Art::query();
 
+        if (!empty($key)) {
+            $query->where('jcomme', 'LIKE', "%{$key}%");
+        }
 
+        $arts = $query->get();
 
+        $artss = Art::join('corps', 'arts.cid', '=', 'corps.cid')
+                // ->select('aid', 'cname', 'jcomme')
+                // ->join('gyos', 'arts.gid', '=', 'gyos.gid')
+                ->get();
 
-
-
-         $arts = Art::where('jcomme','%'.$request->key.'%')->get();
+        //  $arts = Art::where('jcomme','%'.$request->key.'%')->get();
         // $arts = "3";
 
-         Log::debug($request->key);
+         //Log::debug($arts);
+         //Log::debug($arts[0]);
+        //  Log::debug($arts->cid);
+          Log::debug($artss);
+            
 
 
 
 
 
          
-        return $arts;
+        return $artss;
     }
 
 
