@@ -13,7 +13,7 @@ $(function ()
             // console.log(aid);
             // console.log(txt);
             // console.log(txtbtn);
-        
+      
         $.ajax({
             headers: {
                 // csrf対策、「article.blade.php」のheadにcsrf対策のmetaタグも追記
@@ -26,17 +26,32 @@ $(function ()
             //正常にコントローラーの処理が完了した場合
             .done(function (data) //コントローラーからのリターンされた値(like_product、つまりクリックした時の状態)をdataとして指定
             {
-                let html = '<div>'+data.name+'</div>';
-                html += '<div>'+data.txt+'</div>';
-                html += '<div>'+data.textscreated_at+'</div>';
-                html += '<hr>';
-                // console.log(html);
+                // let html = '<div>'+data.icon+'</div>';
+                // html += '<div>'+data.name+'</div>';
+                // html += '<div>'+data.txt+'</div>';
+                // html += '<div>'+data.textscreated_at+'</div>';
+                // html += '<hr>';
+                $('#comme3').remove();
+
+                let html = '<li><div class="comme1">';
+                html += '<div class="comme1_1">';
+                html +='<div><img src="'+data.icon.slice(1)+'" alt=""></div>';
+                html +='<div>＠'+data.name+'</div>';
+                html +='</div>';
+                html +='<div class="comme1_2">'+data.textscreated_at+'に投稿</div>';
+                html +='</div>';
+                html +='<br>';
+                html +='<div class="comme2">'+data.txt+'</div></li>';
+                 // console.log(html);
+                 console.log(data.icon);
+                
+                 
 
                 $(newtext).append(html);
 
                  // 入力フォームのデータを空にする
                 $('#txt').val("");
- 
+                
                 // ajax成功アラート
                 // alert('コメント投稿成功')
             })
@@ -46,5 +61,6 @@ $(function ()
                 alert('コメント投稿処理失敗');
                 alert(JSON.stringify(data));
             });
+        
     });
 });
