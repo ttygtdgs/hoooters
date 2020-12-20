@@ -53,27 +53,21 @@ main{
   align-items: flex-end;
 }
 
-<<<<<<< HEAD
-=======
 /* .left-content.fix{
   position: fixed;
   top: 0;
 } */
 
->>>>>>> main
 .searchform{
   width: 90%;
   height: 40px;
   margin: 5px 0 20px;
   position: relative;
   border-bottom: 1px solid rgb(216, 216, 216);
-<<<<<<< HEAD
-=======
   position: -webkit-sticky; /* Safariに対応する */
   position: sticky; /* 要素を固定/解除する */
   top: 10px;
   left: 0;
->>>>>>> main
 }
 
 .fa-search{
@@ -96,13 +90,10 @@ main{
   width: 90%;
   font-size: 13px;
   padding: 0 0 0 10px;
-<<<<<<< HEAD
-=======
   position: -webkit-sticky; /* Safariに対応する */
   position: sticky; /* 要素を固定/解除する */
   top: 60px;
   left: 0;
->>>>>>> main
 }
 
 .left-title{
@@ -132,12 +123,12 @@ main{
   background-color: rgb(228, 228, 228);
 }
 
-.menu-item.act{
+.menu-item.actmenu{
   background-color:rgb(113, 203, 241);
   color: #fff;
 }
 
-.menu-item.act:hover{
+.menu-item.actmenu:hover{
   cursor: pointer;
   background-color:rgb(107, 191, 228);
 
@@ -171,11 +162,7 @@ main{
   background-color:rgb(252, 252, 252);
   padding: 10px 26px 10px 20px;
   height: 230px;
-<<<<<<< HEAD
-  transition: .5s;
-=======
   transition: .3s;
->>>>>>> main
 }
 
 .gyo-list.act{
@@ -183,6 +170,7 @@ main{
 }
 
 .gyo-item{
+  color: #979797;
   height: 25px;
   line-height: 25px;
   padding: 0 10px 10px;
@@ -212,11 +200,7 @@ main{
   align-items: center;
   height: 45px;
   padding: 0 40px;
-<<<<<<< HEAD
-  color: rgb(83, 83, 83);
-=======
   color: rgb(112, 112, 112);
->>>>>>> main
   font-weight: bold;
 }
 
@@ -226,7 +210,7 @@ main{
 }
 
 #right-theme{
-  padding-top: 3px;
+  padding-top: 4px;
 }
 
 
@@ -278,8 +262,8 @@ main{
 }
 
 .feed-left{
-  width: 50%;
-  padding: 0 40px;
+  width: 40%;
+  padding: 0 0 0 40px;
 }
 
 .kigyo-name{
@@ -304,11 +288,7 @@ main{
   height: 110px;
   padding: 10px;
   width: 100%;
-<<<<<<< HEAD
-  letter-spacing: 2px;
-=======
   letter-spacing: 1px;
->>>>>>> main
   line-height: 24px;
   overflow: hidden;
 }
@@ -317,18 +297,16 @@ main{
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
-<<<<<<< HEAD
-=======
   font-size: 14px;
->>>>>>> main
 }
 
 .feed-right{
-  width: 50%;
+  width: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-right: 40px;
+  overflow: hidden;
 }
 
 .feed-pict{
@@ -370,14 +348,6 @@ main{
   font-style: italic;
 }
 
-
-/* .footerFixed{
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 60px;
-  box-sizing: border-box;
-}
- */
 
 
 footer{
