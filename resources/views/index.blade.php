@@ -7,7 +7,7 @@
   <!-- リセットcss -->
   <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
   <!-- 後藤田用css -->
-  <link href="{{asset('/css/indexcopy.css')}}" rel="stylesheet">
+  <link href="{{asset('/css/index.css')}}" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <!-- ヘッダー統一用のfontawesome -->
@@ -101,62 +101,7 @@
             <ul class="tab-wrap">
                 <!-- １記事 -->
                 <div id=futa></div>
-                <li class="feed">
-                    <div class="feed-left">
-                        <p class="kigyo-name">株式会社サンリオ</p>
-                        <p class="jigyo">ハローキティ事業部　WEBマーケ</p>
-                        <div class="kigyo-comme"><p class="jcomme">キティちゃん人形の拡販。きてぃーちゃんタイムズの運用。あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい</p></div>
-                    </div>
-                    <!-- ピクト図読み込み -->
-                    <div class="feed-right">
-                        <img src="{{asset('/pic/example1.png')}}" class="feed-pict">
-                    </div>
-                    <!-- アイコン -->
-                    <div class="feed-bottom">
-                        <div class="icon-img">
-                            <img src="{{asset('/pic/icon.png')}}"  class="float">
-                        </div>
-                        <p class="kigyo"> @ふーたーずが2020年12月25日に投稿</p>
-                    </div>
-                </li>
-                <!-- １記事 -->
-                <li class="feed">
-                    <div class="feed-left">
-                        <p class="kigyo-name">株式会社サンリオ</p>
-                        <p class="jigyo">ハローキティ事業部　WEBマーケ</p>
-                        <div class="kigyo-comme"><p class="jcomme">キティちゃん人形の拡販。きてぃーちゃんタイムズの運用。あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい</p></div>
-                    </div>
-                    <!-- ピクト図読み込み -->
-                    <div class="feed-right">
-                        <img src="{{asset('/pic/example1.png')}}" class="feed-pict">
-                    </div>
-                    <!-- アイコン -->
-                    <div class="feed-bottom">
-                        <div class="icon-img">
-                            <img src="{{asset('/pic/icon.png')}}"  class="float">
-                        </div>
-                        <p class="kigyo"> @ふーたーずが2020年12月25日に投稿</p>
-                    </div>
-                </li>
-                <!-- １記事 -->
-                <li class="feed">
-                    <div class="feed-left">
-                        <p class="kigyo-name">株式会社サンリオ</p>
-                        <p class="jigyo">ハローキティ事業部　WEBマーケ</p>
-                        <div class="kigyo-comme"><p class="jcomme">キティちゃん人形の拡販。きてぃーちゃんタイムズの運用。あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい</p></div>
-                    </div>
-                    <!-- ピクト図読み込み -->
-                    <div class="feed-right">
-                        <img src="{{asset('/pic/example1.png')}}" class="feed-pict">
-                    </div>
-                    <!-- アイコン -->
-                    <div class="feed-bottom">
-                        <div class="icon-img">
-                            <img src="{{asset('/pic/icon.png')}}"  class="float">
-                        </div>
-                        <p class="kigyo"> @ふーたーずが2020年12月25日に投稿</p>
-                    </div>
-                </li>
+
             </ul>
         </div>
     </div>

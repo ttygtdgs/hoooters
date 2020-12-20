@@ -21,8 +21,27 @@ $('#key').on('keydown', function(e)
           let html = '';
         
           for(let i=0; i<data.length; i++){
-            html = '<li>'+data[i]['cname']+'</li>'+
-                    '<li>'+data[i]['jcomme']+'</li>';
+            html =  '<li class="feed">' +
+                    '<div class="feed-left">'+
+                        '<p class="kigyo-name">'+data[i]['cname']+'</p>'+
+                        '<p class="jigyo">'+data[i]['service']+'</p>'+
+                        '<p class="jigyo">'+data[i]['gname']+'</p>'+
+                        '<div class="kigyo-comme">'+data[i]['jcomme']+'<p class="jcomme">'+data[i]['zcomme']+'</p>'+'</div>'+
+                    '</div>'+
+
+                    '<div class="feed-right">'+
+                        '<img src="'+data[i]['art_img']+'" class="feed-pict">'+
+                    '</div>'+
+
+                    '<div class="feed-bottom">'+
+                        '<div class="icon-img">'+
+                            '<img src="'+data[i]['icon']+'"  class="float">'+
+                        '</div>'+
+                        '<p class="kigyo">@' +data[i]['name']+'が2020年12月25日に投稿'+'</p>'+
+                    '</div>'+
+                '</li>'
+
+                    ;
             $('#futa').append(html);
           };
  
