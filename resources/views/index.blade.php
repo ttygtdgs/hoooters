@@ -27,19 +27,14 @@
     <!-- 検索窓 -->
 <form action="{{ url('kensaku') }}"  method="get">
     <input type="text" id="key" class="kensaku" name="">
-    <input type="submit" name="btn" id="btn" value="検索">
+    <input type="button" name="btn" id="btn" value="検索">
+
+<form action="{{ url('latest') }}"  method="get" value="最近">
+<input type="button" name="最近" value="最近">
+    <!-- 吐き出すとこ -->
+    <div id="text"></div>
 
 
-
-    <!-- 出すとこ -->
- <div class="contents">
-        <h1>検索結果</h1>
-        <ul id="ul">
-  </ul>
-  @foreach ($arts as $art)
-  <li>{{$art->aid}}</li>
-    @endforeach
-</div>
 
 </form>
 
