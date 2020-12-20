@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function top(){
-        $arts = \App\Art::get(); 
+        $arts = \App\Art::get();
 
         return view('index',[
             "arts" => $arts
@@ -21,8 +21,12 @@ class IndexController extends Controller
         ]);
     }
 
+    public function sub(){
+        return view('indexcopy');
+    }
+
     public function kensaku($key){
-        
+
         $arts = $this->art->
         Log::debug($key);
 
