@@ -21,29 +21,36 @@ class IndexController extends Controller
         ]);
     }
 
-    public function kensaku($key){
-        
-        $arts = $this->art->
-        Log::debug($key);
-
-      public function kensaku(Request $request){
+    public function kensaku(Request $request){
         // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
         // return response()->json($users);
-         // Log::debug($key);
         //  Log::debug($request->key);
+        $id = $request->id;
+        Log::debug($id);
+
         $key = $request->key;
 
         // $query = Art::query();
 
-        if (!empty($key)) {
+        if (!empty($key) || $key!=null) {
             $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
             ->join('gyos','arts.gid', '=', 'gyos.gid')
             ->join('users','arts.uid', '=', 'users.id')
-            ->where('jcomme', 'LIKE', "%{$key}%") 
-            ->where('zcomme', 'LIKE', "%{$key}%") 
+            ->where('jcomme', 'LIKE', "%{$key}%")
+            ->where('zcomme', 'LIKE', "%{$key}%")
             ->orWHERE('cname', 'LIKE', "%{$key}%")
             ->orWHERE('service', 'LIKE', "%{$key}%")
             ->get();
+        }else if($id=='timeline'){
+            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
+            ->join('gyos','arts.gid', '=', 'gyos.gid')
+            ->join('users','arts.uid', '=', 'users.id')
+            // ->orderby('update_at','desc')
+            ->get();
+        }else if($id=='popular'){
+
+        }else if($id=='favorite'){
+
         }
 
         Log::debug($arts);
