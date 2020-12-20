@@ -262,8 +262,8 @@ main{
 }
 
 .feed-left{
-  width: 50%;
-  padding: 0 40px;
+  width: 40%;
+  padding: 0 0 0 40px;
 }
 
 .kigyo-name{
@@ -301,11 +301,10 @@ main{
 }
 
 .feed-right{
-  width: 50%;
+  width: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-right: 40px;
 }
 
 .feed-pict{

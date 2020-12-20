@@ -53,21 +53,27 @@ main{
   align-items: flex-end;
 }
 
+<<<<<<< HEAD
+=======
 /* .left-content.fix{
   position: fixed;
   top: 0;
 } */
 
+>>>>>>> main
 .searchform{
   width: 90%;
   height: 40px;
   margin: 5px 0 20px;
   position: relative;
   border-bottom: 1px solid rgb(216, 216, 216);
+<<<<<<< HEAD
+=======
   position: -webkit-sticky; /* Safariに対応する */
   position: sticky; /* 要素を固定/解除する */
   top: 10px;
   left: 0;
+>>>>>>> main
 }
 
 .fa-search{
@@ -90,10 +96,13 @@ main{
   width: 90%;
   font-size: 13px;
   padding: 0 0 0 10px;
+<<<<<<< HEAD
+=======
   position: -webkit-sticky; /* Safariに対応する */
   position: sticky; /* 要素を固定/解除する */
   top: 60px;
   left: 0;
+>>>>>>> main
 }
 
 .left-title{
@@ -162,7 +171,11 @@ main{
   background-color:rgb(252, 252, 252);
   padding: 10px 26px 10px 20px;
   height: 230px;
+<<<<<<< HEAD
+  transition: .5s;
+=======
   transition: .3s;
+>>>>>>> main
 }
 
 .gyo-list.act{
@@ -200,7 +213,11 @@ main{
   align-items: center;
   height: 45px;
   padding: 0 40px;
+<<<<<<< HEAD
+  color: rgb(83, 83, 83);
+=======
   color: rgb(112, 112, 112);
+>>>>>>> main
   font-weight: bold;
 }
 
@@ -288,7 +305,11 @@ main{
   height: 110px;
   padding: 10px;
   width: 100%;
+<<<<<<< HEAD
+  letter-spacing: 2px;
+=======
   letter-spacing: 1px;
+>>>>>>> main
   line-height: 24px;
   overflow: hidden;
 }
@@ -297,7 +318,10 @@ main{
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
+<<<<<<< HEAD
+=======
   font-size: 14px;
+>>>>>>> main
 }
 
 .feed-right{
