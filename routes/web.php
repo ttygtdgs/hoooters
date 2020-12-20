@@ -12,6 +12,10 @@ use Illuminate\Http\Request;
 // 一覧ページ（後藤田担当）
 Route::get('/', 'IndexController@top');
 Route::get('/indexcopy', 'IndexController@sub');
+<<<<<<< HEAD
+=======
+Route::get('/latest', 'IndexController@latest');
+>>>>>>> main
 
 // ajaxの検索機能
 Route::get('/kensaku','IndexController@kensaku');
@@ -46,3 +50,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // like関係
 Route::post('/like_product', 'LikeController@like_product');
+<<<<<<< HEAD
+=======
+
+
+// テキスト投稿用
+Route::post('/text', 'TextContoroller@text');
+>>>>>>> main

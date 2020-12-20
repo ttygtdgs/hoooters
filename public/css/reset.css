@@ -69,3 +69,7 @@ select,
 *:focus {
     outline: none;
 }
+
+body, textarea, input{
+  font-family: 'Meiryo';
+}

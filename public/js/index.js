@@ -8,10 +8,15 @@ $(function ()
         var key = $('#key').val(); //検索ワードを取得
         console.log(key);
 
+<<<<<<< HEAD
+=======
+        // 空欄だったらそのまま
+>>>>>>> main
         if(!key){
           return false;
         };
 
+<<<<<<< HEAD
         $.ajax({
           type: 'GET',
           url: 'kensaku' + key, //後述するweb.phpのURLと同じ形にする
@@ -33,3 +38,37 @@ $(function ()
 }
 )})
   
+=======
+        // axios.get('/kensaku')
+        //   .then(function (response) {
+        //       // handle success
+        //     console.log(response);
+        //   })
+        //   .catch(function (error) {
+        //       // handle error
+        //     console.log(error);
+        //   })
+        //   .finally(function () {
+        //       // always executed
+        //   });
+
+
+      
+        $.ajax({
+          type: 'get',
+          url: 'kensaku' , //web.phpのURLと同じ形にする
+          data: {'key' : key},
+
+          // dataType:'json',
+        }).done(function(data){
+          //alert('ajax成功');
+          // $('#text').html(results);
+          // console.log()
+          console.log(data);
+
+        }).fail(function(){
+            alert('ajax失敗');
+        });
+    })
+  });
+>>>>>>> main

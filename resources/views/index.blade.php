@@ -27,6 +27,7 @@
     <!-- 検索窓 -->
 <form action="{{ url('kensaku') }}"  method="get">
     <input type="text" id="key" class="kensaku" name="">
+<<<<<<< HEAD
     <input type="submit" name="btn" id="btn" value="検索">
 
 
@@ -40,6 +41,16 @@
   <li>{{$art->aid}}</li>
     @endforeach
 </div>
+=======
+    <input type="button" name="btn" id="btn" value="検索">
+
+<form action="{{ url('latest') }}"  method="get" value="最近">
+<input type="button" name="最近" value="最近">
+    <!-- 吐き出すとこ -->
+    <div id="text"></div>
+
+
+>>>>>>> main
 
 </form>
 
