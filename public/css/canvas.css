@@ -7,22 +7,43 @@
   justify-content: center;
 }
 
+#capture{
+  width: 100%;
+  height: 100%;
+}
+
 .canvas-box{
   overflow: hidden;
   width: 100%;
-  max-width: 700px;
   height: 100%;
-  max-height: 525px;
   background-color: #fff;
   position: relative;
 }
 
 .canvas-item{
   position: absolute;
-  top: 0;
-  left: 0;
 }
 
-.canvas-item:hover{
+.cantext{
+  overflow: visible;
+}
+
+.canvas-item:hover, .cantext>textarea:hover{
   cursor: pointer;
 }
+
+.canvas-item.active{
+  border: 4px solid rgba(113, 147, 241, 0.7);
+  transform: translate(-4px, -4px);
+}
+
+.cantext>textarea{
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  resize: none;
+  white-space: pre-wrap;
+  background-color: rgba(0, 0, 0, 0);
+  overflow: visible;
+}
+

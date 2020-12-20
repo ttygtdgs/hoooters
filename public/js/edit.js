@@ -170,8 +170,9 @@ document.getElementById('cadd-submit').addEventListener('click',function(){
 //下書き
 document.getElementById('draft').addEventListener('click',function(){
   document.getElementById('life_flg').value = 0;
+  const place = document.querySelector('.canvas-box').innerHTML;
+  document.getElementById('art_place').value = place;
   if(confirm('下書きに保存しますか？')){
-    console.log(document.getElementById('life_flg').value);
     document.getElementById('submit').click();
   }else{
     return;
@@ -181,8 +182,25 @@ document.getElementById('draft').addEventListener('click',function(){
 //投稿
 document.getElementById('deploy').addEventListener('click',function(){
   document.getElementById('life_flg').value = 1;
-  inputcheck();
+  imagesubmit();
 });
+
+//html2canvas
+function imagecreate(){
+  return new Promise((resolve, reject) => {
+    //座標要素取得
+    const place = document.querySelector('.canvas-box').innerHTML;
+    document.getElementById('art_place').value = place;
+    html2canvas(document.querySelector("#capture")).then(canvas => {
+      const base64 = canvas.toDataURL("image/png");
+      document.getElementById('art_img').value = base64;
+      console.log(document.getElementById('art_img').value);
+      return resolve();
+    }).catch(()=>{
+      return reject();
+    });
+  })
+}
 
 function inputcheck(){
   try{
@@ -190,15 +208,14 @@ function inputcheck(){
     const cid = document.getElementById('cid').value;
     const gid = document.getElementById('gid').value;
     const service = document.getElementById('service').value;
-    const art_img = 'example1.png';
-    // const art_img = document.getElementById('art_img').value;
-    // const art_place = document.getElementById('art_place').value;
+    const art_img = document.getElementById('art_img').value;
+    const art_place = document.getElementById('art_place').value;
     const jcomme = document.getElementById('jcomme').value;
     const zcomme = document.getElementById('zcomme').value;
     const life_flg = document.getElementById('life_flg').value;
-    if(uid=="" || cid=="" || gid=="" || service=="" || art_img=="" || jcomme=="" || zcomme=="" || life_flg==""){
+    if(uid=="" || cid=="" || gid=="" || service=="" || art_img=="" || art_place=="" || jcomme=="" || zcomme=="" || life_flg==""){
       alert('未入力箇所があります！');
-      throw new Error([uid,cid,gid,service,art_img,jcomme,zcomme,life_flg]);
+      throw new Error('error');
     }
     if(confirm('この内容で投稿しますか？')){
       console.log(document.getElementById('life_flg').value);
@@ -209,4 +226,8 @@ function inputcheck(){
   }catch(e){
     console.log(e.message);
   }
+}
+
+function imagesubmit(){
+  imagecreate().then(inputcheck);
 }

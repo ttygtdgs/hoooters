@@ -2,16 +2,16 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <!-- 以下は丹羽追記、ajax部分の対応 -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Articleページ</title>
  <!-- Font Awesome -->
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+ <!-- fontawsome -->
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
   <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-  <!-- Bootstrap core CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
   <!-- articleページ用css -->
   <link href="{{asset('/css/art.css')}}" rel="stylesheet">
   <!-- リセットcss -->
@@ -19,25 +19,74 @@
 </head>
 <body>
 
-<div class="footerFixed">
-    <header>記事のページだよ
-
+<!-- 以下、header----------------------------------------------- -->
+<header class="header">
+        <h1>Hoooters</h1>
+        <nav>
+            <ul>
+                <li>
+                  <a href="{{url('/')}}">
+                    <i class="fa fa-home" style="font-size: 2em; color: #fff;" ></i>
+                   </a>
+                </li>
+                <li>
+                  <a href="{{url('/edit')}}">
+                    <i class="fa fa-newspaper-o " style="font-size: 2em; color: #fff; " ></i>
+                   </a>
+                </li>
+                <li>
+                  <a href="{{url('/mypage')}}">
+                    <i class="fa fa-user-circle-o " style="font-size: 2em; color:#fff; " ></i>
+                   </a>
+                </li>
+                <li>
+                  <!--  以下、ログアウト処理-->
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fa fa-sign-out " style="font-size: 2em; color:#fff; " ></i>
+                   </a>
+                   <form id='logout-form' action={{ route('logout')}} method="POST" style="display: none;">
+                   {{ csrf_field() }}
+                   <!--  以上、ログアウト処理-->
+                </li>          
+            </ul>
+        </nav>
     </header>
-  
+
+    
+<!-- 以上、header----------------------------------------------- -->
+
+
+<!-- 以下、main----------------------------------------------- -->
+
     <main>
+
         <div class="wrapper">
+
               <div class="left-content">
                   <div class="like-icon">
                     <div class="page_top">
-                      <p class="like-num">111</p>
-                      <a href="#"><i class="far fa-heart fa-3x"></i></a>
+                      <p class="like-num">100</p>
+                      <!-- aidのデータ連携！！！！！！ -->
+                      <!-- like_product=0は、いいね押してない状態 -->
+                      <!-- like_product=1は、いいね押してる状態 -->
+                      <!-- 下のif~else部分は機能してないから、ページ遷移時に、データを引き渡す -->
+                      @if(isset($like->like_products[0]))
+                        <a class="iine" aid="1" like_product="1">
+                            <!-- これはいいね押してるハート -->
+                            <i class="fas fa-heart fa-3x"></i>
+                        </a>
+                      @else
+                        <a class="iine" aid="1" like_product="0">
+                          <!-- これはいいね押してないハート -->
+                            <i  class="far fa-heart fa-3x"></i>
+                        </a> 
+                       @endif
+                  
                       <p class="like-num">225</p>
                       <a href="#"><i class="far fa-comments fa-3x"></i></a>
                     </div>
                   </div>
               </div>
-
-
 
               <div class="middle-content">
                         <div class="feed">                 
@@ -59,7 +108,19 @@
                               </div>
                               <div class="comme">
                                 <h2 class="j-title">コメント</h2>
-                                <p class="kigyo-comme">以下コメ
+                                <p class="kigyo-comme">現在、コメントはありません</p>
+                              </div>
+                              
+                             <div class="commepost">
+                                <div>
+                                  <img src="{{asset('/pic/icon.png')}}"  class="float">
+                                  <p>投稿する</p>
+                                </div>
+                                <form action="">
+                                  <textarea name="" id="" cols="30" rows="10"></textarea>
+                                </form>
+                                <button class="" style="margin-left: auto;">投稿</button>
+
 
                               </div>
                         </div>  
@@ -72,17 +133,11 @@
         </div>  
     
     </main>
+<!-- 以上、main----------------------------------------------- -->
 
 
 
-
-    <footer>
-        <p>Hootersのフッター</p>    
-    </footer>
-
-
-
-</div>
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="{{ asset('js/like.js') }}"></script>
 </body>
 </html>
