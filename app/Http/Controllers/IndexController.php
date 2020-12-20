@@ -15,13 +15,16 @@ class IndexController extends Controller
     public function top(){
         $arts = \App\Art::get();
 
-        return view('index');
+        return view('index',[
+            "arts" => $arts
+
+        ]);
     }
 
-    public function sub(){
-        return view('indexcopy');
-    }
-
+    public function kensaku($key){
+        
+        $arts = $this->art->
+        Log::debug($key);
 
       public function kensaku(Request $request){
         // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
@@ -52,23 +55,10 @@ class IndexController extends Controller
                 // ->join('gyos', 'arts.gid', '=', 'gyos.gid')
                 // ->get();
 
-        // $arts = Art::where('jcomme','%'.$request->key.'%')->get();
 
-        // Log::debug($arts);
-        // Log::debug($arts[0]);
-        // Log::debug($arts->cid);
-        // Log::debug($artss);
 
-        return $arts;
+        return response()->json($arts);
     }
 
-
-    public function latest(){
-        $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
-        return response()->json($users);
-
-
-        return view('edit');
-    }
 
 }
