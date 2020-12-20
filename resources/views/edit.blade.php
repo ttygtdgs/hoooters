@@ -90,12 +90,12 @@
           <div class="gselect-wrapper">
             <!-- gid -->
             <input name="gid" id="gid" type="range" min="1" max="6" value="1">
-            <div class="gyo-btn act">新規事業</div>
-            <div class="gyo-btn">Webサービス</div>
-            <div class="gyo-btn">Webプロダクション</div>
-            <div class="gyo-btn">Webマーケティング</div>
-            <div class="gyo-btn">その他</div>
-            <div class="gyo-btn">Sier系</div>
+            <div class="gyo-btn act" id="new">新規事業</div>
+            <div class="gyo-btn" id="webservice">Webサービス</div>
+            <div class="gyo-btn" id="production">Webプロダクション</div>
+            <div class="gyo-btn" id="marketing">Webマーケティング</div>
+            <div class="gyo-btn" id="other">その他</div>
+            <div class="gyo-btn" id="sier">Sier系</div>
           </div>
         </div>
       </div>
