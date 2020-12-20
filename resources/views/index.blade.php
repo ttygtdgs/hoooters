@@ -100,6 +100,7 @@
         <div class="right-content">
             <ul class="tab-wrap">
                 <!-- １記事 -->
+                <div id=futa></div>
                 <li class="feed">
                     <div class="feed-left">
                         <p class="kigyo-name">株式会社サンリオ</p>

@@ -35,7 +35,10 @@ class IndexController extends Controller
         if (!empty($key)) {
             $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
             ->join('gyos','arts.gid', '=', 'gyos.gid')
-            ->where('jcomme', 'LIKE', "%{$key}%")
+            ->where('jcomme', 'LIKE', "%{$key}%") 
+            ->where('zcomme', 'LIKE', "%{$key}%") 
+            ->orWHERE('cname', 'LIKE', "%{$key}%")
+            ->orWHERE('service', 'LIKE', "%{$key}%")
             ->get();
         }
 
