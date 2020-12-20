@@ -11,14 +11,12 @@ use Illuminate\Http\Request;
 
 // 一覧ページ（後藤田担当）
 Route::get('/', 'IndexController@top');
-Route::get('/indexcopy', 'IndexController@sub');
-<<<<<<< HEAD
-=======
 Route::get('/latest', 'IndexController@latest');
 >>>>>>> main
 
 // ajaxの検索機能
 Route::get('/kensaku','IndexController@kensaku');
+Route::get('/indexcopy','IndexController@sub');
 
 // 記事登録ページ（風太担当）
     // ↓とりあえず

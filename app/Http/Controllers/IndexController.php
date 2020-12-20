@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function top(){
-        $arts = \App\Art::get(); 
+        $arts = \App\Art::get();
 
 <<<<<<< HEAD
         return view('index',[
@@ -37,71 +37,51 @@ class IndexController extends Controller
         return view('index');
     }
 
-
     public function sub(){
         return view('indexcopy');
     }
-
 
 
       public function kensaku(Request $request){
         // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
         // return response()->json($users);
          // Log::debug($key);
-         Log::debug($request);
-         Log::debug($request->key);
+        //  Log::debug($request->key);
         $key = $request->key;
-        
-        $query = Art::query();
+
+        // $query = Art::query();
 
         if (!empty($key)) {
-            $query->where('jcomme', 'LIKE', "%{$key}%");
+            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
+            ->join('gyos','arts.gid', '=', 'gyos.gid')
+            ->where('jcomme', 'LIKE', "%{$key}%")
+            ->get();
         }
 
-        $arts = $query->get();
+        Log::debug($arts);
 
-        $artss = Art::join('corps', 'arts.cid', '=', 'corps.cid')
+        // $arts = $query->get();
+
+        // $cname = Corp::where('corps', 'arts.cid', '=', 'corps.cid')
                 // ->select('aid', 'cname', 'jcomme')
-                ->join('gyos', 'arts.gid', '=', 'gyos.gid');
-                ->get();
+                // ->join('gyos', 'arts.gid', '=', 'gyos.gid')
+                // ->get();
 
-        //  $arts = Art::where('jcomme','%'.$request->key.'%')->get();
-        // $arts = "3";
+        // $arts = Art::where('jcomme','%'.$request->key.'%')->get();
 
-         //Log::debug($arts);
-         //Log::debug($arts[0]);
-        //  Log::debug($arts->cid);
-          Log::debug($artss);
-            
+        // Log::debug($arts);
+        // Log::debug($arts[0]);
+        // Log::debug($arts->cid);
+        // Log::debug($artss);
 
-
-
-
-
-         
-        return $artss;
-    }
-
-
-
-         $arts = Art::where('jcomme','%'.$request->key.'%')->get();
-        // $arts = "3";
-
-         Log::debug($request->key);
-
-
-
-
-
-         
         return $arts;
     }
 
 
     public function latest(){
-        // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
-        // return response()->json($users);
-        
+        $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
+        return response()->json($users);
+
 
         return view('edit');
     }
