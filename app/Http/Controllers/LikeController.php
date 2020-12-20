@@ -13,7 +13,7 @@ class LikeController extends Controller
 {
     public function like_product(Request $request)
     {
-        // Log::debug($request);
+         Log::debug($request);
         // Log::debug($request->aid);
         // Log::debug($request->like_product);
         
