@@ -85,4 +85,3 @@ document.getElementById('gyo-btn').addEventListener('click',function(){
       break;
   }
 });
-

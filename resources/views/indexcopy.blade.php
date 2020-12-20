@@ -7,7 +7,7 @@
   <!-- リセットcss -->
   <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
   <!-- 後藤田用css -->
-  <link href="{{asset('/css/index.css')}}" rel="stylesheet">
+  <link href="{{asset('/css/indexcopy.css')}}" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <!-- ヘッダー統一用のfontawesome -->
@@ -18,6 +18,7 @@
 
 <!-- HEADER -->
 <header class="header">
+
     <h1>Hoooters</h1>
     <nav>
         <ul>
