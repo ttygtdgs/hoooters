@@ -116,6 +116,14 @@
                                   <img src="{{asset('/pic/icon.png')}}"  class="float">
                                   <p>投稿する</p>
                                 </div>
+<<<<<<< HEAD
+                                <form action="">
+                                  <textarea name="" id="" cols="30" rows="10"></textarea>
+                                </form>
+                                <button class="" style="margin-left: auto;">投稿</button>
+
+
+=======
                                 <form action="" method="">
                                 <!-- <form action="{{ url('/text') }}" method="POST"> -->
                                   {{ csrf_field() }}
@@ -124,6 +132,7 @@
                                   <textarea name="txt" id="txt" cols="40" rows="3" placeholder="コメントを投稿しよう！100文字以内で入力してください" maxlength="100"></textarea>
                                   <input type="button" id="txtbtn" style="margin-left: auto;" value="投稿">
                                 </form>
+>>>>>>> main
                               </div>
                         </div>  
                 </div>
@@ -141,6 +150,9 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="{{ asset('js/like.js') }}"></script>
+<<<<<<< HEAD
+=======
 <script src="{{ asset('js/text.js') }}"></script>
+>>>>>>> main
 </body>
 </html>

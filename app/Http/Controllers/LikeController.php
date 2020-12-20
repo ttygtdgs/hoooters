@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+
 use App\Like;
 use App\User;
 use Auth;
+use Illuminate\Http\Request;
 use Log;
 
 
@@ -13,7 +14,7 @@ class LikeController extends Controller
 {
     public function like_product(Request $request)
     {
-         Log::debug($request);
+        // Log::debug($request);
         // Log::debug($request->aid);
         // Log::debug($request->like_product);
         
