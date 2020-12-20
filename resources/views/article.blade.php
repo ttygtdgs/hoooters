@@ -116,16 +116,14 @@
                                   <img src="{{asset('/pic/icon.png')}}"  class="float">
                                   <p>投稿する</p>
                                 </div>
-                                <form action="">
-                                  <textarea name="" id="" cols="30" rows="10"></textarea>
+                                <form action="{{ url('/text') }}" method="POST">
+                                  <textarea name="txt" id="" cols="40" rows="3" placeholder="コメントを投稿しよう！100文字以内で入力してください" maxlength="100"></textarea>
+                                  <button type="submit"class="" style="margin-left: auto;">投稿</button>
                                 </form>
-                                <button class="" style="margin-left: auto;">投稿</button>
-
-
                               </div>
                         </div>  
                 </div>
-             
+                
               
 
               <div class="right-content">右側

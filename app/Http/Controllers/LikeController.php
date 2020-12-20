@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\Request;
 use App\Like;
 use App\User;
 use Auth;
-use Illuminate\Http\Request;
 use Log;
 
 
