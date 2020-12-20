@@ -7,7 +7,7 @@
   <!-- リセットcss -->
   <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
   <!-- 後藤田用css -->
-  <link href="{{asset('/css/indexcopy.css')}}" rel="stylesheet">
+  <link href="{{asset('/css/index.css')}}" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <!-- ヘッダー統一用のfontawesome -->
@@ -58,21 +58,21 @@
         <div class="left-box">
             <h2 class="left-title">記事フィード</h2>
             <div class="menu-list">
-                <a href="#" class="menu-item act">
+                <a href="#" class="menu-item actmenu">
                     <i class="fas fa-clock"></i>
-                    <p>タイムライン</p>
+                    <p class="list-name">タイムライン</p>
                 </a>
                 <a href="#" class="menu-item">
                     <i class="fas fa-fire-alt"></i>
-                    <p>人気記事</p>
+                    <p class="list-name">人気記事</p>
                 </a>
                 <a href="#" class="menu-item">
                     <i class="fas fa-heart"></i>
-                    <p>お気に入り</p>
+                    <p class="list-name">お気に入り</p>
                 </a>
                 <div class="menu-item" id="gyo-btn">
                     <i class="fas fa-object-ungroup"></i>
-                    <p>業態別</p>
+                    <p class="list-name">業態別</p>
                     <div class="gyo-list-box">
                         <ul class="gyo-list">
                             <!-- gyo-listにclass"act"追加で以下表示-->
@@ -93,7 +93,7 @@
     <div class="right-content">
         <!-- データを引っ張ってくる -->
         <div class="right-title">
-            <i class="fas fa-clock"></i>
+            <i class="fas fa-clock" id="right-title-icon"></i>
             <h2 id="right-theme">タイムライン</h2>
         </div>
         <div class="right-content">
@@ -171,7 +171,7 @@
 
 <!-- ajax用jquery -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="{{ asset('js/index.js') }}"></script>
+<script src="{{ asset('js/index copy.js') }}"></script>
 </body>
 
 </html>

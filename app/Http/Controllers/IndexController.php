@@ -18,6 +18,10 @@ class IndexController extends Controller
         return view('index');
     }
 
+    public function sub(){
+        return view('indexcopy');
+    }
+
 
       public function kensaku(Request $request){
         // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
@@ -29,9 +33,9 @@ class IndexController extends Controller
         // $query = Art::query();
 
         if (!empty($key)) {
-            $arts = Art::where('jcomme', 'LIKE', "%{$key}%")
-            ->join('corps','arts.cid', '=', 'corps.cid')
+            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
             ->join('gyos','arts.gid', '=', 'gyos.gid')
+            ->where('jcomme', 'LIKE', "%{$key}%")
             ->get();
         }
 
