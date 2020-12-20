@@ -116,16 +116,18 @@
                                   <img src="{{asset('/pic/icon.png')}}"  class="float">
                                   <p>投稿する</p>
                                 </div>
-                                <form action="">
-                                  <textarea name="" id="" cols="30" rows="10"></textarea>
+                                <form action="" method="">
+                                <!-- <form action="{{ url('/text') }}" method="POST"> -->
+                                  {{ csrf_field() }}
+                                  <input type="hidden" name='id' id='id' value="{{Auth::user()->id}}" >
+                                  <input type="hidden" name='aid' id='aid' value="1" >
+                                  <textarea name="txt" id="txt" cols="40" rows="3" placeholder="コメントを投稿しよう！100文字以内で入力してください" maxlength="100"></textarea>
+                                  <input type="button" id="txtbtn" style="margin-left: auto;" value="投稿">
                                 </form>
-                                <button class="" style="margin-left: auto;">投稿</button>
-
-
                               </div>
                         </div>  
                 </div>
-             
+                
               
 
               <div class="right-content">右側
@@ -139,5 +141,6 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="{{ asset('js/like.js') }}"></script>
+<script src="{{ asset('js/text.js') }}"></script>
 </body>
 </html>
