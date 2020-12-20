@@ -58,22 +58,22 @@
         </div>
         <div class="left-box">
             <h2 class="left-title">記事フィード</h2>
-            <div class="menu-list">
-                <a href="#" class="menu-item act">
+            <ul class="menu-list">
+                <li href="#" class="menu-item actmenu" id="timeline">
                     <i class="fas fa-clock"></i>
-                    <p>タイムライン</p>
-                </a>
-                <a href="#" class="menu-item">
+                    <p class="list-name">タイムライン</p>
+                </li>
+                <li href="#" class="menu-item" id="popular">
                     <i class="fas fa-fire-alt"></i>
-                    <p>人気記事</p>
-                </a>
-                <a href="#" class="menu-item">
+                    <p class="list-name">人気記事</p>
+                </li>
+                <li href="#" class="menu-item" id="favorite">
                     <i class="fas fa-heart"></i>
-                    <p>お気に入り</p>
-                </a>
-                <div class="menu-item" id="gyo-btn">
+                    <p class="list-name">お気に入り</p>
+                </li>
+                <li class="menu-item" id="gyo-btn">
                     <i class="fas fa-object-ungroup"></i>
-                    <p>業態別</p>
+                    <p class="list-name">業態別</p>
                     <div class="gyo-list-box">
                         <ul class="gyo-list">
                             <!-- gyo-listにclass"act"追加で以下表示-->
@@ -85,8 +85,8 @@
                             <li class="gyo-item">Sier系</li>
                         </ul>
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -94,13 +94,13 @@
     <div class="right-content">
         <!-- データを引っ張ってくる -->
         <div class="right-title">
-            <i class="fas fa-clock"></i>
+            <i class="fas fa-clock" id="right-title-icon"></i>
             <h2 id="right-theme">タイムライン</h2>
         </div>
         <div class="right-content">
             <ul class="tab-wrap">
                 <!-- １記事 -->
-                <div id=futa></div>
+
 
             </ul>
         </div>
