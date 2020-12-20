@@ -123,12 +123,12 @@ main{
   background-color: rgb(228, 228, 228);
 }
 
-.menu-item.act{
+.menu-item.actmenu{
   background-color:rgb(113, 203, 241);
   color: #fff;
 }
 
-.menu-item.act:hover{
+.menu-item.actmenu:hover{
   cursor: pointer;
   background-color:rgb(107, 191, 228);
 
@@ -170,6 +170,7 @@ main{
 }
 
 .gyo-item{
+  color: #979797;
   height: 25px;
   line-height: 25px;
   padding: 0 10px 10px;
