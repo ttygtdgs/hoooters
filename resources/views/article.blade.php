@@ -41,7 +41,7 @@
                 </li>
                 <li>
                   <!--  以下、ログアウト処理-->
-                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  <a href="{{ route('logout') }}" id="logout">
                     <i class="fa fa-sign-out " style="font-size: 2em; color:#fff; " ></i>
                    </a>
                    <form id='logout-form' action={{ route('logout')}} method="POST" style="display: none;">
@@ -82,7 +82,8 @@
                         </a> 
                        @endif
                   
-                      <p class="like-num">225</p>
+                       <p class="like-num">100</p>
+                      
                       <a href="#"><i class="far fa-comments fa-3x"></i></a>
                     </div>
                   </div>
@@ -106,33 +107,49 @@
                                     <h2 class="j-title">諸条件</h2>
                                     <p class="kigyo-comme">サンリオピューロランドはハローキティをはじめとする、たくさんのサンリオキャラクターに触れ合えるテーマパーク。全館屋内型の施設だから、天候を気にせずに思いっきり遊べます！サンリオの世界をより体験できるエリア「サンリオタウン」では、ハローキティ、マイメロディ、リトルツインスターズのそれぞれの世界を体験できちゃいます。その他にも本格的なミュージカルやパレードを上演！子どもから大人まで楽しめるテーマパークです。</p>
                               </div>
+
+                              
                               <div class="comme">
                                 <h2 class="j-title">コメント</h2>
-                                <p class="kigyo-comme">現在、コメントはありません</p>
+                                <ul id="newtext">
+                                @if(count($texts)>0)      
+                                    @foreach ($texts as $texts)
+                                    <li>
+                                      <div class="comme1">
+                                        <div class="comme1_1">
+                                          <div class="comme1_1_1"><img src="{{asset($texts->icon)}}" alt=""></div> 
+                                          <div>＠{{ $texts->name }}</div>
+                                        </div>
+                                        <div class="comme1_2">{{ $texts->textscreated_at }}に投稿</div> 
+                                      </div>
+                                      <br>
+                                      <div class="comme2">{{ $texts->txt }}</div> 
+                                    </li>
+                                    @endforeach
+                                @else
+                                </ul>
+                                <div id="comme3">
+                                  <p >現在、この記事にコメントはありません。</p>
+                                </div>
+                                @endif
                               </div>
+
                               
                              <div class="commepost">
-                                <div>
-                                  <img src="{{asset('/pic/icon.png')}}"  class="float">
+                                <div class="commepost1">
+                                  <img src="{{asset($usersicon)}}"  class="">
                                   <p>投稿する</p>
                                 </div>
-<<<<<<< HEAD
-                                <form action="">
-                                  <textarea name="" id="" cols="30" rows="10"></textarea>
-                                </form>
-                                <button class="" style="margin-left: auto;">投稿</button>
-
-
-=======
-                                <form action="" method="">
-                                <!-- <form action="{{ url('/text') }}" method="POST"> -->
-                                  {{ csrf_field() }}
-                                  <input type="hidden" name='id' id='id' value="{{Auth::user()->id}}" >
-                                  <input type="hidden" name='aid' id='aid' value="1" >
-                                  <textarea name="txt" id="txt" cols="40" rows="3" placeholder="コメントを投稿しよう！100文字以内で入力してください" maxlength="100"></textarea>
-                                  <input type="button" id="txtbtn" style="margin-left: auto;" value="投稿">
-                                </form>
->>>>>>> main
+                                <div class="commepost2">
+                                  <div class="commepost2_1">
+                                    <input type="hidden" name='id' id='id' value="{{Auth::user()->id}}" >
+                                    <input type="hidden" name='aid' id='aid' value="1" >
+                                    <textarea name="txt" id="txt" cols="80" rows="3" placeholder="コメント入力(100文字以内)" maxlength="100" required></textarea>
+                                  </div>
+                                  <div class="commepost2_2">
+                                    <input type="button" id="txtbtn" style="margin-left: auto;" value="投稿">
+                                  </div>
+                                </div>
                               </div>
                         </div>  
                 </div>
@@ -150,9 +167,7 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="{{ asset('js/like.js') }}"></script>
-<<<<<<< HEAD
-=======
 <script src="{{ asset('js/text.js') }}"></script>
->>>>>>> main
+<script src="{{ asset('js/logoutconfirm.js') }}"></script>
 </body>
 </html>

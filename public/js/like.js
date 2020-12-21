@@ -20,10 +20,7 @@ $(function ()
             //正常にコントローラーの処理が完了した場合
             .done(function (data) //コントローラーからのリターンされた値(like_product、つまりクリックした時の状態)をdataとして指定
             {
-<<<<<<< HEAD
-=======
                 //console.log(data);
->>>>>>> main
                 if ( data == 0 ) //like_product=0 いいね押してない状態
                 {
                     //クリックしたタグをいいね押している状態（like_product=1）に変更
