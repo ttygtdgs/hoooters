@@ -28,7 +28,7 @@
             <div class="icon-wrapper">
                 <div class="myicon">
                     <!-- アイコン -->
-                    <img src="pic/icon.png">
+                    <img src="{{$usericon}}">
                 </div>
                 <i class="fas fa-sort-down"></i>
                 <div class="mypage-list none">

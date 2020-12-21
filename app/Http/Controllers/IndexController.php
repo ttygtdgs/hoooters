@@ -7,20 +7,21 @@ use Log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
+$userid = Auth::id();
+Log::debug($userid);
+
 class IndexController extends Controller
 {
     public function top(){
-        $arts = \App\Art::get();
-
+        // $arts = \App\Art::get();
+        $user = Auth::user();
         return view('index',[
-            "arts" => $arts
-
+            // "arts" => $arts,
+            "usericon" => $user->icon
         ]);
     }
 
-    public function sub(){
-        return view('indexcopy');
-    }
 
     public function kensaku(Request $request){
         // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
@@ -72,6 +73,7 @@ class IndexController extends Controller
             ->join('likes','arts.id', '=', 'likes.aid')
             ->select('arts.updated_at as adate','likes.uid','corps.cname','arts.service','gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id')
             ->where('likes.uid', $uid)
+            ->where('arts.life_flg', '=', 1)
             ->orderby('adate','desc')
             ->get();
         }else if($id=='news'){ //新規事業
