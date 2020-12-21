@@ -74,10 +74,10 @@ body{
 }
 
 #leftprofile #leftprofile1 img{
-    object-fit: contain;
-    width: 70%;
-    height: 70%;
-    /* border-radius: 50%; */
+    object-fit:cover;
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
 }
 
 #leftprofile #leftprofile2{
