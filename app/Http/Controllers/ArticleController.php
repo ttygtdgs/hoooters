@@ -14,11 +14,8 @@ use Log;
 class ArticleController extends Controller
 {
     public function article(Art $aid){
-        Log::debug($aid);
+        //Log::debug($aid);
 
-        // 飛ぶ記事の情報
-        
-        
         //飛ぶ記事に紐づくコメントの情報 (ページ遷移時表示用)
         $texts = Text::join('users','texts.uid','=','users.id')->select('texts.created_at as textscreated_at','texts.txt','users.name','users.icon')->orderBy('textscreated_at', 'asc')->where('aid',$aid->id)->get();
 
@@ -35,7 +32,7 @@ class ArticleController extends Controller
         $likescon =  Like::where('uid',Auth::user()->id)->where('aid',$aid->id)->get();
 
         $art = Art::join('corps','arts.cid', '=', 'corps.id')->join('gyos','arts.gid', '=', 'gyos.id')
-        ->join('users','arts.uid', '=', 'users.id')->select('arts.updated_at as adate','corps.cname','arts.service','gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id','corps.curl')->where('arts.life_flg', '=', 1)->where('arts.id',$aid->id)->first();
+        ->join('users','arts.uid', '=', 'users.id')->select('arts.updated_at as adate','corps.cname','arts.service','gid','gyos.gname','arts.jcomme','arts.zcomme','arts.art_img','users.icon','users.name','arts.id','arts.uid','corps.curl')->where('arts.life_flg', '=', 1)->where('arts.id',$aid->id)->first();
 
         Log::debug($art);
         // 「article.blade.php」に遷移 & データを渡す
@@ -49,6 +46,12 @@ class ArticleController extends Controller
             'likescon' => $likescon,
             'art'=> $art,
              ]);
+    }
+
+    public function articledel(Art $art){
+        //Log::debug($art);
+        $art->delete();
+        return redirect('/');
     }
 
 }
