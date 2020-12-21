@@ -21,37 +21,32 @@
 
 <!-- 以下、header----------------------------------------------- -->
 <header class="header">
-        <h1>Hoooters</h1>
-        <nav>
-            <ul>
-                <li>
-                  <a href="{{url('/')}}">
-                    <i class="fa fa-home" style="font-size: 2em; color: #fff;" ></i>
-                   </a>
-                </li>
-                <li>
-                  <a href="{{url('/edit')}}">
-                    <i class="fa fa-newspaper-o " style="font-size: 2em; color: #fff; " ></i>
-                   </a>
-                </li>
-                <li>
-                  <a href="{{url('/mypage')}}">
-                    <i class="fa fa-user-circle-o " style="font-size: 2em; color:#fff; " ></i>
-                   </a>
-                </li>
-                <li>
-                  <!--  以下、ログアウト処理-->
-                  <a href="{{ route('logout') }}" id="logout">
-                    <i class="fa fa-sign-out " style="font-size: 2em; color:#fff; " ></i>
-                   </a>
-                   <form id='logout-form' action={{ route('logout')}} method="POST" style="display: none;">
-                   {{ csrf_field() }}
-                   <!--  以上、ログアウト処理-->
-                </li>
-            </ul>
-        </nav>
-    </header>
-
+    <div class="header-container">
+        <a href="{{url('/')}}" class="header-left">
+            <img src="{{asset('pic/logo.png')}}" alt="Hoooters">
+        </a>
+        <div class="header-right">
+            <a href="{{url('/edit')}}" class="edit-btn">
+                <i class="fas fa-edit"></i>
+                <p>投稿する</p>
+            </a>
+            <div class="icon-wrapper">
+                <div class="myicon">
+                    <!-- アイコン -->
+                    <img src="{{asset($usersicon)}}">
+                </div>
+                <i class="fas fa-sort-down"></i>
+                <div class="mypage-list none">
+                    <a href="{{url('/mypage')}}" id="mypage-btn">マイページ</a>
+                    <div id="logout-btn">ログアウト</div>
+                    <form id='logout-form' action="{{ route('logout')}}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
 <!-- 以上、header----------------------------------------------- -->
 
@@ -87,16 +82,16 @@
                     </div>
                   </div>
               </div>
-
+              
               <div class="middle-content">
                         <div class="feed">
                               <div class="feed-top">
                                   <img src="{{asset('/pic/icon.png')}}"  class="float">
-                                  <p class="kigyo"> @ふーたーず<span class="update-day">2020年12月25日</span>に更新</p>
+                                  <p class="kigyo"> ＠{{$art->name}}さんが<span class="update-day">{{$art->adate}}</span>に更新</p>
                               </div>
                               <div class="cont">
-                                    <p class="corp"><span class="kigyo-name">株式会社サンリオ</span>{{$aid->service}}</p>
-                                    <p class="gyo-tag"><span class="gyo-tag-back">＃Webマーケ</span></p>
+                                    <p class="corp"><span class="kigyo-name">{{$art->cname}}</span>{{$aid->service}}</p>
+                                    <p class="gyo-tag"><span class="gyo-tag-back">＃{{$art->gname}}</span></p>
                                     <img src="{{asset($aid->art_img)}}" class="feed-pict" alt="">
                                     <h2 class="j-title">事業概要</h2>
                                     <p class="kigyo-comme">{{$aid->jcomme}}</p>
@@ -162,11 +157,16 @@
     </main>
 <!-- 以上、main----------------------------------------------- -->
 
+<!-- 以下、footer ----------------------------------------->
+<footer>
+    <p>@G's Academy TOKYO Lab10_Hooters</p>
+</footer>
+<!-- 以上、footer ----------------------------------------->
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="{{ asset('js/like.js') }}"></script>
 <script src="{{ asset('js/text.js') }}"></script>
-<script src="{{ asset('js/logoutconfirm.js') }}"></script>
+<script src="{{ asset('js/header.js') }}"></script>
 </body>
 </html>
