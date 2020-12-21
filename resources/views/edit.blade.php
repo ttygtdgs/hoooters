@@ -15,36 +15,31 @@
 </head>
 <body>
 <header class="header">
-  <h1>Hoooters</h1>
-  <nav>
-    <ul>
-      <li>
-        <a href="{{url('/')}}">
-          <i class="fa fa-home" style="font-size: 2em; color: #fff;" ></i>
+    <div class="header-container">
+        <a href="{{url('/')}}" class="header-left">
+            <img src="pic/logo.png" alt="Hoooters">
         </a>
-      </li>
-      <li>
-        <a href="{{url('/edit')}}">
-          <i class="fa fa-newspaper-o " style="font-size: 2em; color: #fff; " ></i>
-        </a>
-      </li>
-      <li>
-        <a href="{{url('/mypage')}}">
-          <i class="fa fa-user-circle-o " style="font-size: 2em; color:#fff; " ></i>
-        </a>
-      </li>
-      <li>
-        <!--  以下、ログアウト処理-->
-        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-          <i class="fa fa-sign-out " style="font-size: 2em; color:#fff; " ></i>
-        </a>
-          <form id='logout-form' action={{route('logout')}} method="POST" style="display: none;">
-          {{ csrf_field() }}
-          <!--  以上、ログアウト処理-->
-          </form>
-      </li>
-    </ul>
-  </nav>
+        <div class="header-right">
+            <a href="edit" class="edit-btn">
+                <i class="fas fa-edit"></i>
+                <p>投稿する</p>
+            </a>
+            <div class="icon-wrapper">
+                <div class="myicon">
+                    <!-- アイコン -->
+                    <img src="pic/icon.png">
+                </div>
+                <i class="fas fa-sort-down"></i>
+                <div class="mypage-list none">
+                    <a href="{{url('/mypage')}}" id="mypage-btn">マイページ</a>
+                    <div id="logout-btn">ログアウト</div>
+                    <form id='logout-form' action="{{ route('logout')}}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
   <div class="container">
     <form action="{{ url('/edit') }}" enctype="multipart/form-data" method="post">
@@ -196,5 +191,6 @@
 <script src="{{ asset('js/html2canvas.js') }}"></script>
 <script src="{{ asset('js/edit.js') }}"></script>
 <script src="{{ asset('js/canvas.js') }}"></script>
+<script src="{{ asset('js/header.js') }}"></script>
 </body>
 </html>

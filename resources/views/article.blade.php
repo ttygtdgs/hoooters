@@ -69,12 +69,12 @@
                       <!-- like_product=0は、いいね押してない状態 -->
                       <!-- like_product=1は、いいね押してる状態 -->
                       @if(isset($likescon[0] -> like_product))
-                        <a class="iine" aid="{{$aid}}" like_product="1">
+                        <a class="iine" aid="{{$aid->id}}" like_product="1">
                             <!-- これはいいね押してるハート -->
                             <i class="fas fa-heart fa-3x"></i>
                         </a>
                       @else
-                        <a class="iine" aid="{{$aid}}" like_product="0">
+                        <a class="iine" aid="{{$aid->id}}" like_product="0">
                           <!-- これはいいね押してないハート -->
                             <i  class="far fa-heart fa-3x"></i>
                         </a>
@@ -95,16 +95,15 @@
                                   <p class="kigyo"> @ふーたーず<span class="update-day">2020年12月25日</span>に更新</p>
                               </div>
                               <div class="cont">
-                                    <p class="corp"><span class="kigyo-name">株式会社サンリオ</span> ハローキティ事業部</p>
+                                    <p class="corp"><span class="kigyo-name">株式会社サンリオ</span>{{$aid->service}}</p>
                                     <p class="gyo-tag"><span class="gyo-tag-back">＃Webマーケ</span></p>
-
-                                    <img src="{{asset('/pic/example1.png')}}" class="feed-pict" alt="">
+                                    <img src="{{asset($aid->art_img)}}" class="feed-pict" alt="">
                                     <h2 class="j-title">事業概要</h2>
-                                    <p class="kigyo-comme">キティちゃん人形の拡販。きてぃーちゃんタイムズの運用。PROFILEハローキティ 1974年身長はりんご5個分。体重はりんご3個分。明るくて、優しい女のコ。クッキーを作ったり、ピアノをひくのが大好きで、夢はピアニストか、詩人になること。音楽と英語が得意。好きな食べ物は、ママが作ったアップルパイ。双子の妹、ミミィとは大の仲良し。</p>
+                                    <p class="kigyo-comme">{{$aid->jcomme}}</p>
 
 
                                     <h2 class="j-title">諸条件</h2>
-                                    <p class="kigyo-comme">サンリオピューロランドはハローキティをはじめとする、たくさんのサンリオキャラクターに触れ合えるテーマパーク。全館屋内型の施設だから、天候を気にせずに思いっきり遊べます！サンリオの世界をより体験できるエリア「サンリオタウン」では、ハローキティ、マイメロディ、リトルツインスターズのそれぞれの世界を体験できちゃいます。その他にも本格的なミュージカルやパレードを上演！子どもから大人まで楽しめるテーマパークです。</p>
+                                    <p class="kigyo-comme">{{$aid->zcomme}}</p>
                               </div>
 
 
@@ -142,7 +141,7 @@
                                 <div class="commepost2">
                                   <div class="commepost2_1">
                                     <input type="hidden" name='id' id='id' value="{{Auth::user()->id}}" >
-                                    <input type="hidden" name='aid' id='aid' value="{{$aid}}" >
+                                    <input type="hidden" name='aid' id='aid' value="{{$aid->id}}" >
                                     <textarea name="txt" id="txt" cols="80" rows="3" placeholder="コメント入力(100文字以内)" maxlength="100" required></textarea>
                                   </div>
                                   <div class="commepost2_2">
@@ -151,6 +150,7 @@
                                 </div>
                               </div>
                         </div>
+                        
                 </div>
 
 

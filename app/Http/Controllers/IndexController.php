@@ -22,6 +22,10 @@ class IndexController extends Controller
         ]);
     }
 
+    public function sub(){
+        return view('indexcopy');
+    }
+
     public function kensaku(Request $request){
         // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
         // return response()->json($users);
@@ -37,7 +41,7 @@ class IndexController extends Controller
             $arts = Art::join('corps','arts.cid', '=', 'corps.id')
             ->join('gyos','arts.gid', '=', 'gyos.id')
             ->join('users','arts.uid', '=', 'users.id')
-            ->select('arts.updated_at as adate','corps.cname','arts.service','gyos.id','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id')
+            ->select('arts.updated_at as adate','corps.cname','arts.service','gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id')
             ->where('arts.life_flg', '=', 1)
             ->where(function ($query) use ($key){
                 $query->where('arts.jcomme', 'LIKE', "%{$key}%")
@@ -56,76 +60,76 @@ class IndexController extends Controller
             ->orderby('adate','desc')
             ->get();
         }else if($id=='popular'){ //人気記事
-            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
-            ->join('gyos','arts.gid', '=', 'gyos.gid')
+            $arts = Art::join('corps','arts.cid', '=', 'corps.id')
+            ->join('gyos','arts.gid', '=', 'gyos.id')
             ->join('users','arts.uid', '=', 'users.id')
-            ->join('likes','arts.aid', '=', 'likes.aid')
+            ->join('likes','arts.id', '=', 'likes.aid')
             ->groupBy('likes.aid')
-            ->select('arts.updated_at as adate','corps.cname','arts.service','gyos.gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.aid',\DB::raw('COUNT(likes.aid) as likes'))
+            ->select('arts.updated_at as adate','corps.cname','arts.service','gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id',\DB::raw('COUNT(likes.aid) as likes'))
             ->where('arts.life_flg', '=', 1)
             ->orderby('likes','desc')
             ->get();
         }else if($id=='favorite'){ //お気に入り
-            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
-            ->join('gyos','arts.gid', '=', 'gyos.gid')
+            $arts = Art::join('corps','arts.cid', '=', 'corps.id')
+            ->join('gyos','arts.gid', '=', 'gyos.id')
             ->join('users','arts.uid', '=', 'users.id')
-            ->join('likes','arts.aid', '=', 'likes.aid')
-            ->select('arts.updated_at as adate','likes.uid','corps.cname','arts.service','gyos.gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.aid')
+            ->join('likes','arts.id', '=', 'likes.aid')
+            ->select('arts.updated_at as adate','likes.uid','corps.cname','arts.service','gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id')
             ->where('likes.uid', $uid)
             ->orderby('adate','desc')
             ->get();
         }else if($id=='news'){ //新規事業
-            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
-            ->join('gyos','arts.gid', '=', 'gyos.gid')
+            $arts = Art::join('corps','arts.cid', '=', 'corps.id')
+            ->join('gyos','arts.gid', '=', 'gyos.id')
             ->join('users','arts.uid', '=', 'users.id')
-            ->select('arts.updated_at as adate','corps.cname','arts.service','gyos.gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.aid')
+            ->select('arts.updated_at as adate','corps.cname','arts.service','gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id')
             ->where('arts.life_flg', '=', 1)
-            ->where('gyos.gid', '=', 1)
+            ->where('gid', '=', 1)
             ->orderby('adate','desc')
             ->get();
         }else if($id=='webservice'){ //Webサービス
-            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
-            ->join('gyos','arts.gid', '=', 'gyos.gid')
+            $arts = Art::join('corps','arts.cid', '=', 'corps.id')
+            ->join('gyos','arts.gid', '=', 'gyos.id')
             ->join('users','arts.uid', '=', 'users.id')
-            ->select('arts.updated_at as adate','corps.cname','arts.service','gyos.gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.aid')
+            ->select('arts.updated_at as adate','corps.cname','arts.service','gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id')
             ->where('arts.life_flg', '=', 1)
-            ->where('gyos.gid', '=', 2)
+            ->where('gid', '=', 2)
             ->orderby('adate','desc')
             ->get();
         }else if($id=='production'){ //新規事業
-            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
-            ->join('gyos','arts.gid', '=', 'gyos.gid')
+            $arts = Art::join('corps','arts.cid', '=', 'corps.id')
+            ->join('gyos','arts.gid', '=', 'gyos.id')
             ->join('users','arts.uid', '=', 'users.id')
-            ->select('arts.updated_at as adate','corps.cname','arts.service','gyos.gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.aid')
+            ->select('arts.updated_at as adate','corps.cname','arts.service','gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id')
             ->where('arts.life_flg', '=', 1)
-            ->where('gyos.gid', '=', 3)
+            ->where('gid', '=', 3)
             ->orderby('adate','desc')
             ->get();
         }else if($id=='marketing'){ //新規事業
-            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
-            ->join('gyos','arts.gid', '=', 'gyos.gid')
+            $arts = Art::join('corps','arts.cid', '=', 'corps.id')
+            ->join('gyos','arts.gid', '=', 'gyos.id')
             ->join('users','arts.uid', '=', 'users.id')
-            ->select('arts.updated_at as adate','corps.cname','arts.service','gyos.gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.aid')
+            ->select('arts.updated_at as adate','corps.cname','arts.service','gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id')
             ->where('arts.life_flg', '=', 1)
-            ->where('gyos.gid', '=', 4)
+            ->where('gid', '=', 4)
             ->orderby('adate','desc')
             ->get();
         }else if($id=='other'){ //その他
-            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
-            ->join('gyos','arts.gid', '=', 'gyos.gid')
+            $arts = Art::join('corps','arts.cid', '=', 'corps.id')
+            ->join('gyos','arts.gid', '=', 'gyos.id')
             ->join('users','arts.uid', '=', 'users.id')
-            ->select('arts.updated_at as adate','corps.cname','arts.service','gyos.gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.aid')
+            ->select('arts.updated_at as adate','corps.cname','arts.service','gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id')
             ->where('arts.life_flg', '=', 1)
-            ->where('gyos.gid', '=', 5)
+            ->where('gid', '=', 5)
             ->orderby('adate','desc')
             ->get();
         }else if($id=='sier'){ //Sier系
-            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
-            ->join('gyos','arts.gid', '=', 'gyos.gid')
+            $arts = Art::join('corps','arts.cid', '=', 'corps.id')
+            ->join('gyos','arts.gid', '=', 'gyos.id')
             ->join('users','arts.uid', '=', 'users.id')
-            ->select('arts.updated_at as adate','corps.cname','arts.service','gyos.gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.aid')
+            ->select('arts.updated_at as adate','corps.cname','arts.service','gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id')
             ->where('arts.life_flg', '=', 1)
-            ->where('gyos.gid', '=', 6)
+            ->where('gid', '=', 6)
             ->orderby('adate','desc')
             ->get();
         }else{
