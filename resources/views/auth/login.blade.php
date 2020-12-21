@@ -114,9 +114,9 @@
                                         </button>
 
                                         @if (Route::has('password.request'))
-                                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                            <!-- <a class="btn btn-link" href="{{ route('password.request') }}">
                                                 パスワードを忘れた場合
-                                            </a>
+                                            </a> -->
                                         @endif
                                     </div>
                                 </div>

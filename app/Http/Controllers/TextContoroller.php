@@ -33,8 +33,10 @@ class TextContoroller extends Controller
         // $textsnums =  Text::where('aid',1)->get();
         $textsnums =  Text::where('aid',$request->aid)->get();
 
+        $textdate = $texts->textscreated_at->format('Y年m月d日');
+
         // 「text.js」に、情報返す
-        return  [$texts,$textsnums];
+        return  [$texts,$textsnums,$textdate];
 
     }
 }
