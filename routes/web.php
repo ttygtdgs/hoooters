@@ -18,9 +18,9 @@ Route::get('/kensaku','IndexController@kensaku');
 
 // 記事登録ページ（風太担当）
     // ↓とりあえず
-    Route::get('/article', 'ArticleController@article');
+    // Route::get('/article', 'ArticleController@article');
     // ↓こっち完成形
-    // Route::get('/article/{aid}', 'ArticleController@article');
+    Route::get('/article/{aid}', 'ArticleController@article');
 
 Route::get('/edit', 'EditController@edit');
 
