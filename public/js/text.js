@@ -9,17 +9,17 @@ $(function ()
         let txt = $('#txt').val();
         txtbtn = $(this);
             // 情報確認用
-            // console.log(id);
-            // console.log(aid);
-            // console.log(txt);
-            // console.log(txtbtn);
+            console.log(id);
+            console.log(aid);
+            console.log(txt);
+            //console.log(txtbtn);
       
         $.ajax({
             headers: {
                 // csrf対策、「article.blade.php」のheadにcsrf対策のmetaタグも追記
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  
             },
-            url: 'text',  //route.phpで指定したコントローラーのメソッドURLを指定
+            url: 'http://localhost/hoooters/public/text',  //route.phpで指定したコントローラーのメソッドURLを指定
             type: 'POST',   //GETかPOSTメソットを選択
             data: { 'id': id, 'aid': aid, 'txt': txt,}, //コントローラーに送るに名称をつけてデータを指定
                 })
@@ -37,7 +37,7 @@ $(function ()
                     //挿入するhtmlを作成
                     let html = '<li><div class="comme1">';
                     html += '<div class="comme1_1">';
-                    html +='<div><img src="'+data[0].icon.slice(1)+'" alt=""></div>';
+                    html +='<div><img src="http://localhost/hoooters/public/'+data[0].icon+'" alt=""></div>';
                     html +='<div>＠'+data[0].name+'</div>';
                     html +='</div>';
                     html +='<div class="comme1_2">'+data[0].textscreated_at+'に投稿</div>';
@@ -63,7 +63,7 @@ $(function ()
             .fail(function (data)
             {
                 alert('コメント投稿処理失敗');
-                alert(JSON.stringify(data));
+                // alert(JSON.stringify(data));
             });
         
     });
