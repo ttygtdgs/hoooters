@@ -173,10 +173,9 @@ body{
 
 }
 
-/* #leftprofile #leftprofile3 a{
-    padding-left: 20px;
-    padding-right: 20px;
-} */
+#leftprofile #leftprofile3 a{
+   padding: 0 15px;
+}
 
 
 #leftprofile #leftprofile4{
