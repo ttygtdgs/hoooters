@@ -57,7 +57,7 @@ function ajax(id,key){
         const date = data[i]['adate'].substr(8,2);
         html =  '<li class="feed">' +
                 '<div class="feed-left">'+
-                    '<a href="#" class="kigyo-name">'+data[i]['cname']+'</a>'+
+                    '<a href="/article/{{'+data[i]['aid']+'}}" class="kigyo-name">'+data[i]['cname']+'</a>'+
                     '<p class="jigyo">'+data[i]['service']+'</p>'+
                     '<div class="gyoicon" id="gyoid'+data[i]['gid']+'">'+data[i]['gname']+'</div>'+
                     '<div class="kigyo-comme">'+data[i]['jcomme'].replace(/\r?\n/g, '<br>')+'</div></div>'+
