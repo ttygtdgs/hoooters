@@ -9,7 +9,7 @@
  <!-- Font Awesome -->
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
  <!-- fontawsome -->
- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
   <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
   <!-- articleページ用css -->
@@ -86,8 +86,8 @@
               <div class="middle-content">
                         <div class="feed">
                               <div class="feed-top">
-                                  <img src="{{asset('/pic/icon.png')}}"  class="float">
-                                  <p class="kigyo"> ＠{{$art->name}}さんが<span class="update-day">{{$art->adate}}</span>に更新</p>
+                                  <img src="{{asset($art->icon)}}"  class="float">
+                                  <p class="kigyo"> ＠{{$art->name}}さんが<span class="update-day">{{$art->adate->format('Y年m月d日')}}</span>に更新</p>
                               </div>
                               <div class="cont">
                                   
@@ -133,7 +133,7 @@
                                           <div class="comme1_1_1"><img src="{{asset($texts->icon)}}" alt=""></div>
                                           <div>＠{{ $texts->name }}</div>
                                         </div>
-                                        <div class="comme1_2">{{ $texts->textscreated_at }}に投稿</div>
+                                        <div class="comme1_2">{{ $texts->textscreated_at->format('Y年m月d日') }}に投稿</div>
                                       </div>
                                       <br>
                                       <div class="comme2">{{ $texts->txt }}</div>
