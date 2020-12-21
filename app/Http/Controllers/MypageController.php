@@ -19,8 +19,8 @@ class MypageController extends Controller
         $user = Auth::user();
         $usersicon=$user->icon;
         // 上の$usersiconでassetヘルパー関数の引数に入れても画像は表示されない→{{asset('{{$usersicon}}')}}。''で囲むと文字列になって、ヘルパー関数使えないか?
-        $usersicon=asset($usersicon);
-        Log::debug($user);
+        // $usersicon=asset($usersicon);
+        // Log::debug($user);
 
         $artcount = Art::where('uid',$user->id)->count();
         $likecount = Like::where('uid',$user->id)->count();
