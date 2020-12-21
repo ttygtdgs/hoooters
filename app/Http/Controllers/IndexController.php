@@ -8,10 +8,18 @@ use App\Gyo;
 use App\Like;
 use App\Text;
 use App\User;
+use Auth;
+
+
+
 use Log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
+
+$userid = Auth::id();
+Log::debug($userid);
 
 class IndexController extends Controller
 {
