@@ -26,31 +26,35 @@ $(function ()
             //正常にコントローラーの処理が完了した場合
             .done(function (data) //コントローラーからのリターンされた値(like_product、つまりクリックした時の状態)をdataとして指定
             {
-                // let html = '<div>'+data.icon+'</div>';
-                // html += '<div>'+data.name+'</div>';
-                // html += '<div>'+data.txt+'</div>';
-                // html += '<div>'+data.textscreated_at+'</div>';
-                // html += '<hr>';
-                $('#comme3').remove();
+                // 確認用
+                // console.log(data);
+                // console.log(data[0].icon);
 
-                let html = '<li><div class="comme1">';
-                html += '<div class="comme1_1">';
-                html +='<div><img src="'+data.icon.slice(1)+'" alt=""></div>';
-                html +='<div>＠'+data.name+'</div>';
-                html +='</div>';
-                html +='<div class="comme1_2">'+data.textscreated_at+'に投稿</div>';
-                html +='</div>';
-                html +='<br>';
-                html +='<div class="comme2">'+data.txt+'</div></li>';
-                 // console.log(html);
-                 console.log(data.icon);
-                
-                 
+                //①コメント覧の対応
+                    // コメントがない場合のhtmlを消去
+                    $('#comme3').remove();
+            
+                    //挿入するhtmlを作成
+                    let html = '<li><div class="comme1">';
+                    html += '<div class="comme1_1">';
+                    html +='<div><img src="'+data[0].icon.slice(1)+'" alt=""></div>';
+                    html +='<div>＠'+data[0].name+'</div>';
+                    html +='</div>';
+                    html +='<div class="comme1_2">'+data[0].textscreated_at+'に投稿</div>';
+                    html +='</div>';
+                    html +='<br>';
+                    html +='<div class="comme2">'+data[0].txt+'</div></li>';
+                    // console.log(html);
+                    //console.log(data.icon);
+                    
+                    //htmlを挿入
+                    $(newtext).append(html);
 
-                $(newtext).append(html);
+                    // 入力フォームのデータを空にする
+                    $('#txt').val("");
 
-                 // 入力フォームのデータを空にする
-                $('#txt').val("");
+                //②コメント数の対応
+                $('.like-num2').html(data[1].length);
                 
                 // ajax成功アラート
                 // alert('コメント投稿成功')

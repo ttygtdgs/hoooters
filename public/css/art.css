@@ -73,12 +73,17 @@ body{
   opacity: 0.6;
 }
 
-.like-num{
+.like-num1{
   font-size: 4vh;
   font-weight:bold;
   padding-top:4vh;
 }
 
+.like-num2{
+  font-size: 4vh;
+  font-weight:bold;
+  padding-top:4vh;
+}
 
 .middle-content{
   width:60%;
@@ -86,6 +91,8 @@ body{
   background-color: white;
   padding-bottom: 20px;
 }
+
+
 
 
 .feed{
