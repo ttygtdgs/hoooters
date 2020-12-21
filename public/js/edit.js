@@ -88,7 +88,7 @@ function csearch(key){
     }
     for(let i = 0; i<val.length; i++){
       const li = document.createElement("li");
-      li.id = val[i]["cid"];
+      li.id = val[i]["id"];
       li.className = 'citem';
       li.innerHTML = '<p>'+val[i]["cname"]+'</p><button type="button" class="choice-btn">選択</button>';
       cresult.appendChild(li);
