@@ -170,11 +170,22 @@ body {
 }
 
 .feed-top {
-    height: 5vh;
+    /* height: 5vh;
     top: 1vh;
     margin-left: 1vw;
     position: absolute;
-    display: contents;
+    display: contents; */
+   
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.feed-top img{
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
 }
 
 .feed-icon {
@@ -207,11 +218,11 @@ span {
 
 .kigyo {
     font-size: 3vh;
-    color: red;
+    color: gray;
     margin-top: 0vh;
     display: block;
     padding-top: 4.5vh;
-    margin-left: 3vw;
+    margin-left: 5px;
 }
 
 .update-day {
@@ -225,6 +236,7 @@ span {
     align-items: center;
     width: 90%;
     padding-top: 3vh;
+    margin-left: 2vw;
 }
 
 .deletearea p {
@@ -280,7 +292,7 @@ span.gyo-tag-back {
 
 .gyo-tag {
     padding-top: 2vh;
-    padding-left: 7vw;
+    padding-left: 50px;
 }
 
 h2.j-title {
