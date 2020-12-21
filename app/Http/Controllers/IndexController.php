@@ -1,14 +1,25 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Art;
 use App\Corp;
 use App\Gyo;
 use App\Like;
 use App\Text;
 use App\User;
+use Auth;
+
+
+
 use Log;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+
+$userid = Auth::id();
+Log::debug($userid);
 
 class IndexController extends Controller
 {
@@ -25,12 +36,11 @@ class IndexController extends Controller
         // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
         // return response()->json($users);
         //  Log::debug($request->key);
+        Log::debug(Auth::id());
+        $uid = Auth::id();
         $id = $request->id;
-        Log::debug($id);
         $key = $request->key;
-        $uid = $request->uid;
-
-        // $query = Art::query();
+        // $uid = $request->uid;
 
         if (!empty($key) || $key!=null) {
             $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
@@ -69,10 +79,9 @@ class IndexController extends Controller
             ->join('gyos','arts.gid', '=', 'gyos.gid')
             ->join('users','arts.uid', '=', 'users.id')
             ->join('likes','arts.aid', '=', 'likes.aid')
-            ->select('arts.updated_at as adate','corps.cname','arts.service','gyos.gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','likes.aid as likesart','likes.uid as mylikes')
-            ->where('mylikes', '=', $uid)
-            ->whereNotNull('likesart')
-            ->orderby('likes','desc')
+            ->select('arts.updated_at as adate','likes.uid as likeuid','corps.cname','arts.service','gyos.gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name')
+            ->where('likeuid', '=', $uid)
+            ->orderby('adate','desc')
             ->get();
         }else if($id=='news'){ //新規事業
             $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
