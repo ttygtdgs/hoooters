@@ -44,6 +44,7 @@ function ajax(id,key){
   $.ajax({
     type: 'get',
     url: 'http://localhost/hoooters/public/kensaku' , //web.phpのURLと同じ形にする
+    // url: 'https://cheeseac-lab1020.sakura.ne.jp/hoooters/public/kensaku' , //web.phpのURLと同じ形にする
     data: {'id':id,'key': key},
   }).done(function(data){
     $('.tab-wrap').children().remove();
