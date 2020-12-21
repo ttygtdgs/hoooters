@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 
 // 一覧ページ（後藤田担当）
 Route::get('/', 'IndexController@top');
-Route::get('/indexcopy', 'IndexController@sub');
 Route::get('/latest', 'IndexController@latest');
 
 // ajaxの検索機能
@@ -24,7 +23,7 @@ Route::get('/kensaku','IndexController@kensaku');
     Route::get('/article/{aid}', 'ArticleController@article');
 
 Route::delete('/article/{art}',  'ArticleController@articledel');
-        
+
 Route::get('/edit', 'EditController@edit');
 
 Route::post('/edit', 'EditController@register');

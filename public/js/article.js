@@ -12,8 +12,9 @@ $(function ()
         $.ajax({
             headers: {
                 // csrf対策、「article.blade.php」のheadにcsrf対策のmetaタグも追記
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
+            // url: 'https://cheeseac-lab1020.sakura.ne.jp/hoooters/public/like_product',  //route.phpで指定したコントローラーのメソッドURLを指定
             url: 'http://localhost/hoooters/public/like_product',  //route.phpで指定したコントローラーのメソッドURLを指定
             type: 'POST',   //GETかPOSTメソットを選択
             data: { 'aid': aid, 'like_product': like_product, }, //コントローラーに送るに名称をつけてデータを指定
@@ -22,9 +23,9 @@ $(function ()
             .done(function (data) //コントローラーからのリターンされた値(like_product、つまりクリックした時の状態)をdataとして指定
             {
                 console.log(data);
-                
+
                 console.log(data[0]);
-           
+
                 if ( data[0] == 0 ) //like_product=0 いいね押してない状態
                 {
                     //クリックしたタグをいいね押している状態（like_product=1）に変更
@@ -69,13 +70,14 @@ $(function ()
             console.log(aid);
             console.log(txt);
             //console.log(txtbtn);
-      
+
         $.ajax({
             headers: {
                 // csrf対策、「article.blade.php」のheadにcsrf対策のmetaタグも追記
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             url: 'http://localhost/hoooters/public/text',  //route.phpで指定したコントローラーのメソッドURLを指定
+            // url: 'https://cheeseac-lab1020.sakura.ne.jp/hoooters/public/text',  //route.phpで指定したコントローラーのメソッドURLを指定
             type: 'POST',   //GETかPOSTメソットを選択
             data: { 'id': id, 'aid': aid, 'txt': txt,}, //コントローラーに送るに名称をつけてデータを指定
                 })
@@ -89,11 +91,11 @@ $(function ()
                 //①コメント覧の対応
                     // コメントがない場合のhtmlを消去
                     $('#comme3').remove();
-            
+
                     //挿入するhtmlを作成
                     let html = '<li><div class="comme1">';
                     html += '<div class="comme1_1">';
-                    html +='<div><img src="http://localhost/hoooters/public/'+data[0].icon+'" alt=""></div>';
+                    html +='<div><img src="public/'+data[0].icon+'" alt=""></div>';
                     html +='<div>＠'+data[0].name+'</div>';
                     html +='</div>';
                     html +='<div class="comme1_2">'+data[0].textscreated_at+'に投稿</div>';
@@ -102,7 +104,7 @@ $(function ()
                     html +='<div class="comme2">'+data[0].txt+'</div></li>';
                     // console.log(html);
                     //console.log(data.icon);
-                    
+
                     //htmlを挿入
                     $(newtext).append(html);
 
@@ -111,7 +113,7 @@ $(function ()
 
                 //②コメント数の対応
                 $('.like-num2').html(data[1].length);
-                
+
                 // ajax成功アラート
                 // alert('コメント投稿成功')
             })
@@ -121,7 +123,7 @@ $(function ()
                 alert('コメント投稿処理失敗');
                 // alert(JSON.stringify(data));
             });
-        
+
     });
 });
 // 以上、コメント機能の処理--------------------------

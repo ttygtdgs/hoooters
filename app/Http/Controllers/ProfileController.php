@@ -23,31 +23,31 @@ class ProfileController extends Controller
         $validator = Validator::make($request->all(), [
             'id' => 'required',
             // 以下、nameとemailの条件は「RegisterController.php」と同じ
-            'name' => 'required|string|max:255', 
-            'email' => 'required|string|email|max:255', 
-            // 'icon' => '', 
-            'intro' => 'max:100', 
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            // 'icon' => '',
+            'intro' => 'max:100',
             // 'site' => 'url',
          ]);
-        
+
          //バリデーション:エラー
          if ($validator->fails()) {
-            return redirect('mypage') 
+            return redirect('mypage')
                     // withInput()でセッションに情報保存。inputのvalue注意。テキストp90
                     ->withInput()
-                    ->withErrors($validator); 
+                    ->withErrors($validator);
          }
 
          //アイコン 取得
         $file = $request->file('icon'); //file が空かチェック
         if( !empty($file) ){
             //アイコン名を取得
-            $filename = '/pic/'.date("YmdHis").$file->getClientOriginalName(); //AWSの場合どちらかになる事がある”../upload/” or “./upload/”
+            $filename = './pic/'.date("YmdHis").$file->getClientOriginalName(); //AWSの場合どちらかになる事がある”../upload/” or “./upload/”
             $file->move('./pic/',$filename);
         }else{
             $filename = Auth::user()->icon;
         }
-        
+
         //データ登録
         $users = User::find($request->id);
         $users->name = $request->name;
@@ -62,7 +62,7 @@ class ProfileController extends Controller
         // 下はエラーチェック用
         // return redirect('profile');
         return redirect('mypage');
-       
+
     }
-    
+
 }
