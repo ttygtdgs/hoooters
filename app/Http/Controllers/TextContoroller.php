@@ -28,10 +28,12 @@ class TextContoroller extends Controller
         // orderByで、textsテーブルの「textscreated_at」で並び替え。最後にfirstで一番上のデータだけとってくる
         $texts = Text::join('users','texts.id','=','users.id')->select('texts.created_at as textscreated_at','texts.txt','users.name','users.icon')->orderBy('textscreated_at', 'desc')->first();
 
-        // $texts = Text::orderBy('created_at', 'desc')->first();
+        
+        // 対応するaidのデータのみとってくる。ここの「1」を変更！
+        $textsnums =  Text::where('aid',1)->get();
 
         // 「text.js」に、情報返す
-        return  $texts;
+        return  [$texts,$textsnums];
 
     }
 }
