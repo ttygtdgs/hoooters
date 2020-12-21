@@ -15,24 +15,42 @@ class IndexController extends Controller
     public function top(){
         $arts = \App\Art::get();
 
-        return view('index');
+        return view('index',[
+            "arts" => $arts
+
+        ]);
     }
 
-
-      public function kensaku(Request $request){
+    public function kensaku(Request $request){
         // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
         // return response()->json($users);
-         // Log::debug($key);
         //  Log::debug($request->key);
+        $id = $request->id;
+        Log::debug($id);
+
         $key = $request->key;
 
         // $query = Art::query();
 
-        if (!empty($key)) {
-            $arts = Art::where('jcomme', 'LIKE', "%{$key}%")
-            ->join('corps','arts.cid', '=', 'corps.cid')
+        if (!empty($key) || $key!=null) {
+            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
             ->join('gyos','arts.gid', '=', 'gyos.gid')
+            ->join('users','arts.uid', '=', 'users.id')
+            ->where('jcomme', 'LIKE', "%{$key}%")
+            ->where('zcomme', 'LIKE', "%{$key}%")
+            ->orWHERE('cname', 'LIKE', "%{$key}%")
+            ->orWHERE('service', 'LIKE', "%{$key}%")
             ->get();
+        }else if($id=='timeline'){
+            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
+            ->join('gyos','arts.gid', '=', 'gyos.gid')
+            ->join('users','arts.uid', '=', 'users.id')
+            // ->orderby('update_at','desc')
+            ->get();
+        }else if($id=='popular'){
+
+        }else if($id=='favorite'){
+
         }
 
         Log::debug($arts);
@@ -44,23 +62,10 @@ class IndexController extends Controller
                 // ->join('gyos', 'arts.gid', '=', 'gyos.gid')
                 // ->get();
 
-        // $arts = Art::where('jcomme','%'.$request->key.'%')->get();
 
-        // Log::debug($arts);
-        // Log::debug($arts[0]);
-        // Log::debug($arts->cid);
-        // Log::debug($artss);
 
-        return $arts;
+        return response()->json($arts);
     }
 
-
-    public function latest(){
-        $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
-        return response()->json($users);
-
-
-        return view('edit');
-    }
 
 }
