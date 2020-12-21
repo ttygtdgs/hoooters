@@ -14,7 +14,7 @@ class CreateArtsTable extends Migration
     public function up()
     {
         Schema::create('arts', function (Blueprint $table) {
-            $table->increments('aid');
+            $table->increments('id');
             $table->integer('uid');
             $table->integer('cid')->nullable();
             $table->integer('gid')->nullable();

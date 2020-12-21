@@ -14,7 +14,7 @@ class CreateCorpsTable extends Migration
     public function up()
     {
         Schema::create('corps', function (Blueprint $table) {
-            $table->increments('cid');
+            $table->increments('id');
             $table->string('cname');
             $table->string('curl');
             $table->timestamps();
