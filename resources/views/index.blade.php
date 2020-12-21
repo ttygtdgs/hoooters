@@ -92,9 +92,7 @@
         </div>
         <div class="right-content">
             <ul class="tab-wrap">
-                <!-- １記事 -->
-
-
+                <!-- 記事 -->
             </ul>
         </div>
     </div>
