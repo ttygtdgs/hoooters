@@ -43,7 +43,7 @@ class ProfileController extends Controller
         if( !empty($file) ){
             //アイコン名を取得
             $filename = '/pic/'.date("YmdHis").$file->getClientOriginalName(); //AWSの場合どちらかになる事がある”../upload/” or “./upload/”
-            $move = $file->move('./pic/',$filename);
+            $file->move('./pic/',$filename);
         }else{
             $filename = Auth::user()->icon;
         }
