@@ -52,15 +52,15 @@
         <div class="left-box">
             <h2 class="left-title">記事フィード</h2>
             <ul class="menu-list">
-                <li href="#" class="menu-item actmenu" id="timeline">
+                <li class="menu-item actmenu" id="timeline">
                     <i class="fas fa-clock"></i>
                     <p class="list-name">タイムライン</p>
                 </li>
-                <li href="#" class="menu-item" id="popular">
+                <li class="menu-item" id="popular">
                     <i class="fas fa-fire-alt"></i>
                     <p class="list-name">人気記事</p>
                 </li>
-                <li href="#" class="menu-item" id="favorite">
+                <li class="menu-item" id="favorite">
                     <i class="fas fa-heart"></i>
                     <p class="list-name">お気に入り</p>
                 </li>
