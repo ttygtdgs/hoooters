@@ -69,12 +69,12 @@
                       <!-- like_product=0は、いいね押してない状態 -->
                       <!-- like_product=1は、いいね押してる状態 -->
                       @if(isset($likescon[0] -> like_product))
-                        <a class="iine" aid="{{$aid}}" like_product="1">
+                        <a class="iine" aid="{{$aid->id}}" like_product="1">
                             <!-- これはいいね押してるハート -->
                             <i class="fas fa-heart fa-3x"></i>
                         </a>
                       @else
-                        <a class="iine" aid="{{$aid}}" like_product="0">
+                        <a class="iine" aid="{{$aid->id}}" like_product="0">
                           <!-- これはいいね押してないハート -->
                             <i  class="far fa-heart fa-3x"></i>
                         </a>
@@ -142,7 +142,7 @@
                                 <div class="commepost2">
                                   <div class="commepost2_1">
                                     <input type="hidden" name='id' id='id' value="{{Auth::user()->id}}" >
-                                    <input type="hidden" name='aid' id='aid' value="{{$aid}}" >
+                                    <input type="hidden" name='aid' id='aid' value="{{$aid->id}}" >
                                     <textarea name="txt" id="txt" cols="80" rows="3" placeholder="コメント入力(100文字以内)" maxlength="100" required></textarea>
                                   </div>
                                   <div class="commepost2_2">
@@ -151,6 +151,7 @@
                                 </div>
                               </div>
                         </div>
+                        
                 </div>
 
 

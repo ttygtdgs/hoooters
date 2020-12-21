@@ -14,9 +14,9 @@ class LikeController extends Controller
 {
     public function like_product(Request $request)
     {
-        // Log::debug($request);
-        // Log::debug($request->aid);
-        // Log::debug($request->like_product);
+        Log::debug($request);
+        Log::debug($request->aid);
+        Log::debug($request->like_product);
 
          if ( $request->input('like_product') == 0) {
             //like_product=0(いいね押してない状態)のときはデータベースに情報を保存
