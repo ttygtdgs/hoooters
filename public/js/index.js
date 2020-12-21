@@ -3,18 +3,20 @@ $('#key').on('keydown', function(e)
 {
   if(e.key === 'Enter'){
       const key = $('#key').val(); //検索ワードを取得
-      console.log(key);
 
       // 空欄だったらそのまま
       if(key==""){
-        return false;
-      };
+        return;
+      }else{
+        document.getElementById('right-title-icon').setAttribute('class','fas fa-search');
+        document.getElementById('right-theme').textContent = key;
 
-      ajax('search',key);
+        ajax('search',key);
+        $('#key').val("");
+        $('#key').blur();
+        $('#key').attr('placeholder','キーワードを入力');
+      }
 
-      $('#key').val("");
-      $('#key').blur();
-      $('#key').attr('placeholder','キーワードを入力');
 }});
 
 //メニュー検索
@@ -70,7 +72,7 @@ function ajax(id,key){
                     '<div class="icon-img">'+
                         '<img src="'+data[i]['icon']+'"  class="float">'+
                     '</div>'+
-                    '<p class="kigyo">@' +year+'年'+month+'月'+date+'日に投稿'+'</p>'+
+                    '<p class="artuser">'+data[i]['name']+'さんが'+year+'年'+month+'月'+date+'日に投稿'+'</p>'+
                 '</div>'+
             '</li>'
 
