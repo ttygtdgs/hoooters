@@ -11,10 +11,10 @@ class CsearchController extends Controller
     public function search(Request $request){
 
         if($request->keyword=='null'){
-            $result = Corp::all('cname','cid');
+            $result = Corp::all('cname','id');
             return response()->json($result);
         }else{
-            $result = Corp::where('cname','like','%'.$request->keyword.'%')->select('cid','cname')->get();
+            $result = Corp::where('cname','like','%'.$request->keyword.'%')->select('id','cname')->get();
             // Log::debug($result);
             return response()->json($result);
         }
