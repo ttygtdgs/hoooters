@@ -76,6 +76,7 @@ class IndexController extends Controller
             ->join('likes','arts.id', '=', 'likes.aid')
             ->select('arts.updated_at as adate','likes.uid','corps.cname','arts.service','gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id')
             ->where('likes.uid', $uid)
+            ->where('arts.life_flg', '=', 1)
             ->orderby('adate','desc')
             ->get();
         }else if($id=='news'){ //新規事業

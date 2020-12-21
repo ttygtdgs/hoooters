@@ -46,7 +46,7 @@
     {{ csrf_field() }}
       <!-- タイトル---------------------------------->
       <!-- uid -->
-      <input type="hidden" name="uid" id="uid" value="1">
+      <input type="hidden" name="uid" id="uid" value="{{Auth::id()}}">
       <div class="title-wrapper">
         <div class="title-top">
           <div class="corp-wrapper">
@@ -99,7 +99,7 @@
         <div class="main-wrapper">
           <div class="image-wrapper">
             <div class="image-top">
-              <div class="ilabel tlabel">ピクト図</div>
+              <div class="ilabel tlabel">モデル図</div>
               <div class="imenu-wrapper">
                 <ul class="imenu">
                   <li class="imenu-item"><i class="fas fa-font"></i></li>
@@ -129,7 +129,7 @@
           <div class="comment-wrapper">
             <div class="jcomme-wrapper">
               <div class="j-top">
-                <div class="jlabel tlabel">コメント</div>
+                <div class="jlabel tlabel">概要</div>
               </div>
               <textarea name="jcomme" id="jcomme" placeholder="サービスの具体的な内容や、企業の良い点・悪い点などを紹介してください。"></textarea>
             </div>

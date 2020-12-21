@@ -23,6 +23,8 @@ Route::get('/kensaku','IndexController@kensaku');
     // ↓こっち完成形
     Route::get('/article/{aid}', 'ArticleController@article');
 
+Route::delete('/article/{art}',  'ArticleController@articledel');
+        
 Route::get('/edit', 'EditController@edit');
 
 Route::post('/edit', 'EditController@register');
