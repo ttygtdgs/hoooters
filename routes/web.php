@@ -52,3 +52,13 @@ Route::post('/like_product', 'LikeController@like_product');
 
 // テキスト投稿用
 Route::post('/text', 'TextContoroller@text');
+
+// ウェルカムページ
+Route::get('/welcome', function () { return view('welcome');
+});
+
+Route::get('/login', function () { return view('auth.login');
+});
+
+Route::get('/register', function () { return view('auth.register');
+});
