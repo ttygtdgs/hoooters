@@ -43,9 +43,9 @@ class IndexController extends Controller
                 $query->where('arts.jcomme', 'LIKE', "%{$key}%")
                     ->orWhere('arts.zcomme', 'LIKE', "%{$key}%")
                     ->orWhere('corps.cname', 'LIKE', "%{$key}%")
-                    ->orWhere('arts.service', 'LIKE', "%{$key}%")
-                    ->orderBy('adate','desc');
-            })
+                    ->orWhere('arts.service', 'LIKE', "%{$key}%");
+                })
+            ->orderBy('adate','desc')
             ->get();
         }else if($id=='timeline'){ //タイムライン
             $arts = Art::join('corps','arts.cid', '=', 'corps.id')
