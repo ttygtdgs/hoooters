@@ -14,17 +14,14 @@ Log::debug($userid);
 class IndexController extends Controller
 {
     public function top(){
-        $arts = \App\Art::get();
-
+        // $arts = \App\Art::get();
+        $user = Auth::user();
         return view('index',[
-            "arts" => $arts
-
+            // "arts" => $arts,
+            "usericon" => $user->icon
         ]);
     }
 
-    public function sub(){
-        return view('indexcopy');
-    }
 
     public function kensaku(Request $request){
         // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
