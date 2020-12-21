@@ -95,10 +95,11 @@ $(function ()
                     //挿入するhtmlを作成
                     let html = '<li><div class="comme1">';
                     html += '<div class="comme1_1">';
-                    html +='<div><img src="public/'+data[0].icon+'" alt=""></div>';
+                    html +='<div><img src="http://localhost/hoooters/public/'+data[0].icon+'" alt=""></div>';
+                    //html +='<div><img src="https://cheeseac-lab1020.sakura.ne.jp/hoooters/public/'+data[0].icon+'" alt=""></div>';
                     html +='<div>＠'+data[0].name+'</div>';
                     html +='</div>';
-                    html +='<div class="comme1_2">'+data[0].textscreated_at+'に投稿</div>';
+                    html +='<div class="comme1_2">'+data[2]+'に投稿</div>';
                     html +='</div>';
                     html +='<br>';
                     html +='<div class="comme2">'+data[0].txt+'</div></li>';
