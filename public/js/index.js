@@ -20,10 +20,15 @@ $('#key').on('keydown', function(e)
 //メニュー検索
 $('.menu-item').on('click',function(){
   const id = $(this).attr('id');
-  console.log(id);
   if(id=='gyo-btn'){
     return false;
+  }else{
+    ajax(id);
   }
+});
+
+$('.gyo-item').on('click',function(){
+  const id = $(this).attr('id');
   ajax(id);
 });
 
@@ -40,17 +45,22 @@ function ajax(id,key){
     data: {'id':id,'key' : key},
   }).done(function(data){
     $('.tab-wrap').children().remove();
-      console.log(data);
-
-      let html;
-
+    console.log(data);
+    let html;
+    if(data==""){
+      html = '<div class="error-wrapper"><div class="error-message">該当する記事はありません。</div></div>';
+      $('.tab-wrap').append(html);
+    }else{
       for(let i=0; i<data.length; i++){
+        const year = data[i]['adate'].substr(0,4);
+        const month = data[i]['adate'].substr(5,2);
+        const date = data[i]['adate'].substr(8,2);
         html =  '<li class="feed">' +
                 '<div class="feed-left">'+
                     '<a href="#" class="kigyo-name">'+data[i]['cname']+'</a>'+
                     '<p class="jigyo">'+data[i]['service']+'</p>'+
                     '<div class="gyoicon" id="gyoid'+data[i]['gid']+'">'+data[i]['gname']+'</div>'+
-                    '<div class="kigyo-comme">'+data[i]['jcomme']+'</div></div>'+
+                    '<div class="kigyo-comme">'+data[i]['jcomme'].replace(/\r?\n/g, '<br>')+'</div></div>'+
 
                 '<div class="feed-right">'+
                     '<img src="'+data[i]['art_img']+'" class="feed-pict">'+
@@ -60,19 +70,18 @@ function ajax(id,key){
                     '<div class="icon-img">'+
                         '<img src="'+data[i]['icon']+'"  class="float">'+
                     '</div>'+
-                    '<p class="kigyo">@' +data[i]['name']+'が2020年12月25日に投稿'+'</p>'+
+                    '<p class="kigyo">@' +year+'年'+month+'月'+date+'日に投稿'+'</p>'+
                 '</div>'+
             '</li>'
 
                 ;
         $('.tab-wrap').append(html);
       };
-
-
+    };
   }).fail(function(){
     alert('ajax失敗')
   });
-}
+};
 
 
 //メニューバーの処理

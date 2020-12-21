@@ -57,7 +57,6 @@
 
 
 <!-- 以下、main----------------------------------------------- -->
-
     <main>
 
         <div class="wrapper">
@@ -65,12 +64,11 @@
               <div class="left-content">
                   <div class="like-icon">
                     <div class="page_top">
-                      <p class="like-num">100</p>
+                      <p class="like-num1">{{count($likesnums)}}</p>
                       <!-- aidのデータ連携！！！！！！ -->
                       <!-- like_product=0は、いいね押してない状態 -->
                       <!-- like_product=1は、いいね押してる状態 -->
-                      <!-- 下のif~else部分は機能してないから、ページ遷移時に、データを引き渡す -->
-                      @if(isset($like->like_products[0]))
+                      @if(isset($likescon[0] -> like_product))
                         <a class="iine" aid="1" like_product="1">
                             <!-- これはいいね押してるハート -->
                             <i class="fas fa-heart fa-3x"></i>
@@ -82,9 +80,10 @@
                         </a> 
                        @endif
                   
-                       <p class="like-num">100</p>
-                      
-                      <a href="#"><i class="far fa-comments fa-3x"></i></a>
+                       <p class="like-num2">{{count($textsnums)}}</p>
+                      <!-- <a href="#"> -->
+                        <i class="far fa-comments fa-3x"></i>
+                      <!-- </a> -->
                     </div>
                   </div>
               </div>
@@ -156,7 +155,7 @@
                 
               
 
-              <div class="right-content">右側
+              <div class="right-content">
               </div>
         </div>  
     
@@ -167,8 +166,7 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="{{ asset('js/like.js') }}"></script>
-<<<<<<< HEAD
-=======
 <script src="{{ asset('js/text.js') }}"></script>
+<script src="{{ asset('js/logoutconfirm.js') }}"></script>
 </body>
 </html>

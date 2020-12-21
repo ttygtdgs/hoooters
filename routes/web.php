@@ -15,7 +15,6 @@ Route::get('/latest', 'IndexController@latest');
 
 // ajaxの検索機能
 Route::get('/kensaku','IndexController@kensaku');
-Route::get('/indexcopy','IndexController@sub');
 
 // 記事登録ページ（風太担当）
     // ↓とりあえず
@@ -47,3 +46,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // like関係
 Route::post('/like_product', 'LikeController@like_product');
+
+
+// テキスト投稿用
+Route::post('/text', 'TextContoroller@text');

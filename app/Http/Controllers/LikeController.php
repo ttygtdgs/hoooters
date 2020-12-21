@@ -34,8 +34,13 @@ class LikeController extends Controller
             
             // $count = $likes->like_product->count();
         }
+
+         // 対応するaidのデータのみとってくる。ここの「1」を変更！
+        $likesnums =  Like::where('aid',1)->get();
+
         
-         return  $request->input('like_product');
+         return  [$request->input('like_product'),$likesnums];
+         //return  $request;
     } 
 }
 

@@ -77,12 +77,12 @@
                     <div class="gyo-list-box">
                         <ul class="gyo-list">
                             <!-- gyo-listにclass"act"追加で以下表示-->
-                            <li class="gyo-item">新規事業</li>
-                            <li class="gyo-item">Webサービス</li>
-                            <li class="gyo-item">Webプロダクション</li>
-                            <li class="gyo-item">Webマーケティング</li>
-                            <li class="gyo-item">その他</li>
-                            <li class="gyo-item">Sier系</li>
+                            <li class="gyo-item" id="news">新規事業</li>
+                            <li class="gyo-item" id="webservice">Webサービス</li>
+                            <li class="gyo-item" id="production">Webプロダクション</li>
+                            <li class="gyo-item" id="marketing">Webマーケティング</li>
+                            <li class="gyo-item" id="other">その他</li>
+                            <li class="gyo-item" id="sier">Sier系</li>
                         </ul>
                     </div>
                 </li>
@@ -117,7 +117,7 @@
 
 
 <!-- ajax用jquery -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="{{ asset('js/index.js') }}"></script>
 </body>
 
