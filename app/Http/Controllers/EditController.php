@@ -52,7 +52,7 @@ class EditController extends Controller
         $article->zcomme = $request->zcomme;
         $article->life_flg = $request->life_flg;
         $article->save();
-        return redirect('edit');
+        return redirect('/');
     }
 
     //表示
