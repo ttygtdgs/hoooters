@@ -20,10 +20,14 @@ $('#key').on('keydown', function(e)
 //メニュー検索
 $('.menu-item').on('click',function(){
   const id = $(this).attr('id');
-  console.log(id);
   if(id=='gyo-btn'){
     return false;
   }
+  ajax(id);
+});
+
+$('.gyo-item').on('click',function(){
+  const id = $(this).attr('id');
   ajax(id);
 });
 
@@ -40,17 +44,19 @@ function ajax(id,key){
     data: {'id':id,'key' : key},
   }).done(function(data){
     $('.tab-wrap').children().remove();
-      console.log(data);
-
-      let html;
-
+    console.log(data);
+    let html;
+    if(data==""){
+      html = '<div class="error-wrapper"><div class="error-message">該当する記事はありません。</div></div>';
+      $('.tab-wrap').append(html);
+    }else{
       for(let i=0; i<data.length; i++){
         html =  '<li class="feed">' +
                 '<div class="feed-left">'+
                     '<a href="#" class="kigyo-name">'+data[i]['cname']+'</a>'+
                     '<p class="jigyo">'+data[i]['service']+'</p>'+
                     '<div class="gyoicon" id="gyoid'+data[i]['gid']+'">'+data[i]['gname']+'</div>'+
-                    '<div class="kigyo-comme">'+data[i]['jcomme']+'</div></div>'+
+                    '<div class="kigyo-comme">'+data[i]['jcomme'].replace(/\r?\n/g, '<br>')+'</div></div>'+
 
                 '<div class="feed-right">'+
                     '<img src="'+data[i]['art_img']+'" class="feed-pict">'+
@@ -67,12 +73,11 @@ function ajax(id,key){
                 ;
         $('.tab-wrap').append(html);
       };
-
-
+    };
   }).fail(function(){
     alert('ajax失敗')
   });
-}
+};
 
 
 //メニューバーの処理
