@@ -90,15 +90,35 @@
                                   <p class="kigyo"> ＠{{$art->name}}さんが<span class="update-day">{{$art->adate}}</span>に更新</p>
                               </div>
                               <div class="cont">
-                                    <p class="corp"><span class="kigyo-name">{{$art->cname}}</span>{{$aid->service}}</p>
+                                  
+                                    @if(Auth::user()->id == $art->uid)
+                                      <div class="deletearea">
+                                        <p><span>{{$art->cname}}</span>{{$aid->service}}</p>
+                                        <form id="delete_form"action="{{ url('article/'.$art->id) }}" method="POST"> 
+                                          {{ csrf_field() }}
+                                          {{ method_field('DELETE') }}
+                                          <button type="submit" id="deletebtn">
+                                            <i class="fa fa-trash-o fa-1x"></i>
+                                            削除する
+                                          </button>
+                                        </form>
+                                      </div>
+                                    @else
+                                      <p class="corp"><span class="kigyo-name">{{$art->cname}}</span>{{$aid->service}}</p>
+                                    @endif
+                                  
                                     <p class="gyo-tag"><span class="gyo-tag-back">＃{{$art->gname}}</span></p>
                                     <img src="{{asset($aid->art_img)}}" class="feed-pict" alt="">
                                     <h2 class="j-title">事業概要</h2>
-                                    <p class="kigyo-comme">{{$aid->jcomme}}</p>
+                                    <p class="kigyo-comme">{{$art->jcomme}}</p>
 
 
                                     <h2 class="j-title">諸条件</h2>
-                                    <p class="kigyo-comme">{{$aid->zcomme}}</p>
+                                    <p class="kigyo-comme">{{$art->zcomme}}</p>
+
+                                    <h2 class="j-title">企業リンク</h2>
+                                    <a href="{{$art->curl}}" style="color: black; font-size: 18px;" target="_blank"><p class="kigyo-comme">{{$art->curl}}</p></a>
+
                               </div>
 
 
@@ -165,8 +185,7 @@
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="{{ asset('js/like.js') }}"></script>
-<script src="{{ asset('js/text.js') }}"></script>
+<script src="{{ asset('js/article.js') }}"></script>
 <script src="{{ asset('js/header.js') }}"></script>
 </body>
 </html>
