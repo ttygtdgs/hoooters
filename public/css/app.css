@@ -1,3 +1,36 @@
+html{
+  height:100vh;
+  width:100vw;
+}
+
+.header{
+  width: 100vw;
+  height: 7vh;
+  background-color:rgb(113, 203, 241);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.header-container{
+  width: 100%;
+  max-width: 1200px;
+  padding:0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-left{
+  width: 150px;
+  display: block;
+}
+.header-left>img{
+  width: 100%;
+}
+
+
+
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 /*!
@@ -121,7 +154,9 @@ ol,
 ul,
 dl {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  display: flex;
+  list-style: none;
 }
 
 ol ol,
@@ -170,7 +205,7 @@ sup {
 }
 
 a {
-  color: #3490dc;
+  color: white;
   text-decoration: none;
   background-color: transparent;
 }
@@ -8624,7 +8659,7 @@ button.bg-dark:focus {
 
 .pt-4,
 .py-4 {
-  padding-top: 1.5rem !important;
+  padding-top: 8.0rem !important;
 }
 
 .pr-4,
