@@ -22,8 +22,8 @@ class MypageController extends Controller
         $usersicon=asset($usersicon);
         Log::debug($user);
 
-        $artcount = Art::count('uid',$user->id);
-        $likecount = Like::count('uid',$user->id);
+        $artcount = Art::where('uid',$user->id)->count();
+        $likecount = Like::where('uid',$user->id)->count();
         $likearts = Art::join('likes','arts.id','=','likes.aid')
             ->join('corps','arts.cid','=','corps.id')
             ->join('users','arts.uid', '=', 'users.id')
