@@ -10,44 +10,37 @@
   <link href="{{asset('/css/index.css')}}" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-  <!-- ヘッダー統一用のfontawesome -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
 
 </head>
 <body>
 
 <!-- HEADER -->
 <header class="header">
-    <h1>Hoooters</h1>
-    <nav>
-        <ul>
-            <li>
-                <a href="{{url('/')}}">
-                <i class="fa fa-home" style="font-size: 2em; color: #fff;" ></i>
-                </a>
-            </li>
-            <li>
-                <a href="{{url('/edit')}}">
-                <i class="fa fa-newspaper-o " style="font-size: 2em; color: #fff; " ></i>
-                </a>
-            </li>
-            <li>
-                <a href="{{url('/mypage')}}">
-                <i class="fa fa-user-circle-o " style="font-size: 2em; color:#fff; " ></i>
-                </a>
-            </li>
-            <li>
-                <!--  以下、ログアウト処理-->
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <i class="fa fa-sign-out " style="font-size: 2em; color:#fff; " ></i>
-                </a>
-                <form id='logout-form' action={{ route('logout')}} method="POST" style="display: none;">
-                {{ csrf_field() }}
-                </form>
-                <!--  以上、ログアウト処理-->
-            </li>
-        </ul>
-    </nav>
+    <div class="header-container">
+        <a href="{{url('/')}}" class="header-left">
+            <img src="pic/logo.png" alt="Hoooters">
+        </a>
+        <div class="header-right">
+            <a href="edit" class="edit-btn">
+                <i class="fas fa-edit"></i>
+                <p>投稿する</p>
+            </a>
+            <div class="icon-wrapper">
+                <div class="myicon">
+                    <!-- アイコン -->
+                    <img src="pic/icon.png">
+                </div>
+                <i class="fas fa-sort-down"></i>
+                <div class="mypage-list none">
+                    <a href="{{url('/mypage')}}" id="mypage-btn">マイページ</a>
+                    <div id="logout-btn">ログアウト</div>
+                    <form id='logout-form' action="{{ route('logout')}}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 
 <main>
@@ -119,6 +112,7 @@
 <!-- ajax用jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="{{ asset('js/index.js') }}"></script>
+<script src="{{ asset('js/header.js') }}"></script>
 </body>
 
 </html>
