@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Art;
 use Validator;
+use Auth;
 use Log;
 use Illuminate\Http\Request;
 
@@ -57,6 +58,9 @@ class EditController extends Controller
 
     //表示
     public function edit(){
-        return view('edit');
+        $user = Auth::user();
+        return view('edit',[
+            'usericon'=>$user->icon
+        ]);
     }
 }

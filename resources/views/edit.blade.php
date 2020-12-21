@@ -20,14 +20,14 @@
             <img src="pic/logo.png" alt="Hoooters">
         </a>
         <div class="header-right">
-            <a href="edit" class="edit-btn">
+            <!-- <a href="edit" class="edit-btn">
                 <i class="fas fa-edit"></i>
                 <p>投稿する</p>
-            </a>
+            </a> -->
             <div class="icon-wrapper">
                 <div class="myicon">
                     <!-- アイコン -->
-                    <img src="pic/icon.png">
+                    <img src="{{$usericon}}">
                 </div>
                 <i class="fas fa-sort-down"></i>
                 <div class="mypage-list none">
@@ -76,7 +76,7 @@
             <button type="button" class="submit-btn" id="deploy">投稿</button>
             <input type="hidden" name="life_flg" id="life_flg" value="0">
             <button type="submit" class="none" id="submit"></button>
-            <i class="fas fa-question-circle"></i>
+            <!-- <i class="fas fa-question-circle"></i> -->
           </div>
         </div>
         <!-- 業態 -->
