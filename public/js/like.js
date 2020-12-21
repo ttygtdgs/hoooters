@@ -13,7 +13,7 @@ $(function ()
                 // csrf対策、「article.blade.php」のheadにcsrf対策のmetaタグも追記
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  
             },
-            url: 'like_product',  //route.phpで指定したコントローラーのメソッドURLを指定
+            url: 'http://localhost/hoooters/public/like_product',  //route.phpで指定したコントローラーのメソッドURLを指定
             type: 'POST',   //GETかPOSTメソットを選択
             data: { 'aid': aid, 'like_product': like_product, }, //コントローラーに送るに名称をつけてデータを指定
                 })
@@ -45,7 +45,7 @@ $(function ()
             .fail(function (data)
             {
                 alert('いいね処理失敗');
-                alert(JSON.stringify(data));
+                //alert(JSON.stringify(data));
             });
     });
 });
