@@ -22,6 +22,7 @@ class IndexController extends Controller
         // $arts = $this->art->where('jcomme','like','%'.$key.'%')->get();
         // return response()->json($users);
         //  Log::debug($request->key);
+        Log::debug($request);
         $uid = Auth::id();
         Log::debug($uid);
         $id = $request->id;
@@ -29,10 +30,10 @@ class IndexController extends Controller
         // $uid = $request->uid;
 
         if (!empty($key) || $key!=null) {
-            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
-            ->join('gyos','arts.gid', '=', 'gyos.gid')
+            $arts = Art::join('corps','arts.cid', '=', 'corps.id')
+            ->join('gyos','arts.gid', '=', 'gyos.id')
             ->join('users','arts.uid', '=', 'users.id')
-            ->select('arts.updated_at as adate','corps.cname','arts.service','gyos.gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.aid')
+            ->select('arts.updated_at as adate','corps.cname','arts.service','gyos.id','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id')
             ->where('arts.life_flg', '=', 1)
             ->where(function ($query) use ($key){
                 $query->where('arts.jcomme', 'LIKE', "%{$key}%")
@@ -43,10 +44,10 @@ class IndexController extends Controller
             })
             ->get();
         }else if($id=='timeline'){ //タイムライン
-            $arts = Art::join('corps','arts.cid', '=', 'corps.cid')
-            ->join('gyos','arts.gid', '=', 'gyos.gid')
+            $arts = Art::join('corps','arts.cid', '=', 'corps.id')
+            ->join('gyos','arts.gid', '=', 'gyos.id')
             ->join('users','arts.uid', '=', 'users.id')
-            ->select('arts.updated_at as adate','corps.cname','arts.service','gyos.gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.aid')
+            ->select('arts.updated_at as adate','corps.cname','arts.service','arts.gid','gyos.gname','arts.jcomme','arts.art_img','users.icon','users.name','arts.id')
             ->where('arts.life_flg', '=', 1)
             ->orderby('adate','desc')
             ->get();
@@ -135,8 +136,6 @@ class IndexController extends Controller
                 // ->select('aid', 'cname', 'jcomme')
                 // ->join('gyos', 'arts.gid', '=', 'gyos.gid')
                 // ->get();
-
-
 
         return response()->json($arts);
     }
