@@ -7,6 +7,10 @@ use Log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
+$userid = Auth::id();
+Log::debug($userid);
+
 class IndexController extends Controller
 {
     public function top(){
