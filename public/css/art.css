@@ -71,12 +71,14 @@ body {
     width: 37px;
     height: 37px;
     border-radius: 50%;
-    background-color: #fff;
+    /* background-color: #fff; */
     overflow: hidden;
     margin-right: 5px;
 }
 .myicon > img {
+    object-fit: cover;
     width: 100%;
+    border-radius: 100%;
 }
 .icon-wrapper > .fa-sort-down {
     color: rgb(85, 150, 224);
@@ -242,6 +244,13 @@ span {
     padding-top: 3vh;
     margin-left: 2vw;
 }
+
+.deletearea1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 .deletearea p {
     font-weight: bold;
