@@ -63,4 +63,12 @@ class EditController extends Controller
             'usericon'=>$user->icon
         ]);
     }
+
+    public function postedit(){
+        $user = Auth::user();
+
+        return view('postedit',[
+            'usericon'=>$user->icon
+        ]);
+    }
 }

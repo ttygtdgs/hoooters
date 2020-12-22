@@ -81,7 +81,7 @@ hr {
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
-  
+
 }
 
 .navbar-default {
@@ -138,6 +138,7 @@ i {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow: hidden;
 }
 
 #headerwrap h1 {
@@ -294,6 +295,12 @@ i {
   height: auto;
   max-width: 100%;
 }
+
 .btn-warning {
   margin-bottom: 60px;
+  margin: 20px 10px;
+}
+
+.btn-warning>a{
+  font-weight: bold;
 }
