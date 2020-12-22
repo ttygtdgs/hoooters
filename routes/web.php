@@ -26,7 +26,11 @@ Route::delete('/article/{art}',  'ArticleController@articledel');
 
 Route::get('/edit', 'EditController@edit');
 
+//投稿ページ
 Route::post('/edit', 'EditController@register');
+
+//編集ページ
+Route::get('/postedit', 'EditController@postedit');
 
 Route::post('/corp', 'CorpController@register');
 
@@ -59,8 +63,8 @@ Route::post('/text', 'TextContoroller@text');
 Route::get('/welcome', function () { return view('welcome');
 });
 
-Route::get('/login', function () { return view('auth.login');
-});
+// Route::get('/login', function () { return view('auth.login');
+// });
 
-Route::get('/register', function () { return view('auth.register');
-});
+// Route::get('/register', function () { return view('auth.register');
+// });
