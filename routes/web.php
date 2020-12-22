@@ -30,7 +30,7 @@ Route::get('/edit', 'EditController@edit');
 Route::post('/edit', 'EditController@register');
 
 //編集ページ
-Route::get('/postedit', 'EditController@postedit');
+Route::get('/postedit/{id}', 'EditController@postedit');
 
 Route::post('/corp', 'CorpController@register');
 

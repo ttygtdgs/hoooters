@@ -64,11 +64,14 @@ class EditController extends Controller
         ]);
     }
 
-    public function postedit(){
+    public function postedit(Art $id){
         $user = Auth::user();
+        $arts = Art::join('corps','arts.cid','=','corps.id')->where('arts.id',$id->id)->first();
 
+        Log::debug($arts);
         return view('postedit',[
-            'usericon'=>$user->icon
+            'usericon'=>$user->icon,
+            'arts' => $arts
         ]);
     }
 }
