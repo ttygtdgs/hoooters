@@ -8,7 +8,8 @@ const divH = clientRect.bottom;
 const centerX = (divW - divX)/2;
 const centerY = (divH - divY)/2;
 
-const pass = 'http://localhost/hoooters/public';//ローカルホスト用
+// const pass = 'http://localhost/hoooters/public';//ローカルホスト用
+const pass = 'http://tealimpala23.sakura.ne.jp/hoooters/public';//ローカルホスト用
 
 const imenu_items = document.querySelectorAll('.canicon');
 imenu_items.forEach(imenu_item => {
