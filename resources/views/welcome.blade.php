@@ -42,8 +42,8 @@
               <img class="img-fluid" src="{{asset('/pic/ipad-hand.png')}}" alt="">
             </div>
             <div class="col-md-7">
-              <button type="button" class="btn btn-warning btn-lg"><a href="{{url('/login')}}">   LOG IN ! </a></button>
-              <button type="button" class="btn btn-warning btn-lg"><a href="{{url('/register')}}">   REGISTER !  </a></button>
+              <button type="button" class="btn btn-warning btn-lg"><a href="{{asset('/login')}}">   LOG IN ! </a></button>
+              <button type="button" class="btn btn-warning btn-lg"><a href="{{asset('/register')}}">   REGISTER !  </a></button>
 
               <img src="{{asset('/pic/search.jpg')}}" class="img-flex align-items-end">
             </div>
