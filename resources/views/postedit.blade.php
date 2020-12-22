@@ -54,19 +54,19 @@
             <div class="company-wrapper">
               <div class="clabel tlabel">企業</div>
               <div class="cname-wrapper">
-                <div id="csearch-btn" type="button"><i class="far fa-hand-point-right"></i>企業を選ぶ</div>
-                <div id="cname-box" class="none"></div>
-                <div id="cchange-btn" class="none">変更する</div>
+                <div id="csearch-btn" type="button" class="none"><i class="far fa-hand-point-right"></i>企業を選ぶ</div>
+                <div id="cname-box" class="">{{$arts->cname}}</div>
+                <div id="cchange-btn" class="">変更する</div>
               </div>
               <!-- cid -->
-              <input type="hidden" name="cid" id="cid">
+              <input type="hidden" name="cid" id="cid" value="{{$arts->cid}}">
             </div>
             <!-- サービス -->
             <div class="service-wrapper">
               <div class="slabel tlabel">事業</div>
               <div class="service-name">
                 <!-- service -->
-                <input id="service" type="text" name="service" placeholder="事業やサービスの名前を入力してください。">
+                <input id="service" type="text" name="service" placeholder="事業やサービスの名前を入力してください。"  value="{{$arts->service}}">
               </div>
             </div>
           </div>
@@ -84,8 +84,8 @@
           <div class="glabel tlabel">業態</div>
           <div class="gselect-wrapper">
             <!-- gid -->
-            <input name="gid" id="gid" type="range" min="1" max="6" value="1">
-            <div class="gyo-btn act" id="new">新規事業</div>
+            <input name="gid" id="gid" type="range" min="1" max="6" value="{{$arts->gid}}">
+            <div class="gyo-btn" id="new">新規事業</div>
             <div class="gyo-btn" id="webservice">Webサービス</div>
             <div class="gyo-btn" id="production">Webプロダクション</div>
             <div class="gyo-btn" id="marketing">Webマーケティング</div>
@@ -120,6 +120,7 @@
               <!-- キャンバス -->
               <div id="capture">
                 <div class="canvas-box">
+                  {!!$arts->art_place!!}
                 </div>
               </div>
               <textarea type="text" name="art_img" id="art_img" class="none"></textarea>
@@ -131,13 +132,13 @@
               <div class="j-top">
                 <div class="jlabel tlabel">概要</div>
               </div>
-              <textarea name="jcomme" id="jcomme" placeholder="サービスの具体的な内容や、企業の良い点・悪い点などを紹介してください。"></textarea>
+              <textarea name="jcomme" id="jcomme" placeholder="サービスの具体的な内容や、企業の良い点・悪い点などを紹介してください。">{{$arts->jcomme}}</textarea>
             </div>
             <div class="zcomme-wrapper">
               <div class="z-top">
                 <div class="zlabel tlabel">諸情報</div>
               </div>
-              <textarea name="zcomme" id="zcomme" placeholder="給与条件や労働条件など、働き方に関する諸情報を入力してください。"></textarea>
+              <textarea name="zcomme" id="zcomme" placeholder="給与条件や労働条件など、働き方に関する諸情報を入力してください。">{{$arts->zcomme}}</textarea>
             </div>
           </div>
         </div>
@@ -192,5 +193,6 @@
 <script src="{{ asset('js/edit.js') }}"></script>
 <script src="{{ asset('js/canvas.js') }}"></script>
 <script src="{{ asset('js/header.js') }}"></script>
+<script src="{{ asset('js/postedit.js') }}"></script>
 </body>
 </html>
