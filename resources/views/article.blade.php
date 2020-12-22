@@ -93,14 +93,20 @@
                                     @if(Auth::user()->id == $art->uid)
                                       <div class="deletearea">
                                         <p><span>{{$art->cname}}</span>{{$aid->service}}</p>
-                                        <form id="delete_form"action="{{ url('article/'.$art->id) }}" method="POST">
-                                          {{ csrf_field() }}
-                                          {{ method_field('DELETE') }}
-                                          <button type="submit" id="deletebtn">
-                                            <i class="fa fa-trash-o fa-1x"></i>
-                                            削除する
-                                          </button>
-                                        </form>
+                                        <div class="deletearea1">
+                                          <a href="{{ url('postedit/'.$aid->id) }}" class="">
+                                            <button><i class="fa fa-pencil fa-1x"></i>修正</button>
+                                          </a>
+                                          <form id="delete_form"action="{{ url('article/'.$art->id) }}" method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <button type="submit" id="deletebtn">
+                                              <i class="fa fa-trash-o fa-1x"></i>
+                                              削除する
+                                            </button>
+                                          </form>
+                                        </div>
+
                                       </div>
                                     @else
                                       <p class="corp"><span class="kigyo-name">{{$art->cname}}</span>{{$aid->service}}</p>
