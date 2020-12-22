@@ -15,8 +15,8 @@ imenu_items.forEach(imenu_item => {
     let item = document.createElement('div');
     item.className = 'canvas-item';
     item.innerHTML = '<img src="./pic/'+index+'.png" class="iconimg">';
-    item.style.top = centerY/2 + 'px';
-    item.style.left = centerX + 'px';
+    item.style.top = '30px';
+    item.style.left = '30px';
     field.appendChild(item);
     itemmoves();
   });
@@ -113,9 +113,9 @@ document.querySelector('.fa-trash-alt').addEventListener('click',function(){
 document.querySelector('.fa-font').addEventListener('click',function(){
   const font = document.createElement('div');
   font.className = 'canvas-item cantext';
-  font.innerHTML = '<textarea class="textcontent" readonly disabled>テキスト</textarea>';
-  font.style.top = '10px';
-  font.style.left = '10px';
+  font.innerHTML = '<textarea rows="1" class="textcontent" readonly disabled>テキスト</textarea>';
+  font.style.top = '30px';
+  font.style.left = '30px';
   field.appendChild(font);
   itemmoves();
   textchange();
@@ -132,42 +132,102 @@ function textchange(){
   })
 }
 
+
+//テンプレート
+//新規事業
+const temp_new = '<div class="canvas-item" style="top: 171.609px; left: 589px; z-index: 0;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 169.609px; left: 525.5px; z-index: 0;"><img src="./pic/0.png" class="iconimg"></div><div class="canvas-item" style="top: 173.609px; left: 305.5px; z-index: 0;"><img src="./pic/8.png" class="iconimg"></div><div class="canvas-item" style="top: 173.609px; left: 78px; z-index: 0;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 184.609px; left: 157px; z-index: 0;"><img src="./pic/3.png" class="iconimg"></div><div class="canvas-item" style="top: 186.609px; left: 386px; z-index: 0;"><img src="./pic/3.png" class="iconimg"></div><div class="canvas-item" style="top: 242.609px; left: 159px; z-index: 0;"><img src="./pic/5.png" class="iconimg"></div><div class="canvas-item" style="top: 243.609px; left: 385px; z-index: 0;"><img src="./pic/5.png" class="iconimg"></div><div class="canvas-item" style="top: 227.109px; left: 430.5px; z-index: 0;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item" style="top: 170.109px; left: 425.5px; z-index: 0;"><img src="./pic/7.png" class="iconimg"></div><div class="canvas-item" style="top: 230.109px; left: 203.5px; z-index: 0;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item cantext" style="top: 123.109px; left: 150px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">予算・人材</textarea></div><div class="canvas-item cantext" style="top: 148.109px; left: 150px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">自社の強み</textarea></div><div class="canvas-item cantext" style="top: 288.109px; left: 39px; z-index: 0;"><textarea rows="1" class="textcontent">自社</textarea></div><div class="canvas-item cantext" style="top: 273.109px; left: 150px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">売上</textarea></div><div class="canvas-item cantext" style="top: 305.109px; left: 265px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">IT技術を用いた</textarea></div><div class="canvas-item cantext" style="top: 329.109px; left: 265px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">新規事業</textarea></div><div class="canvas-item cantext" style="top: 268.109px; left: 378px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">利用料</textarea></div><div class="canvas-item cantext" style="top: 139.109px; left: 379px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">サービス</textarea></div><div class="canvas-item cantext" style="top: 289.109px; left: 519px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">カスタマー</textarea></div>';
+
+//Webサービス
+const temp_webservice = '<div class="canvas-item" style="top: 177.609px; left: 506px; z-index: 0;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 174.609px; left: 424.5px; z-index: 0;"><img src="./pic/0.png" class="iconimg"></div><div class="canvas-item" style="top: 177.609px; left: 148.5px; z-index: 0;"><img src="./pic/8.png" class="iconimg"></div><div class="canvas-item" style="top: 199.609px; left: 260px; z-index: 0;"><img src="./pic/3.png" class="iconimg"></div><div class="canvas-item" style="top: 250.609px; left: 260px; z-index: 0;"><img src="./pic/5.png" class="iconimg"></div><div class="canvas-item" style="top: 237.109px; left: 303.5px; z-index: 0;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item" style="top: 180.109px; left: 298.5px; z-index: 0;"><img src="./pic/7.png" class="iconimg"></div><div class="canvas-item cantext" style="top: 287.109px; left: 106px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">自社サービス</textarea></div><div class="canvas-item cantext" style="top: 153.109px; left: 255px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">サービス</textarea></div><div class="canvas-item cantext" style="top: 280.109px; left: 253px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">利用料</textarea></div><div class="canvas-item cantext" style="top: 294.109px; left: 432px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">ユーザー</textarea></div>';
+
+//Webプロダクション
+const temp_production = '<div class="canvas-item" style="top: 195.609px; left: 331px; z-index: 0;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 195.609px; left: 118px; z-index: 0;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 191.609px; left: 537.5px; z-index: 0;"><img src="./pic/0.png" class="iconimg"></div><div class="canvas-item" style="top: 194.609px; left: 600px; z-index: 0;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item cantext" style="top: 313.109px; left: 537px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">ユーザー</textarea></div><div class="canvas-item" style="top: 217.609px; left: 401px; z-index: 0;"><img src="./pic/3.png" class="iconimg"></div><div class="canvas-item" style="top: 198.109px; left: 444.5px; z-index: 0;"><img src="./pic/7.png" class="iconimg"></div><div class="canvas-item" style="top: 276.609px; left: 401px; z-index: 0;"><img src="./pic/5.png" class="iconimg"></div><div class="canvas-item" style="top: 259.109px; left: 449.5px; z-index: 0;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item" style="top: 217.609px; left: 185px; z-index: 0;"><img src="./pic/3.png" class="iconimg"></div><div class="canvas-item" style="top: 276.609px; left: 186px; z-index: 0;"><img src="./pic/5.png" class="iconimg"></div><div class="canvas-item" style="top: 258.109px; left: 230.5px; z-index: 0;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item cantext" style="top: 314.109px; left: 293px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">クライアント</textarea></div><div class="canvas-item cantext" style="top: 311.109px; left: 77px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">自社</textarea></div><div class="canvas-item cantext" style="top: 167.109px; left: 398px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">サービス</textarea></div><div class="canvas-item cantext" style="top: 299.109px; left: 401px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">利用料</textarea></div><div class="canvas-item cantext" style="top: 189.109px; left: 177px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">技術提供</textarea></div><div class="canvas-item cantext" style="top: 300.109px; left: 181px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">開発依頼</textarea></div>';
+
+//Webマーケティング
+const temp_marketing = '<div class="canvas-item" style="top: 83.6094px; left: 202px; z-index: 0;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 81.6094px; left: 449.5px; z-index: 0;"><img src="./pic/0.png" class="iconimg"></div><div class="canvas-item" style="top: 95.6094px; left: 294px; z-index: 0;"><img src="./pic/3.png" class="iconimg"></div><div class="canvas-item" style="top: 164.609px; left: 293px; z-index: 0;"><img src="./pic/5.png" class="iconimg"></div><div class="canvas-item" style="top: 76.1094px; left: 334.5px; z-index: 0;"><img src="./pic/7.png" class="iconimg"></div><div class="canvas-item" style="top: 150.109px; left: 338.5px; z-index: 0;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item" style="top: 337.609px; left: 199px; z-index: 0;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 200.609px; left: 228px; z-index: 0;"><img src="./pic/4.png" class="iconimg"></div><div class="canvas-item" style="top: 343.609px; left: 450.5px; z-index: 0;"><img src="./pic/8.png" class="iconimg"></div><div class="canvas-item" style="top: 229.109px; left: 212.5px; z-index: 0;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item" style="top: 381.609px; left: 291px; z-index: 0;"><img src="./pic/3.png" class="iconimg"></div><div class="canvas-item" style="top: 364.109px; left: 336.5px; z-index: 0;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item" style="top: 206.609px; left: 478px; z-index: 0;"><img src="./pic/4.png" class="iconimg"></div><div class="canvas-item cantext" style="top: 49.1094px; left: 164px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">顧客</textarea></div><div class="canvas-item cantext" style="top: 49.1094px; left: 410px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">ユーザー</textarea></div><div class="canvas-item cantext" style="top: 445.109px; left: 157px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">自社</textarea></div><div class="canvas-item cantext" style="top: 452.109px; left: 416px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">SNSなどの</textarea></div><div class="canvas-item cantext" style="top: 476.109px; left: 413px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">メディア</textarea></div><div class="canvas-item cantext" style="top: 51.1094px; left: 289px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">商品</textarea></div><div class="canvas-item cantext" style="top: 190.109px; left: 289px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">購入</textarea></div><div class="canvas-item cantext" style="top: 235.109px; left: 84px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">広告運用依頼</textarea></div><div class="canvas-item cantext" style="top: 401.109px; left: 285px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">広告枠買付</textarea></div><div class="canvas-item cantext" style="top: 243.109px; left: 446px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">閲覧</textarea></div>';
+
+//その他
+const temp_other = '<div class="canvas-item" style="top: 198.609px; left: 192px; z-index: 0;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 196.609px; left: 443.5px; z-index: 0;"><img src="./pic/0.png" class="iconimg"></div><div class="canvas-item" style="top: 216.609px; left: 284px; z-index: 0;"><img src="./pic/3.png" class="iconimg"></div><div class="canvas-item" style="top: 273.609px; left: 286px; z-index: 0;"><img src="./pic/5.png" class="iconimg"></div><div class="canvas-item" style="top: 256.109px; left: 329.5px; z-index: 0;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item" style="top: 196.109px; left: 325.5px; z-index: 0;"><img src="./pic/7.png" class="iconimg"></div><div class="canvas-item cantext" style="top: 311.109px; left: 151px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">自社</textarea></div><div class="canvas-item cantext" style="top: 311.109px; left: 410px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">ユーザー</textarea></div><div class="canvas-item cantext" style="top: 164.109px; left: 281px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">サービス</textarea></div><div class="canvas-item cantext" style="top: 302.109px; left: 279px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">利用料</textarea></div>';
+
+//Sier系
+const temp_sier = '<div class="canvas-item" style="top: 186.609px; left: 191px; z-index: 0;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 186.609px; left: 460px; z-index: 0;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 203.609px; left: 289px; z-index: 0;"><img src="./pic/3.png" class="iconimg"></div><div class="canvas-item" style="top: 257.609px; left: 290px; z-index: 0;"><img src="./pic/5.png" class="iconimg"></div><div class="canvas-item" style="top: 241.109px; left: 334.5px; z-index: 0;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item cantext" style="top: 303.109px; left: 152px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">自社</textarea></div><div class="canvas-item cantext" style="top: 302.109px; left: 419px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">クライアント</textarea></div><div class="canvas-item cantext" style="top: 283.109px; left: 282px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">委託料</textarea></div><div class="canvas-item cantext" style="top: 138.109px; left: 281px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">保守・運用</textarea></div><div class="canvas-item cantext" style="top: 164.109px; left: 280px; z-index: 0;"><textarea rows="1" class="textcontent" readonly="" disabled="">サポート</textarea></div>';
+
 const gyo_btns = document.querySelectorAll('.gyo-btn');
 const canvas_box = document.querySelector('.canvas-box');
 gyo_btns.forEach(gyo_btn => {
   gyo_btn.addEventListener('click',function(){
     const id = gyo_btn.getAttribute('id');
-    switch(id){
-      case 'new':
-        canvas_box.innerHTML = '<div class="canvas-item" style="top: 176.609px; left: 594px; z-index: 1000;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 174.609px; left: 529.5px; z-index: 1000;"><img src="./pic/0.png" class="iconimg"></div><div class="canvas-item" style="top: 173.609px; left: 303.5px; z-index: 1000;"><img src="./pic/8.png" class="iconimg"></div><div class="canvas-item" style="top: 175.609px; left: 80px; z-index: 1000;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 201.609px; left: 150px; z-index: 1000;"><img src="./pic/3.png" class="iconimg"></div><div class="canvas-item" style="top: 205.609px; left: 384px; z-index: 1000;"><img src="./pic/3.png" class="iconimg"></div><div class="canvas-item" style="top: 237.609px; left: 152px; z-index: 1000;"><img src="./pic/5.png" class="iconimg"></div><div class="canvas-item" style="top: 243.609px; left: 385px; z-index: 1000;"><img src="./pic/5.png" class="iconimg"></div><div class="canvas-item" style="top: 234.109px; left: 428.5px; z-index: 1000;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item" style="top: 186.109px; left: 423.5px; z-index: 1000;"><img src="./pic/7.png" class="iconimg"></div><div class="canvas-item" style="top: 222.109px; left: 191.5px; z-index: 1000;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item cantext" style="top: 292.109px; left: 233px; z-index: 1000;"><textarea class="textcontent" readonly disabled>IT技術を用いた\n新規事業</textarea></div><div class="canvas-item cantext" style="top: 289.109px; left: 8px; z-index: 1000;"><textarea class="textcontent" readonly disabled>自社</textarea></div><div class="canvas-item cantext" style="top: 291.109px; left: 491px; z-index: 1000;"><textarea class="textcontent" readonly disabled>カスタマー</textarea></div><div class="canvas-item cantext" style="top: 263.109px; left: 111px; z-index: 1000;"><textarea class="textcontent" readonly disabled>売上</textarea></div><div class="canvas-item cantext" style="top: 272.109px; left: 347px; z-index: 1000;"><textarea class="textcontent" readonly disabled>利用料</textarea></div><div class="canvas-item cantext" style="top: 151.109px; left: 346px; z-index: 1000;"><textarea class="textcontent" readonly disabled>サービス</textarea></div><div class="canvas-item cantext" style="top: 149.109px; left: 109px; z-index: 1000;"><textarea class="textcontent" readonly disabled>予算・人材\n自社の強み</textarea></div>';
-        itemmoves();
-        textchange();
-        break;
-      case 'webservice':
-        canvas_box.innerHTML = '<div class="canvas-item" style="top: 177.609px; left: 528px; z-index: 1000;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 177.609px; left: 456.5px; z-index: 1000;"><img src="./pic/0.png" class="iconimg"></div><div class="canvas-item" style="top: 178.609px; left: 159.5px; z-index: 1000;"><img src="./pic/8.png" class="iconimg"></div><div class="canvas-item" style="top: 206.609px; left: 285px; z-index: 1000;"><img src="./pic/3.png" class="iconimg"></div><div class="canvas-item" style="top: 257.609px; left: 283px; z-index: 1000;"><img src="./pic/5.png" class="iconimg"></div><div class="canvas-item" style="top: 242.109px; left: 329.5px; z-index: 1000;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item" style="top: 187.109px; left: 325.5px; z-index: 1000;"><img src="./pic/7.png" class="iconimg"></div><div class="canvas-item cantext" style="top: 290.109px; left: 87px; z-index: 1000;"><textarea class="textcontent" readonly="" disabled="">自社サービス</textarea></div><div class="canvas-item cantext" style="top: 290.109px; left: 420px; z-index: 1000;"><textarea class="textcontent">ユーザー</textarea></div><div class="canvas-item cantext" style="top: 279.109px; left: 248px; z-index: 1000;"><textarea class="textcontent" readonly="" disabled="">利用料</textarea></div><div class="canvas-item cantext" style="top: 159.109px; left: 250px; z-index: 1000;"><textarea class="textcontent" readonly="" disabled="">サービス</textarea></div>';
-        itemmoves();
-        textchange();
-        break;
-      case 'production':
-        canvas_box.innerHTML = '<div class="canvas-item" style="top: 98.6094px; left: 536px; z-index: 1000;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 95.6094px; left: 468.5px; z-index: 1000;"><img src="./pic/0.png" class="iconimg"></div><div class="canvas-item" style="top: 131.609px; left: 308px; z-index: 1000;"><img src="./pic/3.png" class="iconimg"></div><div class="canvas-item" style="top: 173.609px; left: 309px; z-index: 1000;"><img src="./pic/5.png" class="iconimg"></div><div class="canvas-item" style="top: 160.109px; left: 350.5px; z-index: 1000;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item" style="top: 113.109px; left: 346.5px; z-index: 1000;"><img src="./pic/7.png" class="iconimg"></div><div class="canvas-item cantext" style="top: 209.109px; left: 140px; z-index: 1000;"><textarea class="textcontent">顧客</textarea></div><div class="canvas-item cantext" style="top: 207.109px; left: 431px; z-index: 1000;"><textarea class="textcontent">ユーザー</textarea></div><div class="canvas-item cantext" style="top: 199.109px; left: 270px; z-index: 1000;"><textarea class="textcontent" readonly="" disabled="">利用料</textarea></div><div class="canvas-item cantext" style="top: 76.1094px; left: 272px; z-index: 1000;"><textarea class="textcontent" readonly="" disabled="">サービス</textarea></div><div class="canvas-item" style="top: 100.609px; left: 211px; z-index: 1000;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 381.609px; left: 212px; z-index: 1000;"><img src="./pic/1.png" class="iconimg"></div><div class="canvas-item" style="top: 245.609px; left: 216px; z-index: 1000;"><img src="./pic/2.png" class="iconimg"></div><div class="canvas-item" style="top: 246.609px; left: 256px; z-index: 1000;"><img src="./pic/4.png" class="iconimg"></div><div class="canvas-item" style="top: 292.109px; left: 242.5px; z-index: 1000;"><img src="./pic/6.png" class="iconimg"></div><div class="canvas-item" style="top: 290.109px; left: 195.5px; z-index: 1000;"><img src="./pic/7.png" class="iconimg"></div><div class="canvas-item cantext" style="top: 302.109px; left: 226px; z-index: 1000;"><textarea class="textcontent" readonly="" disabled="">開発依頼</textarea></div><div class="canvas-item cantext" style="top: 300.109px; left: 52px; z-index: 1000;"><textarea class="textcontent" readonly="" disabled="">技術提供</textarea></div><div class="canvas-item cantext" style="top: 486.109px; left: 142px; z-index: 1000;"><textarea class="textcontent">自社</textarea></div>';
-        itemmoves();
-        textchange();
-        break;
-      case 'marketing':
-        canvas_box.innerHTML = '';
-        itemmoves();
-        textchange();
-        break;
-      case 'other':
-        canvas_box.innerHTML = '';
-        itemmoves();
-        textchange();
-        break;
-      case 'sier':
-        canvas_box.innerHTML = '';
-        itemmoves();
-        textchange();
-        break;
+    const canvas_content = canvas_box.childElementCount;
+    if(canvas_content==0){
+      switch(id){
+        case 'new':
+          canvas_box.innerHTML = temp_new;
+          itemmoves();
+          textchange();
+          break;
+        case 'webservice':
+          canvas_box.innerHTML = temp_webservice;
+          itemmoves();
+          textchange();
+          break;
+        case 'production':
+          canvas_box.innerHTML = temp_production;
+          itemmoves();
+          textchange();
+          break;
+        case 'marketing':
+          canvas_box.innerHTML = temp_marketing;
+          itemmoves();
+          textchange();
+          break;
+        case 'other':
+          canvas_box.innerHTML = temp_other;
+          itemmoves();
+          textchange();
+          break;
+        case 'sier':
+          canvas_box.innerHTML = temp_sier;
+          itemmoves();
+          textchange();
+          break;
+      }
+    }else{
+      if(confirm('モデル図をテンプレートに書き換えますか？')){
+        switch(id){
+          case 'new':
+            canvas_box.innerHTML = temp_new;
+            itemmoves();
+            textchange();
+            break;
+          case 'webservice':
+            canvas_box.innerHTML = temp_webservice;
+            itemmoves();
+            textchange();
+            break;
+          case 'production':
+            canvas_box.innerHTML = temp_production;
+            itemmoves();
+            textchange();
+            break;
+          case 'marketing':
+            canvas_box.innerHTML = temp_marketing;
+            itemmoves();
+            textchange();
+            break;
+          case 'other':
+            canvas_box.innerHTML = temp_other;
+            itemmoves();
+            textchange();
+            break;
+          case 'sier':
+            canvas_box.innerHTML = temp_sier;
+            itemmoves();
+            textchange();
+            break;
+        }
+      }else{
+        return;
+      };
     }
   });
 })

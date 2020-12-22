@@ -12,7 +12,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- fontawsome -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
   <!-- 丹羽作成 -->
   <link href="{{asset('/css/mypage.css')}}" rel="stylesheet">
 
@@ -81,7 +81,7 @@
           @if (Auth::user()->tsite == "")
           @else
           <a href="{{Auth::user()->tsite}}" target="_blank" rel="noopener noreferrer">
-            <i class="fa fa-twitter my-icon " style="font-size: 2em; color:rgb(53, 53, 53); " aria-hidden="true"></i>
+            <i class="fa fa-twitter my-icon " style="font-size: 2em; color:#55acee; " aria-hidden="true"></i>
           </a>
           @endif
           @if (Auth::user()->fsite == "")
@@ -134,7 +134,7 @@
                         <div class="poster-icon">
                             <img src="{{$likeart->icon}}">
                         </div>
-                        <p class="poster-info">{{$likeart->name}}さんが{{$likeart->adate}}に投稿</p>
+                        <p class="poster-info">{{$likeart->name}}さんが{{$likeart->adate->format('Y年m月d日')}}に投稿</p>
                     </div>
                 </li>
                 @endforeach
@@ -152,7 +152,7 @@
                 <li class="art-item myarts">
                     <a href="{{url('/article/'.$postart->id)}}" class="art-title">{{$postart->cname}}<span>{{$postart->service}}</span></a>
                     <div class="post-name">
-                        <p class="poster-info">{{$postart->adate}}に投稿</p>
+                        <p class="poster-info">{{$postart->adate->format('Y年m月d日')}}に投稿</p>
                     </div>
                 </li>
                 @endforeach
