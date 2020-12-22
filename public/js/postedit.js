@@ -21,4 +21,6 @@ window.onload = function(){
       document.getElementById('sier').classList.add('act');
       break;
   }
+  itemmoves();
+  textchange();
 }
