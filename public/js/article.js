@@ -15,7 +15,7 @@ $(function ()
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             url: 'https://cheeseac-lab1020.sakura.ne.jp/hoooters/public/like_product',  //route.phpで指定したコントローラーのメソッドURLを指定
-            //url: 'http://localhost/hoooters/public/like_product',  //route.phpで指定したコントローラーのメソッドURLを指定
+            // url: 'http://localhost/hoooters/public/like_product',  //route.phpで指定したコントローラーのメソッドURLを指定
             type: 'POST',   //GETかPOSTメソットを選択
             data: { 'aid': aid, 'like_product': like_product, }, //コントローラーに送るに名称をつけてデータを指定
                 })
