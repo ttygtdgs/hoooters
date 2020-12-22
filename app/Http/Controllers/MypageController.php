@@ -56,17 +56,16 @@ class MypageController extends Controller
     }
 
     public function othersmypage(User $othersid){
-        $user = Auth::user();
-        $usersicon=$user->icon;
-        
+        $users = User::where('id',$othersid->id)->first();
+        $usericon=Auth::user()->icon;
 
-        $artcount = Art::where('uid',$othersid)->where('life_flg',1)->count();
-        $likecount = Like::where('uid',$othersid)->count();
+        $artcount = Art::where('uid',$othersid->id)->where('life_flg',1)->count();
+        $likecount = Like::where('uid',$othersid->id)->count();
         $likearts = Art::join('likes','arts.id','=','likes.aid')
             ->join('corps','arts.cid','=','corps.id')
             ->join('users','arts.uid', '=', 'users.id')
             ->select('arts.updated_at as adate','corps.cname','arts.service','arts.id','life_flg','likes.uid','users.name','like_product','users.icon')
-            ->where('likes.uid',$othersid)
+            ->where('likes.uid',$othersid->id)
             ->where('life_flg',1)
             ->orderBy('adate','desc')
             ->limit(3)
@@ -75,16 +74,18 @@ class MypageController extends Controller
         $postarts = Art::join('corps','arts.cid','=','corps.id')
             ->join('users','arts.uid', '=', 'users.id')
             ->select('arts.updated_at as adate','corps.cname','arts.service','arts.id','life_flg')
-            ->where('arts.uid',$othersid)
+            ->where('arts.uid',$othersid->id)
             ->where('life_flg',1)
             ->orderBy('adate','desc')
             ->get();
 
-        Log::debug($likearts);
+        //Log::debug($likearts);
+        //Log::debug($othersid->id);
+        Log::debug($users);
 
-        return view('mypage',[
-            'users' => $user,
-            'usersicon' => $usersicon,
+        return view('othersmypage',[
+            'users' => $users,
+            'usericon' => $usericon,
             'artcount' => $artcount,
             'likecount' => $likecount,
             'likearts' => $likearts,

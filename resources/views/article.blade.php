@@ -82,12 +82,11 @@
                     </div>
                   </div>
               </div>
-              {{$art->uid}}
               <div class="middle-content">
                         <div class="feed">
                               <div class="feed-top">
                                   <img src="{{asset($art->icon)}}"  class="float">
-                                  <a href="{{ url('mypage/'.$art->uid) }}" class=""><p class="kigyo"> ＠{{$art->name}}さんが<span class="update-day">{{$art->adate->format('Y年m月d日')}}</span>に更新</p></a>
+                                  <a href="{{ url('othersmypage/'.$art->uid) }}" class=""><p class="kigyo"> ＠{{$art->name}}さんが<span class="update-day">{{$art->adate->format('Y年m月d日')}}</span>に更新</p></a>
                               </div>
                               <div class="cont">
 
@@ -133,7 +132,7 @@
                                       <div class="comme1">
                                         <div class="comme1_1">
                                           <div class="comme1_1_1"><img src="{{asset($texts->icon)}}" alt=""></div>
-                                          <div>＠{{ $texts->name }}</div>
+                                          <a href="{{ url('othersmypage/'.$texts->uid) }}" class="" style="color: black;"><div>＠{{ $texts->name }}</div></a>
                                         </div>
                                         <div class="comme1_2">{{ $texts->textscreated_at->format('Y年m月d日') }}に投稿</div>
                                       </div>

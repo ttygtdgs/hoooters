@@ -17,7 +17,7 @@ class ArticleController extends Controller
         //Log::debug($aid);
 
         //飛ぶ記事に紐づくコメントの情報 (ページ遷移時表示用)
-        $texts = Text::join('users','texts.uid','=','users.id')->select('texts.created_at as textscreated_at','texts.txt','users.name','users.icon')->orderBy('textscreated_at', 'asc')->where('aid',$aid->id)->get();
+        $texts = Text::join('users','texts.uid','=','users.id')->select('texts.created_at as textscreated_at','texts.txt','texts.uid','users.name','users.icon')->orderBy('textscreated_at', 'asc')->where('aid',$aid->id)->get();
 
         // 飛ぶ記事に紐づくコメントの情報 (カウント用)
         $textsnums =  Text::where('aid',$aid->id)->get();
