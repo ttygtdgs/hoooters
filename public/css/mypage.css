@@ -155,6 +155,11 @@ body{
     object-fit: cover;
     width: 100%;
     border-radius: 100%;
+
+    /* object-fit: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%; */
 }
 
 #leftprofile #leftprofile2{
@@ -174,7 +179,8 @@ body{
 }
 
 #leftprofile #leftprofile3 a{
-   padding: 0 15px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 

@@ -97,7 +97,10 @@ $(function ()
                     html += '<div class="comme1_1">';
                     html +='<div><img src="http://localhost/hoooters/public/'+data[0].icon+'" alt=""></div>';
                     //html +='<div><img src="https://cheeseac-lab1020.sakura.ne.jp/hoooters/public/'+data[0].icon+'" alt=""></div>';
+                    html +='<a href="http://localhost/hoooters/public/othersmypage/'+data[0].uid+'" style="color: black;">';
+                    // html +='<a href="https://cheeseac-lab1020.sakura.ne.jp/hoooters/public/othersmypage/'+data[0].uid+'">';
                     html +='<div>＠'+data[0].name+'</div>';
+                    html +='</a>';
                     html +='</div>';
                     html +='<div class="comme1_2">'+data[2]+'に投稿</div>';
                     html +='</div>';
