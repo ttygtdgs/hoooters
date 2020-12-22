@@ -75,8 +75,8 @@ function csearch(key){
   params.append('keyword',key);
 
   //非同期通信でcorpへpost
-  fetch('http://localhost/hoooters/public/csearch',{
-  // fetch('https://cheeseac-lab1020.sakura.ne.jp/hoooters/public/csearch',{
+  // fetch('http://localhost/hoooters/public/csearch',{
+  fetch('http://tealimpala23.sakura.ne.jp/hoooters/public/csearch',{
     headers: {'X-CSRF-TOKEN': token},
     method: 'POST',
     cache: 'no-cache',
@@ -146,8 +146,8 @@ document.getElementById('cadd-submit').addEventListener('click',function(){
   params.append('curl',curl);
 
   //非同期通信でcorpへpost
-  fetch('http://localhost/hoooters/public/corp',{
-  // fetch('https://cheeseac-lab1020.sakura.ne.jp/hoooters/public/corp',{
+  // fetch('http://localhost/hoooters/public/corp',{
+  fetch('http://tealimpala23.sakura.ne.jp/hoooters/public/corp',{
     headers: {'X-CSRF-TOKEN': token},
     method: 'POST',
     cache: 'no-cache',
