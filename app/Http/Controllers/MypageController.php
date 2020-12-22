@@ -22,7 +22,7 @@ class MypageController extends Controller
         // $usersicon=asset($usersicon);
         // Log::debug($user);
 
-        $artcount = Art::where('uid',$user->id)->count();
+        $artcount = Art::where('uid',$user->id)->where('life_flg',1)->count();
         $likecount = Like::where('uid',$user->id)->count();
         $likearts = Art::join('likes','arts.id','=','likes.aid')
             ->join('corps','arts.cid','=','corps.id')

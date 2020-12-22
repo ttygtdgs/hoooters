@@ -435,6 +435,7 @@ main{
 
 .feed-pict{
   width: 100%;
+  /* object-fit: cover; */
 }
 
 /*

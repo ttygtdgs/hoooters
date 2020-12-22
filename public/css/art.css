@@ -155,6 +155,10 @@ body {
     padding-top: 4vh;
 }
 
+.fa-heart:hover, .like-num2:hover{
+    cursor: pointer;
+}
+
 .middle-content {
     width: 60%;
     min-height: 93vh;
@@ -175,7 +179,7 @@ body {
     margin-left: 1vw;
     position: absolute;
     display: contents; */
-   
+
     height: 70px;
     display: flex;
     align-items: center;
@@ -262,6 +266,7 @@ span {
 
 .deletearea button:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 /* 以上、丹羽追記 */
@@ -284,14 +289,17 @@ p.kigyo-comme {
     line-height: 2.5;
 }
 
-span.gyo-tag-back {
-    background: lightgray;
+.gyo-tag-back {
     font-weight: lighter;
+    background: lightgray;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
     /* margin-top: 0vh; */
 }
 
 .gyo-tag {
-    padding-top: 2vh;
+    margin-top: 2vh;
     padding-left: 50px;
 }
 
@@ -416,6 +424,10 @@ h2.j-title {
     color: #fff;
     font-weight: bold;
     border-radius: 8px;
+}
+
+#txtbtn{
+    cursor: pointer;
 }
 
 /* 以上、丹羽追記（コメント投稿エリア)a */
