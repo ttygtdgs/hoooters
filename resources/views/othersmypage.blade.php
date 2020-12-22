@@ -24,7 +24,7 @@
 <header class="header">
     <div class="header-container">
         <a href="{{url('/')}}" class="header-left">
-            <img src="pic/logo.png" alt="Hoooters">
+            <img src="{{asset('pic/logo.png')}}" alt="Hoooters">
         </a>
         <div class="header-right">
             <a href="{{url('/edit')}}" class="edit-btn">
@@ -34,7 +34,7 @@
             <div class="icon-wrapper">
                 <div class="myicon">
                     <!-- アイコン -->
-                    <img src="{{$usersicon}}">
+                    <img src="{{asset($usericon)}}">
                 </div>
                 <i class="fas fa-sort-down"></i>
                 <div class="mypage-list none">
@@ -65,38 +65,38 @@
   <div id="leftprofilebox">
     <div id="leftprofile">
         <div id="leftprofile1">
-            <img src="{{$usersicon}}" alt="">
+            <img src="{{asset($users->icon)}}" alt="">
         </div>
         <div id="leftprofile2">
             <!-- ユーザーネーム -->
-            {{Auth::user()->name}}さん
+            {{$users->name}}さん
         </div>
         <div id="leftprofile3">
-          @if (Auth::user()->site == "")
+          @if ($users->site == "")
           @else
-            <a href="{{Auth::user()->site}}" target="_blank" rel="noopener noreferrer">
+            <a href="{{$users->site}}" target="_blank" rel="noopener noreferrer">
               <i class="fa fa-github my-icon" style="font-size: 2em; color: rgb(53, 53, 53);" aria-hidden="true"></i>
             </a>
           @endif
-          @if (Auth::user()->tsite == "")
+          @if ($users->tsite == "")
           @else
-          <a href="{{Auth::user()->tsite}}" target="_blank" rel="noopener noreferrer">
+          <a href="{{$users->tsite}}" target="_blank" rel="noopener noreferrer">
             <i class="fa fa-twitter my-icon " style="font-size: 2em; color:#55acee; " aria-hidden="true"></i>
           </a>
           @endif
-          @if (Auth::user()->fsite == "")
+          @if ($users->fsite == "")
           @else
-          <a href="{{Auth::user()->fsite}}" target="_blank" rel="noopener noreferrer">
+          <a href="{{$users->fsite}}" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-facebook-square" style="font-size: 2em; color: royalblue;" aria-hidden="true"></i>
           </a>
           @endif
         </div>
         <div id="leftprofile4">
-          @if (Auth::user()->intro == "")
-              <p>「プロフィールを編集する」から<br>自己紹介文を記載しましょう！</p>
+          @if ($users->intro == "")
+              <p>プロフィールは記載されていません。</p>
           @else
                <!-- 初めまして、チキンです。原宿のエンジニア養成学校に通ってます。チーム開発頑張るぞ〜〜。 -->
-               <p>{{Auth::user()->intro}}</p>
+               <p>{{$users->intro}}</p>
           @endif
         </div>
         <div  id="leftprofile5">
@@ -111,11 +111,11 @@
                 <p class="p6">Likes</p>
             </div>
         </div>
-        <div id="leftprofile6">
+        <!-- <div id="leftprofile6">
             <a href="/hoooters/public/profile" id="">
                 プロフィールを編集する
             </a>
-        </div>
+        </div> -->
     </div>
   </div>
 
@@ -132,7 +132,7 @@
                     <a href="{{url('/article/'.$likeart->id)}}" class="art-title">{{$likeart->cname}}<span>{{$likeart->service}}</span></a>
                     <div class="post-name">
                         <div class="poster-icon">
-                            <img src="{{$likeart->icon}}">
+                            <img src="{{asset($likeart->icon)}}">
                         </div>
                         <p class="poster-info">{{$likeart->name}}さんが{{$likeart->adate->format('Y年m月d日')}}に投稿</p>
                     </div>

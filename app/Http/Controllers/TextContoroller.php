@@ -26,7 +26,7 @@ class TextContoroller extends Controller
         // created_atのカラム名が被っているので、selectを使って、textsテーブルのcreated_atを「textscreated_at」に変更
         // また、selectで結合したテーブルから、必要なカラムのみ、抽出する。ここでは、①textsテーブルの「textscreated_at(※上で名前変えたやつ！！)」、②textsテーブルの「txt」、③usersテーブルの「name」
         // orderByで、textsテーブルの「textscreated_at」で並び替え。最後にfirstで一番上のデータだけとってくる
-        $texts = Text::join('users','texts.uid','=','users.id')->select('texts.created_at as textscreated_at','texts.txt','users.name','users.icon')->orderBy('textscreated_at', 'desc')->first();
+        $texts = Text::join('users','texts.uid','=','users.id')->select('texts.created_at as textscreated_at','texts.txt','users.name','users.icon','texts.uid')->orderBy('textscreated_at', 'desc')->first();
 
         
         // 対応するaidのデータのみとってくる。ここの「1」を変更！

@@ -24,7 +24,7 @@
 <header class="header">
     <div class="header-container">
         <a href="{{url('/')}}" class="header-left">
-            <img src="pic/logo.png" alt="Hoooters">
+            <img src="{{asset('pic/logo.png')}}" alt="Hoooters">
         </a>
         <div class="header-right">
             <a href="{{url('/edit')}}" class="edit-btn">
