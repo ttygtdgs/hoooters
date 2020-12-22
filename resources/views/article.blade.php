@@ -82,7 +82,7 @@
                     </div>
                   </div>
               </div>
-              
+
               <div class="middle-content">
                         <div class="feed">
                               <div class="feed-top">
@@ -90,11 +90,11 @@
                                   <p class="kigyo"> ＠{{$art->name}}さんが<span class="update-day">{{$art->adate->format('Y年m月d日')}}</span>に更新</p>
                               </div>
                               <div class="cont">
-                                  
+
                                     @if(Auth::user()->id == $art->uid)
                                       <div class="deletearea">
                                         <p><span>{{$art->cname}}</span>{{$aid->service}}</p>
-                                        <form id="delete_form"action="{{ url('article/'.$art->id) }}" method="POST"> 
+                                        <form id="delete_form"action="{{ url('article/'.$art->id) }}" method="POST">
                                           {{ csrf_field() }}
                                           {{ method_field('DELETE') }}
                                           <button type="submit" id="deletebtn">
@@ -106,8 +106,10 @@
                                     @else
                                       <p class="corp"><span class="kigyo-name">{{$art->cname}}</span>{{$aid->service}}</p>
                                     @endif
-                                  
-                                    <p class="gyo-tag"><span class="gyo-tag-back">＃{{$art->gname}}</span></p>
+
+                                    <div class="gyo-tag">
+                                      <button type="button" class="gyo-tag-back">＃{{$art->gname}}</button>
+                                    </div>
                                     <img src="{{asset($aid->art_img)}}" class="feed-pict" alt="">
                                     <h2 class="j-title">事業概要</h2>
                                     <p class="kigyo-comme">{{$art->jcomme}}</p>
@@ -165,7 +167,7 @@
                                 </div>
                               </div>
                         </div>
-                        
+
                 </div>
 
 
