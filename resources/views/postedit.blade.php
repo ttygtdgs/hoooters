@@ -17,7 +17,7 @@
 <header class="header">
     <div class="header-container">
         <a href="{{url('/')}}" class="header-left">
-            <img src="pic/logo.png" alt="Hoooters">
+            <img src="{{asset('pic/logo.png')}}" alt="Hoooters">
         </a>
         <div class="header-right">
             <!-- <a href="edit" class="edit-btn">
@@ -27,7 +27,7 @@
             <div class="icon-wrapper">
                 <div class="myicon">
                     <!-- アイコン -->
-                    <img src="{{$usericon}}">
+                    <img src="{{asset($usericon)}}">
                 </div>
                 <i class="fas fa-sort-down"></i>
                 <div class="mypage-list none">
@@ -42,11 +42,12 @@
     </div>
 </header>
   <div class="container">
-    <form action="{{ url('/edit') }}" enctype="multipart/form-data" method="post">
+    <form action="{{ url('/edit/update') }}" enctype="multipart/form-data" method="post">
     {{ csrf_field() }}
       <!-- タイトル---------------------------------->
       <!-- uid -->
       <input type="hidden" name="uid" id="uid" value="{{Auth::id()}}">
+      <input type="hidden" name="id" value="{{$aid}}">
       <div class="title-wrapper">
         <div class="title-top">
           <div class="corp-wrapper">

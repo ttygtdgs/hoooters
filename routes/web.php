@@ -28,6 +28,7 @@ Route::get('/edit', 'EditController@edit');
 
 //投稿ページ
 Route::post('/edit', 'EditController@register');
+Route::post('/edit/update', 'EditController@update');
 
 //編集ページ
 Route::get('/postedit/{id}', 'EditController@postedit');
