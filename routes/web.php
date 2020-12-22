@@ -35,7 +35,7 @@ Route::post('/csearch', 'CsearchController@search');
 // マイページ（丹羽担当）
 Route::get('/mypage', 'MypageController@mypage');
 
-Route::get('/mypage/{uid}', 'MypageController@othersmypage');
+Route::get('/mypage/{othersid}', 'MypageController@othersmypage');
 
 Route::get('/profile', 'ProfileController@profile');
 

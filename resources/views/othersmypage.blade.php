@@ -111,11 +111,11 @@
                 <p class="p6">Likes</p>
             </div>
         </div>
-        <div id="leftprofile6">
+        <!-- <div id="leftprofile6">
             <a href="/hoooters/public/profile" id="">
                 プロフィールを編集する
             </a>
-        </div>
+        </div> -->
     </div>
   </div>
 

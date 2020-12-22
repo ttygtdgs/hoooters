@@ -82,12 +82,12 @@
                     </div>
                   </div>
               </div>
-
+              {{$art->uid}}
               <div class="middle-content">
                         <div class="feed">
                               <div class="feed-top">
                                   <img src="{{asset($art->icon)}}"  class="float">
-                                  <p class="kigyo"> ＠{{$art->name}}さんが<span class="update-day">{{$art->adate->format('Y年m月d日')}}</span>に更新</p>
+                                  <a href="{{ url('mypage/'.$art->uid) }}" class=""><p class="kigyo"> ＠{{$art->name}}さんが<span class="update-day">{{$art->adate->format('Y年m月d日')}}</span>に更新</p></a>
                               </div>
                               <div class="cont">
 
