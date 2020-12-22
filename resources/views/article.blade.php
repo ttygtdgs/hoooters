@@ -112,11 +112,11 @@
                                     </div>
                                     <img src="{{asset($aid->art_img)}}" class="feed-pict" alt="">
                                     <h2 class="j-title">事業概要</h2>
-                                    <p class="kigyo-comme">{{$art->jcomme}}</p>
+                                    <p class="kigyo-comme">{!! nl2br(e($art->jcomme)) !!}</p>
 
 
                                     <h2 class="j-title">諸条件</h2>
-                                    <p class="kigyo-comme">{{$art->zcomme}}</p>
+                                    <p class="kigyo-comme">{!! nl2br(e($art->zcomme)) !!}</p>
 
                                     <h2 class="j-title">企業リンク</h2>
                                     <a href="{{$art->curl}}" style="color: black; font-size: 18px;" target="_blank"><p class="kigyo-comme">{{$art->curl}}</p></a>
