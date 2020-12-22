@@ -40,6 +40,7 @@
 .cantext>textarea{
   text-align: center;
   font-size: 16px;
+  width: 140px;
   border: none;
   resize: none;
   white-space: pre-wrap;
