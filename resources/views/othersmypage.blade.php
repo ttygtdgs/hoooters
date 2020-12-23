@@ -39,6 +39,7 @@
                 <i class="fas fa-sort-down"></i>
                 <div class="mypage-list none">
                     <a href="{{url('/mypage')}}" id="mypage-btn">マイページ</a>
+                    <a href="{{url('/draft')}}" id="draft-btn">下書き一覧</a>
                     <div id="logout-btn">ログアウト</div>
                     <form id='logout-form' action="{{ route('logout')}}" method="POST" style="display: none;">
                     {{ csrf_field() }}
@@ -123,7 +124,7 @@
         <div id="like">
             <div class="article-title">
                 <span class="fa fa-thumb-tack"></span>
-                <p>最新のお気に入り記事</p>
+                <p>{{$users->name}}さんのお気に入り記事</p>
             </div>
             <ul class="art-list">
                 <!-- foreach -->
@@ -144,7 +145,7 @@
         <div id="article">
             <div class="article-title">
                 <span class="fa fa-pencil"></span>
-                <p>投稿した記事一覧</p>
+                <p>{{$users->name}}さんが投稿した記事</p>
             </div>
             <ul class="art-list">
                 <!-- foreach -->

@@ -38,6 +38,7 @@
                 <i class="fas fa-sort-down"></i>
                 <div class="mypage-list none">
                     <a href="{{url('/mypage')}}" id="mypage-btn">マイページ</a>
+                    <a href="{{url('/draft')}}" id="draft-btn">下書き一覧</a>
                     <div id="logout-btn">ログアウト</div>
                     <form id='logout-form' action="{{ route('logout')}}" method="POST" style="display: none;">
                     {{ csrf_field() }}

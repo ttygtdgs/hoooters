@@ -42,8 +42,6 @@ class MypageController extends Controller
             ->orderBy('adate','desc')
             ->get();
 
-        Log::debug($likearts);
-
         return view('mypage',[
             'users' => $user,
             'usersicon' => $usersicon,
@@ -79,10 +77,6 @@ class MypageController extends Controller
             ->orderBy('adate','desc')
             ->get();
 
-        //Log::debug($likearts);
-        //Log::debug($othersid->id);
-        Log::debug($users);
-
         return view('othersmypage',[
             'users' => $users,
             'usericon' => $usericon,
@@ -92,5 +86,26 @@ class MypageController extends Controller
             'postarts' => $postarts
         ]);
 
+    }
+
+    public function draft(){
+        $user = Auth::user();
+        $arts = Art::join('corps','arts.cid','=','corps.id')
+            ->select('arts.updated_at as adate','corps.cname','arts.service','arts.id','life_flg')
+            ->where('arts.uid',$user->id)
+            ->where('life_flg',0)
+            ->orderBy('adate','desc')
+            ->get();
+
+            Log::debug($arts);
+        return view('draft',[
+            'usersicon' => $user->icon,
+            'arts' => $arts
+        ]);
+    }
+
+    public function delete(Art $art){
+        $art->delete();
+        return redirect('draft');
     }
 }

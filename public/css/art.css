@@ -71,7 +71,7 @@ body {
     width: 37px;
     height: 37px;
     border-radius: 50%;
-    /* background-color: #fff; */
+    background-color: #fff;
     overflow: hidden;
     margin-right: 5px;
 }
@@ -96,17 +96,17 @@ body {
     z-index: 10;
 }
 #mypage-btn,
-#logout-btn {
+#logout-btn ,#draft-btn{
     display: block;
     padding: 15px 0;
     font-size: 12px;
     color: rgb(105, 105, 105);
 }
-#mypage-btn {
+#mypage-btn ,#draft-btn{
     border-bottom: 1px solid rgb(204, 204, 204);
 }
 #mypage-btn:hover,
-#logout-btn:hover {
+#logout-btn:hover ,#draft-btn:hover{
     cursor: pointer;
     color: rgb(88, 88, 88);
     background-color: rgb(241, 241, 241);
