@@ -5,7 +5,7 @@
   <!-- 以下は丹羽追記、ajax部分の対応 -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Articleページ</title>
+  <title>Hoooters</title>
  <!-- Font Awesome -->
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
  <!-- fontawsome -->
@@ -16,6 +16,8 @@
   <link href="{{asset('/css/art.css')}}" rel="stylesheet">
   <!-- リセットcss -->
   <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
+  <!-- Favicons -->
+  <link href="{{asset('/pic/favicon.png')}}" rel="icon">
 </head>
 <body>
 
@@ -38,6 +40,7 @@
                 <i class="fas fa-sort-down"></i>
                 <div class="mypage-list none">
                     <a href="{{url('/mypage')}}" id="mypage-btn">マイページ</a>
+                    <a href="{{url('/draft')}}" id="draft-btn">下書き一覧</a>
                     <div id="logout-btn">ログアウト</div>
                     <form id='logout-form' action="{{ route('logout')}}" method="POST" style="display: none;">
                     {{ csrf_field() }}
@@ -191,6 +194,7 @@
 <!-- 以上、footer ----------------------------------------->
 
 
+<script src="{{ asset('js/url.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="{{ asset('js/article.js') }}"></script>
 <script src="{{ asset('js/header.js') }}"></script>

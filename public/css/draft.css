@@ -1,0 +1,252 @@
+body{
+  background-color: rgb(247, 247, 247);
+  color: rgb(73, 73, 73);
+}
+
+.none{
+  display: none;
+}
+
+/* 以下、header---------------------------- */
+.none{
+  display: none;
+}
+
+.header{
+  width: 100vw;
+  height: 7vh;
+  background-color:rgb(113, 203, 241);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-container{
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-left{
+  width: 150px;
+  display: block;
+}
+.header-left>img{
+  width: 100%;
+}
+.header-right{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.edit-btn{
+  width: 130px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  background-color: rgb(97, 171, 255);
+  color: #fff;
+  margin-right: 20px;
+}
+.edit-btn:hover{
+  background-color: rgb(87, 151, 224);
+}
+.edit-btn>.fa-edit{
+  font-size: 16px;
+  margin-right: 10px;
+  padding-bottom: 2px;
+}
+.edit-btn>p{
+  font-size: 12px;
+}
+.icon-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.icon-wrapper:hover{
+  cursor: pointer;
+}
+.myicon{
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background-color: #fff;
+  overflow: hidden;
+  margin-right: 5px;
+}
+.myicon>img{
+  object-fit: cover;
+  width: 100%;
+  border-radius: 100%;
+
+}
+.icon-wrapper>.fa-sort-down{
+  color: rgb(85, 150, 224);
+  padding-bottom: 3px;
+}
+.mypage-list{
+  position: absolute;
+  top: 40px;
+  right: 0;
+  text-align: center;
+  width: 120px;
+  background-color: #fff;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  z-index: 10;
+}
+#mypage-btn,#logout-btn,#draft-btn{
+  display: block;
+  padding: 15px 0;
+  font-size: 12px;
+  color: rgb(105, 105, 105);
+}
+#mypage-btn,#draft-btn{
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+#mypage-btn:hover,#logout-btn:hover,#draft-btn:hover{
+  cursor: pointer;
+  color: rgb(88, 88, 88);
+  background-color: rgb(241, 241, 241);
+}
+
+/* 以上、header---------------------------- */
+
+main{
+  width: 100%;
+  padding: 40px 0 80px;
+}
+
+.container{
+  width: 60%;
+  min-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  min-height: 605px;
+}
+
+.title-wrapper{
+  width: 100%;
+  height: 45px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(247, 247, 247);
+}
+
+.fa-pencil-ruler{
+  color: #C5A801;
+  margin-right: 10px;
+}
+
+.page-title{
+  font-weight: bold;
+  padding-top: 3px;
+}
+
+
+/* 下書きリストーーーーーーーーーーーーーーーーーーーーーー */
+.draft-wrapper{
+  width: 100%;
+}
+
+.draft-item{
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid rgb(247, 247, 247);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px 10px 50px;
+}
+
+.item-left{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.draft-title{
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+}
+
+.cname{
+  font-size: 22px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.service{
+  overflow: hidden;
+  height: 16px;
+}
+
+.draft-date{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: rgb(161, 161, 161);
+}
+
+.update{
+  padding-left: 5px;
+}
+
+.datetitle{
+  padding-left: 10px;
+}
+
+.item-right{
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+.draft-btn,.delete-btn{
+  display: block;
+  padding: 7px 14px 5px;
+  background-color: #fff;
+  color: rgb(116, 116, 116);
+  border: 1px solid rgb(156, 156, 156);
+  border-radius: 2px;
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+.draft-btn:hover,.delete-btn:hover{
+  cursor: pointer;
+  opacity: 1;
+  background-color: rgb(240, 240, 240);
+}
+
+.draft-btn{
+  margin-right: 20px;
+}
+
+.error{
+  width: 100%;
+  padding: 80px 0;
+  text-align: center;
+  color: rgb(116, 116, 116);
+}
+
+/* 以下、footer------------------------------------------------------- */
+footer{
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  color: #cccccc;
+}
+/* 以上、footer------------------------------------------------------- */

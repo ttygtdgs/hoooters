@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hootersのトップページ</title>
-  <!-- リセットcss -->
-  <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
-  <!-- 後藤田用css -->
-  <link href="{{asset('/css/index.css')}}" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoooters</title>
+<!-- リセットcss -->
+<link href="{{asset('/css/reset.css')}}" rel="stylesheet">
+<!-- 後藤田用css -->
+<link href="{{asset('/css/index.css')}}" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<!-- Favicons -->
+<link href="{{asset('/pic/favicon.png')}}" rel="icon">
 </head>
 <body>
 
@@ -18,7 +19,7 @@
 <header class="header">
     <div class="header-container">
         <a href="{{url('/')}}" class="header-left">
-            <img src="pic/logo.png" alt="Hoooters">
+            <img src="{{asset('pic/logo.png')}}" alt="Hoooters">
         </a>
         <div class="header-right">
             <a href="edit" class="edit-btn">
@@ -33,6 +34,7 @@
                 <i class="fas fa-sort-down"></i>
                 <div class="mypage-list none">
                     <a href="{{url('/mypage')}}" id="mypage-btn">マイページ</a>
+                    <a href="{{url('/draft')}}" id="draft-btn">下書き一覧</a>
                     <div id="logout-btn">ログアウト</div>
                     <form id='logout-form' action="{{ route('logout')}}" method="POST" style="display: none;">
                     {{ csrf_field() }}
@@ -108,6 +110,7 @@
 
 
 <!-- ajax用jquery -->
+<script src="{{ asset('js/url.js') }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="{{ asset('js/index.js') }}"></script>
 <script src="{{ asset('js/header.js') }}"></script>

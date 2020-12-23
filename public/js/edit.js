@@ -75,8 +75,7 @@ function csearch(key){
   params.append('keyword',key);
 
   //非同期通信でcorpへpost
-  // fetch('http://localhost/hoooters/public/csearch',{
-  fetch('http://tealimpala23.sakura.ne.jp/hoooters/public/csearch',{
+  fetch(dburlrequest+'/csearch',{
     headers: {'X-CSRF-TOKEN': token},
     method: 'POST',
     cache: 'no-cache',
@@ -146,8 +145,7 @@ document.getElementById('cadd-submit').addEventListener('click',function(){
   params.append('curl',curl);
 
   //非同期通信でcorpへpost
-  // fetch('http://localhost/hoooters/public/corp',{
-  fetch('http://tealimpala23.sakura.ne.jp/hoooters/public/corp',{
+  fetch(dburlrequest+'/corp',{
     headers: {'X-CSRF-TOKEN': token},
     method: 'POST',
     cache: 'no-cache',
@@ -174,9 +172,15 @@ document.getElementById('draft').addEventListener('click',function(){
   document.getElementById('life_flg').value = 0;
   const place = document.querySelector('.canvas-box').innerHTML;
   document.getElementById('art_place').value = place;
-  if(confirm('下書きに保存しますか？')){
-    document.getElementById('submit').click();
+  const cid = document.getElementById('cid').value;
+  if(cid!=""){
+    if(confirm('下書きに保存しますか？')){
+      document.getElementById('submit').click();
+    }else{
+      return;
+    }
   }else{
+    alert('企業を選択してください');
     return;
   }
 });

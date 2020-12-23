@@ -2,20 +2,21 @@
 <html lang="ja">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Hoooters</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Hoooters</title>
 
-  <!-- リセットcss -->
-  <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- fontawsome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
-  <!-- 丹羽作成 -->
-  <link href="{{asset('/css/mypage.css')}}" rel="stylesheet">
-
+<!-- リセットcss -->
+<link href="{{asset('/css/reset.css')}}" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- fontawsome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
+<!-- 丹羽作成 -->
+<link href="{{asset('/css/mypage.css')}}" rel="stylesheet">
+<!-- Favicons -->
+<link href="{{asset('/pic/favicon.png')}}" rel="icon">
 </head>
 
 <body>
@@ -39,6 +40,7 @@
                 <i class="fas fa-sort-down"></i>
                 <div class="mypage-list none">
                     <a href="{{url('/mypage')}}" id="mypage-btn">マイページ</a>
+                    <a href="{{url('/draft')}}" id="draft-btn">下書き一覧</a>
                     <div id="logout-btn">ログアウト</div>
                     <form id='logout-form' action="{{ route('logout')}}" method="POST" style="display: none;">
                     {{ csrf_field() }}
@@ -123,7 +125,7 @@
         <div id="like">
             <div class="article-title">
                 <span class="fa fa-thumb-tack"></span>
-                <p>最新のお気に入り記事</p>
+                <p>{{$users->name}}さんのお気に入り記事</p>
             </div>
             <ul class="art-list">
                 <!-- foreach -->
@@ -144,7 +146,7 @@
         <div id="article">
             <div class="article-title">
                 <span class="fa fa-pencil"></span>
-                <p>投稿した記事一覧</p>
+                <p>{{$users->name}}さんが投稿した記事</p>
             </div>
             <ul class="art-list">
                 <!-- foreach -->
@@ -171,6 +173,7 @@
 </footer>
 <!-- 以上、footer ----------------------------------------->
 
+<script src="{{ asset('js/url.js') }}"></script>
 <script src="{{ asset('js/header.js') }}"></script>
 <script src="{{ asset('js/mypage.js') }}"></script>
 </body>

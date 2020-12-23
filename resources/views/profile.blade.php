@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hooters</title>
-    
+    <title>Hoooters</title>
+
     <!-- Scripts -->
     <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
@@ -16,18 +16,20 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Favicons -->
+    <link href="{{asset('/pic/favicon.png')}}" rel="icon">
 </head>
 <body>
-    
+
 
 
 <!-- 以下、main---------------------- -->
 <main class="py-4">
-    <div class="container"> 
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    
+
                     <div class="card-header">プロフィールを編集</div>
 
                     <div class="card-body">

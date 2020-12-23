@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>投稿・編集</title>
+  <title>Hoooters</title>
 </head>
 <body>
 <header class="header">
@@ -32,6 +32,7 @@
                 <i class="fas fa-sort-down"></i>
                 <div class="mypage-list none">
                     <a href="{{url('/mypage')}}" id="mypage-btn">マイページ</a>
+                    <a href="{{url('/draft')}}" id="draft-btn">下書き一覧</a>
                     <div id="logout-btn">ログアウト</div>
                     <form id='logout-form' action="{{ route('logout')}}" method="POST" style="display: none;">
                     {{ csrf_field() }}
@@ -188,6 +189,7 @@
 
 <!-- JS -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+<script src="{{ asset('js/url.js') }}"></script>
 <script src="{{ asset('js/html2canvas.js') }}"></script>
 <script src="{{ asset('js/edit.js') }}"></script>
 <script src="{{ asset('js/canvas.js') }}"></script>

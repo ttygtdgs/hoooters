@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>HOOOTERS WelcomePage Template</title>
+  <title>Hoooters</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -21,7 +21,7 @@
 
    <!-- リセットcss -->
    <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
-   
+
   <!-- welcome用css -->
   <link href="{{asset('/css/welcome.css')}}" rel="stylesheet">
 
@@ -36,7 +36,7 @@
     <div class="container">
           <img class="img-responsive" src="{{asset('/pic/logo.png')}}" alt="">
     </div>
-    <div class="container">   
+    <div class="container">
         <div class="row">
             <div class="col-md-5">
               <img class="img-fluid" src="{{asset('/pic/ipad-hand.png')}}" alt="">
@@ -53,7 +53,7 @@
         </div> -->
     </div>
   </div>
- 
+
 
 
 </body>
