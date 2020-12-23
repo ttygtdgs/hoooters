@@ -5,7 +5,7 @@
   <!-- 以下は丹羽追記、ajax部分の対応 -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Articleページ</title>
+  <title>Hoooters</title>
  <!-- Font Awesome -->
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
  <!-- fontawsome -->
@@ -16,6 +16,8 @@
   <link href="{{asset('/css/art.css')}}" rel="stylesheet">
   <!-- リセットcss -->
   <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
+  <!-- Favicons -->
+  <link href="{{asset('/pic/favicon.png')}}" rel="icon">
 </head>
 <body>
 

@@ -2,20 +2,21 @@
 <html lang="ja">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Hoooters</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Hoooters</title>
 
-  <!-- リセットcss -->
-  <link href="{{asset('/css/reset.css')}}" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- fontawsome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
-  <!-- 丹羽作成 -->
-  <link href="{{asset('/css/draft.css')}}" rel="stylesheet">
-
+<!-- リセットcss -->
+<link href="{{asset('/css/reset.css')}}" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- fontawsome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?v=2">
+<!-- 中野作成 -->
+<link href="{{asset('/css/draft.css')}}" rel="stylesheet">
+<!-- Favicons -->
+<link href="{{asset('/pic/favicon.png')}}" rel="icon">
 </head>
 
 <body>
