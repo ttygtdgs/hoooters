@@ -193,6 +193,7 @@
 
 <!-- JS -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+<script src="{{ asset('js/url.js') }}"></script>
 <script src="{{ asset('js/html2canvas.js') }}"></script>
 <script src="{{ asset('js/edit.js') }}"></script>
 <script src="{{ asset('js/canvas.js') }}"></script>

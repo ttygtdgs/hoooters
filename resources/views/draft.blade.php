@@ -102,6 +102,7 @@
 </footer>
 <!-- 以上、footer ----------------------------------------->
 
+<script src="{{ asset('js/url.js') }}"></script>
 <script src="{{ asset('js/header.js') }}"></script>
 <script src="{{ asset('js/draft.js') }}"></script>
 </body>

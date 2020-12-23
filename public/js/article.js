@@ -15,7 +15,7 @@ $(function ()
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             // url: 'https://cheeseac-lab1020.sakura.ne.jp/hoooters/public/like_product',  //route.phpで指定したコントローラーのメソッドURLを指定
-            url: 'http://localhost/hoooters/public/like_product',  //route.phpで指定したコントローラーのメソッドURLを指定
+            url: dburlrequest+'/like_product',  //route.phpで指定したコントローラーのメソッドURLを指定
             type: 'POST',   //GETかPOSTメソットを選択
             data: { 'aid': aid, 'like_product': like_product, }, //コントローラーに送るに名称をつけてデータを指定
                 })
@@ -76,7 +76,7 @@ $(function ()
                 // csrf対策、「article.blade.php」のheadにcsrf対策のmetaタグも追記
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            url: 'http://localhost/hoooters/public/text',  //route.phpで指定したコントローラーのメソッドURLを指定
+            url: dburlrequest+'/text',  //route.phpで指定したコントローラーのメソッドURLを指定
             //  url: 'https://cheeseac-lab1020.sakura.ne.jp/hoooters/public/text',  //route.phpで指定したコントローラーのメソッドURLを指定
             type: 'POST',   //GETかPOSTメソットを選択
             data: { 'id': id, 'aid': aid, 'txt': txt,}, //コントローラーに送るに名称をつけてデータを指定
@@ -95,9 +95,9 @@ $(function ()
                     //挿入するhtmlを作成
                     let html = '<li><div class="comme1">';
                     html += '<div class="comme1_1">';
-                    html +='<div><img src="http://localhost/hoooters/public/'+data[0].icon+'" alt=""></div>';
+                    html +='<div><img src="'+dburlrequest+'/'+data[0].icon+'" alt=""></div>';
                     // html +='<div><img src="https://cheeseac-lab1020.sakura.ne.jp/hoooters/public/'+data[0].icon+'" alt=""></div>';
-                    html +='<a href="http://localhost/hoooters/public/othersmypage/'+data[0].uid+'" style="color: black;">';
+                    html +='<a href="'+dburlrequest+'/othersmypage/'+data[0].uid+'" style="color: black;">';
                     // html +='<a href="https://cheeseac-lab1020.sakura.ne.jp/hoooters/public/othersmypage/'+data[0].uid+'">';
                     html +='<div>＠'+data[0].name+'</div>';
                     html +='</a>';
