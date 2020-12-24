@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class EditController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     //登録
     public function register(Request $request){
         // Log::debug($request);
