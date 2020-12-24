@@ -13,6 +13,11 @@ use Log;
 
 class ArticleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function article(Art $aid){
         //Log::debug($aid);
 
@@ -37,7 +42,7 @@ class ArticleController extends Controller
         Log::debug($art);
         // 「article.blade.php」に遷移 & データを渡す
         return view('article',[
-            
+
             'aid' => $aid,
             'texts' => $texts,
             'usersicon' => $usersicon,

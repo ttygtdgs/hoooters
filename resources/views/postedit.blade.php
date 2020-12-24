@@ -70,7 +70,7 @@
               <div class="slabel tlabel">事業</div>
               <div class="service-name">
                 <!-- service -->
-                <input id="service" type="text" name="service" placeholder="事業やサービスの名前を入力してください。"  value="{{$arts->service}}">
+                <input id="service" maxlength="15" type="text" name="service" placeholder="事業やサービスの名前を入力してください。(15文字以内)"  value="{{$arts->service}}">
               </div>
             </div>
           </div>

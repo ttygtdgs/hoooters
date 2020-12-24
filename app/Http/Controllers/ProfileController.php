@@ -10,6 +10,11 @@ use Log;
 
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     //画面繊維の処理
     public function profile(){
         return view('profile');

@@ -15,6 +15,11 @@ use Illuminate\Http\Request;
 
 class MypageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function mypage(){
         $user = Auth::user();
         $usersicon=$user->icon;
